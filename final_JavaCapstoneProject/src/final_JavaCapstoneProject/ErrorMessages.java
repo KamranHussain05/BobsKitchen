@@ -28,7 +28,7 @@ public class ErrorMessages extends JFrame implements ActionListener {
 	    panel.setBackground(new Color(200,200,200));
 	    
 	    //Error labels
-	    JLabel error = new JLabel("You added wayyy too much!", SwingConstants.CENTER);
+	    JLabel error = new JLabel("You added way too much!", SwingConstants.CENTER);
 	    error.setFont(new Font("Montserrat", Font.PLAIN, 17));
 	    panel.add(error, BorderLayout.CENTER);
 	    
