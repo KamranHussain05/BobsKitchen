@@ -134,6 +134,13 @@ public class Home extends JFrame implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		if(e.getSource() == sandwich) {
 			System.out.println("Level 1, Sandwich, was selected");
+			SandwichStart sStart = new SandwichStart();
+			sStart.setBounds(50,50,1440,900);
+			sStart.setBackground(new Color(211,211,211));;
+			sStart.setVisible(true);
+			sStart.setIconImage(Main.getIcon());
+			
+			Main.closeHome();
 		}
 		if(e.getSource() == burger) {
 			System.out.println("Level 2, Burger, was selected");
@@ -156,7 +163,7 @@ public class Home extends JFrame implements ActionListener {
 			help.setBounds(1000,70,500,900);
 			help.setBackground(new Color(211, 211, 211));
 			help.setVisible(true);
-			
+			help.setResizable(false);
 			help.setIconImage(Main.getIcon());
 		}
 	}

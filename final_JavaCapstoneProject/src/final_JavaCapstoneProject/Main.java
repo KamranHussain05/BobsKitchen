@@ -6,6 +6,8 @@ import java.awt.Image;
 import javax.swing.ImageIcon;
 
 public class Main {
+	
+	public static Home home = new Home();
 
 	//The app's icon image, needed for all frames
 	public static Image getIcon() {
@@ -13,9 +15,13 @@ public class Main {
     	Image icon = appIcon.getImage();
     	return icon;
 	}
+	
+	public static void closeHome() {
+		home.setVisible(false);
+		home.dispose();
+	}
 	//Main method that runs the home frame, starts the game
 	public static void main(String[] args) {
-		Home home = new Home();
     	home.setBounds(50, 50, 1440, 900);
     	home.setBackground(new Color(211,211,211));
     	home.setVisible(true);
