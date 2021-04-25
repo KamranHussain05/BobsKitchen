@@ -123,7 +123,17 @@ public class SandwichMeat extends JFrame implements ActionListener{
 			setVisible(false);
 			dispose();
 		}
-		
+		if(e.getSource() == next) {
+			System.out.println("next selected");
+			SandwichCondiments next = new SandwichCondiments();
+			next.setBounds(50,50,1440,900);
+			next.setBackground(new Color(211,211,211));
+			next.setVisible(true);
+			next.setIconImage(Main.getIcon());
+			
+			setVisible(false);
+			dispose();
+		}
 	}
 
 }
