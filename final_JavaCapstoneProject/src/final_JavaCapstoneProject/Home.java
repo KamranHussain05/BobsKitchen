@@ -134,28 +134,45 @@ public class Home extends JFrame implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		if(e.getSource() == sandwich) {
 			System.out.println("Level 1, Sandwich, was selected");
-			SandwichStart sStart = new SandwichStart();
-			sStart.setBounds(50,50,1440,900);
-			sStart.setBackground(new Color(211,211,211));;
-			sStart.setVisible(true);
-			sStart.setIconImage(Main.getIcon());
 			
-			Main.closeHome();
+			ConfirmSandwichPlay confirm = new ConfirmSandwichPlay();
+			confirm.setBounds(300,300, 300,100);
+			confirm.setBackground(new Color(211,211,211));
+			confirm.setVisible(true);
+			confirm.setIconImage(Main.getIcon());
+			
 		}
 		if(e.getSource() == burger) {
 			System.out.println("Level 2, Burger, was selected");
-			
+			ConfirmBurgerPlay confirm = new ConfirmBurgerPlay();
+			confirm.setBounds(300,300, 300,100);
+			confirm.setBackground(new Color(211,211,211));
+			confirm.setVisible(true);
+			confirm.setIconImage(Main.getIcon());
 		}
 		if(e.getSource() == pancake) {
 			System.out.println("Level 3, Souffle Pancake, was selected");
-			
+			ConfirmPancakePlay confirm = new ConfirmPancakePlay();
+			confirm.setBounds(300,300, 300,100);
+			confirm.setBackground(new Color(211,211,211));
+			confirm.setVisible(true);
+			confirm.setIconImage(Main.getIcon());
 		}
 		if(e.getSource() == ramen) {
 			System.out.println("Level 4, Waygu Ramen, was selected");
-			
+			ConfirmRamenPlay confirm = new ConfirmRamenPlay();
+			confirm.setBounds(300,300, 300,100);
+			confirm.setBackground(new Color(211,211,211));
+			confirm.setVisible(true);
+			confirm.setIconImage(Main.getIcon());
 		}
 		if(e.getSource() == beefWellington) {
 			System.out.println("Level 5, Beef Wellington, was selected");
+			ConfirmWellingtonPlay confirm = new ConfirmWellingtonPlay();
+			confirm.setBounds(300,300, 300,100);
+			confirm.setBackground(new Color(211,211,211));
+			confirm.setVisible(true);
+			confirm.setIconImage(Main.getIcon());
 		}
 		if(e.getSource() == help) {
 			System.out.println("Help was selected");

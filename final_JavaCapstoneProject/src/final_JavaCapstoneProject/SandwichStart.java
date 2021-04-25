@@ -1,4 +1,4 @@
-package final_JavaCapstoneProject;
+ package final_JavaCapstoneProject;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
@@ -22,6 +22,8 @@ public class SandwichStart extends JFrame implements ActionListener {
 	private JButton whiteBread;
 	private JButton sweetBread;
 	private JButton garlicBread;
+	
+	private String breadType = "";
 
 	public SandwichStart() {
 		super("Level 1: Sandwich");
@@ -84,6 +86,7 @@ public class SandwichStart extends JFrame implements ActionListener {
 	    back.setBackground(new Color(191, 192, 192));
 	    back.addActionListener(this);;
 	    this.add(back);
+	    
 	    next = new JButton();
 	    next.setText("Next");
 	    next.setFont(new Font("Montserrat", Font.PLAIN, 20));
@@ -98,12 +101,11 @@ public class SandwichStart extends JFrame implements ActionListener {
 		base.add(main, BorderLayout.CENTER);
 		base.add(footer, BorderLayout.AFTER_LAST_LINE);
 	}
-	
-	
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		if(e.getSource() == back) {
+			System.out.println("Back button pressed");
 			Home homePage = new Home();
 			homePage.setBounds(50, 50, 1440, 900);
 	    	homePage.setBackground(new Color(211,211,211));
@@ -114,8 +116,37 @@ public class SandwichStart extends JFrame implements ActionListener {
 	    	dispose();
 		}
 		if(e.getSource() == next) {
+			System.out.println("Next button pressed");
+			SandwichVeggies nextWindow = new SandwichVeggies();
+			nextWindow.setBounds(50,50, 1440,900);
+			nextWindow.setBackground(new Color(211,211,211));
+			nextWindow.setVisible(true);
+			nextWindow.setIconImage(Main.getIcon());
 			
+			setVisible(false);
+			dispose();
 		}
+		
+		//Breads *********************************************************************
+		if(e.getSource() == whiteBread) {
+			System.out.println("White Bread Selected");
+			breadType = "White Bread";
+			whiteBread.setBackground(new Color(34,222,34));
+		}
+		if(e.getSource() == sweetBread) {
+			System.out.println("Sweet Bread Selected");
+			breadType = "Sweet Bread";
+			sweetBread.setBackground(new Color(34,222,34));
+		}
+		if(e.getSource() == garlicBread) {
+			System.out.println("Garlic Bread");
+			breadType = "Garlic Bread";
+			garlicBread.setBackground(new Color(34,222,34));
+		}
+	}
+	
+	public String getBread() {
+		return breadType;
 	}
 
 }
