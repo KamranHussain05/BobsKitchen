@@ -106,14 +106,23 @@ public class SandwichStart extends JFrame implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		if(e.getSource() == back) {
 			System.out.println("Back button pressed");
-			Home homePage = new Home();
-			homePage.setBounds(50, 50, 1440, 900);
-	    	homePage.setBackground(new Color(211,211,211));
-	    	homePage.setVisible(true);
-	    	homePage.setIconImage(Main.getIcon());
-	    	
-	    	setVisible(false);
-	    	dispose();
+			
+			ConfirmExit confirm = new ConfirmExit();
+			confirm.setBounds(500, 500, 300,200);
+			confirm.setBackground(new Color(211,211,211));
+	    	confirm.setVisible(true);
+	    	confirm.setIconImage(Main.getIcon());
+			
+	    	if(ConfirmExit.isDismissed() == true) {
+	    		Home homePage = new Home();
+	    		homePage.setBounds(50, 50, 1440, 900);
+		    	homePage.setBackground(new Color(211,211,211));
+		    	homePage.setVisible(true);
+		    	homePage.setIconImage(Main.getIcon());
+		    	
+		    	setVisible(false);
+		    	dispose();
+	    	}
 		}
 		if(e.getSource() == next) {
 			System.out.println("Next button pressed");
