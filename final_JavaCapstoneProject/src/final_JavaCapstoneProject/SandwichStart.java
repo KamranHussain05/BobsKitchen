@@ -49,7 +49,7 @@ public class SandwichStart extends JFrame implements ActionListener {
 	    header.add(title);
 	    
 	    //*********************************************************************************
-	    ImageIcon whiteBreadImage = new ImageIcon("Resources/sandwich.png");
+	    ImageIcon whiteBreadImage = new ImageIcon("Resources/whitebread.png");
 		whiteBread = new JButton();
 		whiteBread.setIcon(whiteBreadImage);
 		whiteBread.setHorizontalAlignment(JButton.CENTER);
@@ -59,7 +59,7 @@ public class SandwichStart extends JFrame implements ActionListener {
 		main.add(whiteBread);
 		
 		//Level 2, make a burger
-		ImageIcon sweetBreadImage = new ImageIcon("Resources/burger.png");
+		ImageIcon sweetBreadImage = new ImageIcon("Resources/sweetbread.png");
 		sweetBread = new JButton();
 		sweetBread.setIcon(sweetBreadImage);
 		sweetBread.setHorizontalAlignment(JButton.CENTER);
@@ -69,7 +69,7 @@ public class SandwichStart extends JFrame implements ActionListener {
 		main.add(sweetBread);
 		
 		//Level 3, make a souffle pancake
-		ImageIcon garlicBreadImage = new ImageIcon("Resources/pancake.png");
+		ImageIcon garlicBreadImage = new ImageIcon("Resources/garlicbread.png");
 		garlicBread = new JButton();
 		garlicBread.setIcon(garlicBreadImage);
 		garlicBread.setHorizontalAlignment(JButton.CENTER);
@@ -112,17 +112,12 @@ public class SandwichStart extends JFrame implements ActionListener {
 			confirm.setBackground(new Color(211,211,211));
 	    	confirm.setVisible(true);
 	    	confirm.setIconImage(Main.getIcon());
-			
+	    	
 	    	if(ConfirmExit.isDismissed() == true) {
-	    		Home homePage = new Home();
-	    		homePage.setBounds(50, 50, 1440, 900);
-		    	homePage.setBackground(new Color(211,211,211));
-		    	homePage.setVisible(true);
-		    	homePage.setIconImage(Main.getIcon());
-		    	
-		    	setVisible(false);
-		    	dispose();
+	    		setVisible(false);
+	    		dispose();
 	    	}
+	    	
 		}
 		if(e.getSource() == next) {
 			System.out.println("Next button pressed");

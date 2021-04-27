@@ -43,6 +43,14 @@ public class ConfirmExit extends JFrame implements ActionListener {
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
+		System.out.println("Game Exit confirmed");
+		
+		Home homePage = new Home();
+		homePage.setBounds(50, 50, 1440, 900);
+    	homePage.setBackground(new Color(211,211,211));
+    	homePage.setVisible(true);
+    	homePage.setIconImage(Main.getIcon());
+		
 		setVisible(false);
 		dispose();
 		dismissed = true;

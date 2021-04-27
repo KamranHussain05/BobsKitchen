@@ -58,7 +58,7 @@ public class Home extends JFrame implements ActionListener {
 		topButtons.setBackground(new Color(200,200,200));
 	    
 	    //Level 1, make a sandwich
-		ImageIcon sandwichImage = new ImageIcon("Resources/sandwich.png");
+		ImageIcon sandwichImage = new ImageIcon("Resources/sandwichthumbnail.png");
 		sandwich = new JButton();
 		sandwich.setIcon(sandwichImage);
 		sandwich.setHorizontalAlignment(JButton.CENTER);
@@ -68,7 +68,7 @@ public class Home extends JFrame implements ActionListener {
 		topButtons.add(sandwich);
 		
 		//Level 2, make a burger
-		ImageIcon burgerImage = new ImageIcon("Resources/burger.png");
+		ImageIcon burgerImage = new ImageIcon("Resources/burgerthumbnail.png");
 		burger = new JButton();
 		burger.setIcon(burgerImage);
 		burger.setHorizontalAlignment(JButton.CENTER);
@@ -86,7 +86,7 @@ public class Home extends JFrame implements ActionListener {
 		lowerButtons.setBackground(new Color(200,200,200));
 		
 		//Level 3, make a souffle pancake
-		ImageIcon pancakeImage = new ImageIcon("Resources/pancake.png");
+		ImageIcon pancakeImage = new ImageIcon("Resources/pancakethumbnail.png");
 		pancake = new JButton();
 		pancake.setIcon(pancakeImage);
 		pancake.setHorizontalAlignment(JButton.CENTER);
@@ -96,7 +96,7 @@ public class Home extends JFrame implements ActionListener {
 		lowerButtons.add(pancake);
 		
 		//Level 4, 
-		ImageIcon ramenImage = new ImageIcon("Resources/ramen.png");
+		ImageIcon ramenImage = new ImageIcon("Resources/ramenthumbnail.png");
 		ramen = new JButton();
 		ramen.setIcon(ramenImage);
 		ramen.setHorizontalAlignment(JButton.CENTER);
@@ -105,7 +105,7 @@ public class Home extends JFrame implements ActionListener {
 		this.add(ramen);
 		lowerButtons.add(ramen);
 		
-		ImageIcon wellingtonImage = new ImageIcon("Resources/beefwellington.png");
+		ImageIcon wellingtonImage = new ImageIcon("Resources/wellingtonthumbnail.png");
 		beefWellington = new JButton();
 		beefWellington.setIcon(wellingtonImage);
 		beefWellington.setHorizontalAlignment(JButton.CENTER);
