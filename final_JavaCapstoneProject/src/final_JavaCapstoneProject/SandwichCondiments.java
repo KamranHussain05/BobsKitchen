@@ -53,7 +53,7 @@ public class SandwichCondiments extends JFrame implements ActionListener {
 		saucePanel.add(sauce, BorderLayout.BEFORE_LINE_BEGINS);
 		 
 		JButton sauceImage = new JButton();
-		ImageIcon image = new ImageIcon("Resources/burgerthumbnail.png");
+		ImageIcon image = new ImageIcon("Resources/honeymustard.png");
 		sauceImage.setBackground(Color.WHITE);
 		sauceImage.setIcon(image);
 		saucePanel.add(sauceImage, BorderLayout.CENTER);
@@ -61,7 +61,7 @@ public class SandwichCondiments extends JFrame implements ActionListener {
 		JComboBox<String> options = new JComboBox<String>();
 		options.addItem("");
 		options.addItem("Honey Mustard");
-		options.addItem("Mayonaise");
+		options.addItem("Mayonnaise");
 		options.addItem("Ketchup");
 		options.addItem("1000 Island Dressing");
 		options.addItem("None");
@@ -77,14 +77,14 @@ public class SandwichCondiments extends JFrame implements ActionListener {
 		cheesePanel.add(cheese, BorderLayout.NORTH);
 		 
 		JButton cheeseImage = new JButton();
-		ImageIcon image2 = new ImageIcon("Resources/burger.png");
+		ImageIcon image2 = new ImageIcon("Resources/pancakethumbnail.png");
 		cheeseImage.setIcon(image2);
 		cheesePanel.add(cheeseImage, BorderLayout.CENTER);
 		 
 		JComboBox<String> cheeseOptions = new JComboBox<String>();
 		cheeseOptions.addItem("");
 		cheeseOptions.addItem("Chedder");
-		cheeseOptions.addItem("Mozzerella");
+		cheeseOptions.addItem("Mozzarella");
 		cheeseOptions.addItem("Provolone");
 		cheeseOptions.addItem("Cream Cheese");
 		cheeseOptions.addItem("None");

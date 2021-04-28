@@ -49,7 +49,7 @@ public class SandwichMeat extends JFrame implements ActionListener{
 	    header.add(title);
 	    
 	    //*********************************************************************************
-	    ImageIcon turkeyImage = new ImageIcon("Resources/sandwich.png");
+	    ImageIcon turkeyImage = new ImageIcon("Resources/turkey.png");
 		turkey = new JButton();
 		turkey.setIcon(turkeyImage);
 		turkey.setHorizontalAlignment(JButton.CENTER);
@@ -59,7 +59,7 @@ public class SandwichMeat extends JFrame implements ActionListener{
 		main.add(turkey);
 		
 		//Level 2, make a burger
-		ImageIcon hamImage = new ImageIcon("Resources/burger.png");
+		ImageIcon hamImage = new ImageIcon("Resources/ham.png");
 		ham = new JButton();
 		ham.setIcon(hamImage);
 		ham.setHorizontalAlignment(JButton.CENTER);
@@ -69,7 +69,7 @@ public class SandwichMeat extends JFrame implements ActionListener{
 		main.add(ham);
 		
 		//Level 3, make a souffle pancake
-		ImageIcon steakImage = new ImageIcon("Resources/pancake.png");
+		ImageIcon steakImage = new ImageIcon("Resources/steak.png");
 		steak = new JButton();
 		steak.setIcon(steakImage);
 		steak.setHorizontalAlignment(JButton.CENTER);
@@ -78,7 +78,7 @@ public class SandwichMeat extends JFrame implements ActionListener{
 		this.add(steak);
 		main.add(steak);
 
-		ImageIcon baconImage = new ImageIcon("Resources/pancake.png");
+		ImageIcon baconImage = new ImageIcon("Resources/bacon.png");
 		bacon = new JButton();
 		bacon.setIcon(baconImage);
 		bacon.setHorizontalAlignment(JButton.CENTER);
