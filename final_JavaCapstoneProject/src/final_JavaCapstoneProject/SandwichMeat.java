@@ -19,7 +19,7 @@ import javax.swing.JTextPane;
 public class SandwichMeat extends JFrame implements ActionListener{
 	
 	private JButton turkey;
-	private JButton ham;
+	private JButton beef;
 	private JButton steak;
 	private JButton bacon;
 	
@@ -60,14 +60,14 @@ public class SandwichMeat extends JFrame implements ActionListener{
 		main.add(turkey);
 		
 		//Level 2, make a burger
-		ImageIcon hamImage = new ImageIcon("Resources/burger.png");
-		ham = new JButton();
-		ham.setIcon(hamImage);
-		ham.setHorizontalAlignment(JButton.CENTER);
-		ham.setBackground(Color.WHITE);
-		ham.addActionListener(this);;
-		this.add(ham);
-		main.add(ham);
+		ImageIcon beefImage = new ImageIcon("Resources/burger.png");
+		beef = new JButton();
+		beef.setIcon(beefImage);
+		beef.setHorizontalAlignment(JButton.CENTER);
+		beef.setBackground(Color.WHITE);
+		beef.addActionListener(this);;
+		this.add(beef);
+		main.add(beef);
 		
 		//Level 3, make a souffle pancake
 		ImageIcon steakImage = new ImageIcon("Resources/pancake.png");

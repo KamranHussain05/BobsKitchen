@@ -18,6 +18,7 @@ import javax.swing.JTextPane;
 @SuppressWarnings("serial")
 public class Home extends JFrame implements ActionListener {
 	
+	//fields
 	private JButton sandwich;
 	private JButton burger;
 	private JButton pancake;
@@ -25,6 +26,7 @@ public class Home extends JFrame implements ActionListener {
 	private JButton beefWellington;
 	private JButton help;
 
+	//Constructor
 	public Home() {
 		super("Bob's Kitchen");
 		
@@ -131,6 +133,7 @@ public class Home extends JFrame implements ActionListener {
 	}
 
 	@Override
+	//Method
 	public void actionPerformed(ActionEvent e) {
 		if(e.getSource() == sandwich) {
 			System.out.println("Level 1, Sandwich, was selected");
