@@ -17,14 +17,15 @@ import javax.swing.JTextPane;
 public class SandwichStart extends JFrame implements ActionListener {
 
 	private static final long serialVersionUID = 1L;
+	//Fields
 	private JButton back;
 	private JButton next;
 	private JButton whiteBread;
 	private JButton sweetBread;
 	private JButton garlicBread;
-	
 	private String breadType = "";
 
+	//Constructor
 	public SandwichStart() {
 		super("Level 1: Sandwich");
 		
@@ -103,6 +104,7 @@ public class SandwichStart extends JFrame implements ActionListener {
 	}
 
 	@Override
+	//Method
 	public void actionPerformed(ActionEvent e) {
 		if(e.getSource() == back) {
 			System.out.println("Back button pressed");
@@ -149,6 +151,7 @@ public class SandwichStart extends JFrame implements ActionListener {
 		}
 	}
 	
+	//Method
 	public String getBread() {
 		return breadType;
 	}

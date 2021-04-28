@@ -13,8 +13,10 @@ import javax.swing.JPanel;
 
 @SuppressWarnings("serial")
 public class ConfirmExit extends JFrame implements ActionListener {
-
+	//Fields
 	private static boolean dismissed = false;
+	
+	//Constructor
 	public ConfirmExit() {
 		super("Confirm Exit");
 		
@@ -42,6 +44,7 @@ public class ConfirmExit extends JFrame implements ActionListener {
 	}
 
 	@Override
+	//Method
 	public void actionPerformed(ActionEvent e) {
 		System.out.println("Game Exit confirmed");
 		
@@ -56,6 +59,7 @@ public class ConfirmExit extends JFrame implements ActionListener {
 		dismissed = true;
 	}
 
+	//Method
 	public static boolean isDismissed() {
 		return dismissed;
 	}
