@@ -26,7 +26,7 @@ public class SandwichCondiments extends JFrame implements ActionListener {
 		super("Level 1: Sandwich");
 		
 		JPanel main = new JPanel();
-		GridLayout mainLayout = new GridLayout(1, 3);
+		GridLayout mainLayout = new GridLayout(1, 2);
 		main.setBorder(BorderFactory.createEmptyBorder(10,10,10,10));
 		mainLayout.setVgap(5);
 		mainLayout.setHgap(5);
@@ -47,13 +47,14 @@ public class SandwichCondiments extends JFrame implements ActionListener {
 	    
 	    JPanel saucePanel = new JPanel();
 		JTextPane sauce = new JTextPane();
-		sauce.setText("Saucy Sauce");
+		sauce.setText("Sauce");
 		sauce.setFont(new Font("Montserrat", Font.PLAIN, 30));
 		sauce.setEditable(false);
-		saucePanel.add(sauce, BorderLayout.NORTH);
+		saucePanel.add(sauce, BorderLayout.BEFORE_LINE_BEGINS);
 		 
 		JButton sauceImage = new JButton();
-		ImageIcon image = new ImageIcon("Resources/burger.png");
+		ImageIcon image = new ImageIcon("Resources/burgerthumbnail.png");
+		sauceImage.setBackground(Color.WHITE);
 		sauceImage.setIcon(image);
 		saucePanel.add(sauceImage, BorderLayout.CENTER);
 		 
@@ -70,7 +71,7 @@ public class SandwichCondiments extends JFrame implements ActionListener {
 		
 		JPanel cheesePanel = new JPanel();
 		JTextPane cheese = new JTextPane();
-		cheese.setText("Cheesy Cheese");
+		cheese.setText("Cheese");
 		cheese.setFont(new Font("Montserrat", Font.PLAIN, 30));
 		cheese.setEditable(false);
 		cheesePanel.add(cheese, BorderLayout.NORTH);
