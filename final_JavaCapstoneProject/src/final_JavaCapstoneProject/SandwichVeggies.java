@@ -53,7 +53,7 @@ public class SandwichVeggies extends JFrame implements ActionListener {
 		left.add(veg1, BorderLayout.BEFORE_FIRST_LINE);
 		 
 		JButton veg1Image = new JButton();
-		ImageIcon image = new ImageIcon("Resources/burger.png");
+		ImageIcon image = new ImageIcon("Resources/tomato.png");
 		veg1Image.setIcon(image);
 		left.add(veg1Image, BorderLayout.CENTER);
 		 
@@ -76,7 +76,7 @@ public class SandwichVeggies extends JFrame implements ActionListener {
 		center.add(veg2, BorderLayout.NORTH);
 		 
 		JButton veg2Image = new JButton();
-		ImageIcon image2 = new ImageIcon("Resources/burger.png");
+		ImageIcon image2 = new ImageIcon("Resources/tomato.png");
 		veg2Image.setIcon(image2);
 		center.add(veg2Image, BorderLayout.CENTER);
 		 
@@ -99,7 +99,7 @@ public class SandwichVeggies extends JFrame implements ActionListener {
 		right.add(veg3, BorderLayout.NORTH);
 		 
 		JButton veg3Image = new JButton();
-		ImageIcon image3 = new ImageIcon("Resources/burger.png");
+		ImageIcon image3 = new ImageIcon("Resources/tomato.png");
 		veg3Image.setIcon(image3);
 		right.add(veg3Image, BorderLayout.CENTER);
 		 
