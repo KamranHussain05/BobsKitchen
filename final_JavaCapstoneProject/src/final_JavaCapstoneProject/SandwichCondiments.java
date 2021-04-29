@@ -26,7 +26,7 @@ public class SandwichCondiments extends JFrame implements ActionListener {
 		super("Level 1: Sandwich");
 		
 		JPanel main = new JPanel();
-		GridLayout mainLayout = new GridLayout(1, 3);
+		GridLayout mainLayout = new GridLayout(1, 2);
 		main.setBorder(BorderFactory.createEmptyBorder(10,10,10,10));
 		mainLayout.setVgap(5);
 		mainLayout.setHgap(5);
@@ -47,20 +47,21 @@ public class SandwichCondiments extends JFrame implements ActionListener {
 	    
 	    JPanel saucePanel = new JPanel();
 		JTextPane sauce = new JTextPane();
-		sauce.setText("Saucy Sauce");
+		sauce.setText("Sauce");
 		sauce.setFont(new Font("Montserrat", Font.PLAIN, 30));
 		sauce.setEditable(false);
-		saucePanel.add(sauce, BorderLayout.NORTH);
+		saucePanel.add(sauce, BorderLayout.BEFORE_LINE_BEGINS);
 		 
 		JButton sauceImage = new JButton();
-		ImageIcon image = new ImageIcon("Resources/burger.png");
+		ImageIcon image = new ImageIcon("Resources/honeymustard.png");
+		sauceImage.setBackground(Color.WHITE);
 		sauceImage.setIcon(image);
 		saucePanel.add(sauceImage, BorderLayout.CENTER);
 		 
 		JComboBox<String> options = new JComboBox<String>();
 		options.addItem("");
 		options.addItem("Honey Mustard");
-		options.addItem("Mayonaise");
+		options.addItem("Mayonnaise");
 		options.addItem("Ketchup");
 		options.addItem("1000 Island Dressing");
 		options.addItem("None");
@@ -70,20 +71,20 @@ public class SandwichCondiments extends JFrame implements ActionListener {
 		
 		JPanel cheesePanel = new JPanel();
 		JTextPane cheese = new JTextPane();
-		cheese.setText("Cheesy Cheese");
+		cheese.setText("Cheese");
 		cheese.setFont(new Font("Montserrat", Font.PLAIN, 30));
 		cheese.setEditable(false);
 		cheesePanel.add(cheese, BorderLayout.NORTH);
 		 
 		JButton cheeseImage = new JButton();
-		ImageIcon image2 = new ImageIcon("Resources/burger.png");
+		ImageIcon image2 = new ImageIcon("Resources/pancakethumbnail.png");
 		cheeseImage.setIcon(image2);
 		cheesePanel.add(cheeseImage, BorderLayout.CENTER);
 		 
 		JComboBox<String> cheeseOptions = new JComboBox<String>();
 		cheeseOptions.addItem("");
 		cheeseOptions.addItem("Chedder");
-		cheeseOptions.addItem("Mozzerella");
+		cheeseOptions.addItem("Mozzarella");
 		cheeseOptions.addItem("Provolone");
 		cheeseOptions.addItem("Cream Cheese");
 		cheeseOptions.addItem("None");

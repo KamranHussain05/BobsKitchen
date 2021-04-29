@@ -19,10 +19,9 @@ import javax.swing.JTextPane;
 public class SandwichMeat extends JFrame implements ActionListener{
 	
 	private JButton turkey;
-	private JButton beef;
+	private JButton ham;
 	private JButton steak;
 	private JButton bacon;
-	
 	private JButton back;
 	private JButton next;
 
@@ -50,7 +49,7 @@ public class SandwichMeat extends JFrame implements ActionListener{
 	    header.add(title);
 	    
 	    //*********************************************************************************
-	    ImageIcon turkeyImage = new ImageIcon("Resources/sandwich.png");
+	    ImageIcon turkeyImage = new ImageIcon("Resources/turkey.png");
 		turkey = new JButton();
 		turkey.setIcon(turkeyImage);
 		turkey.setHorizontalAlignment(JButton.CENTER);
@@ -60,17 +59,17 @@ public class SandwichMeat extends JFrame implements ActionListener{
 		main.add(turkey);
 		
 		//Level 2, make a burger
-		ImageIcon beefImage = new ImageIcon("Resources/burger.png");
-		beef = new JButton();
-		beef.setIcon(beefImage);
-		beef.setHorizontalAlignment(JButton.CENTER);
-		beef.setBackground(Color.WHITE);
-		beef.addActionListener(this);;
-		this.add(beef);
-		main.add(beef);
+		ImageIcon hamImage = new ImageIcon("Resources/ham.png");
+		ham = new JButton();
+		ham.setIcon(hamImage);
+		ham.setHorizontalAlignment(JButton.CENTER);
+		ham.setBackground(Color.WHITE);
+		ham.addActionListener(this);;
+		this.add(ham);
+		main.add(ham);
 		
 		//Level 3, make a souffle pancake
-		ImageIcon steakImage = new ImageIcon("Resources/pancake.png");
+		ImageIcon steakImage = new ImageIcon("Resources/steak.png");
 		steak = new JButton();
 		steak.setIcon(steakImage);
 		steak.setHorizontalAlignment(JButton.CENTER);
@@ -79,7 +78,7 @@ public class SandwichMeat extends JFrame implements ActionListener{
 		this.add(steak);
 		main.add(steak);
 
-		ImageIcon baconImage = new ImageIcon("Resources/pancake.png");
+		ImageIcon baconImage = new ImageIcon("Resources/bacon.png");
 		bacon = new JButton();
 		bacon.setIcon(baconImage);
 		bacon.setHorizontalAlignment(JButton.CENTER);
