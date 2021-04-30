@@ -101,7 +101,7 @@ public class SandwichCondiments extends JFrame implements ActionListener {
 	    back.setFont(new Font("Montserrat", Font.PLAIN, 20));
 	    back.setBackground(new Color(191, 192, 192));
 	    back.addActionListener(this);;
-	    this.add(back);
+	    this.add(back); 
 	    next = new JButton();
 	    next.setText("Next");
 	    next.setFont(new Font("Montserrat", Font.PLAIN, 20));
