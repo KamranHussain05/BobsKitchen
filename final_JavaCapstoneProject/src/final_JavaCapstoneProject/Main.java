@@ -10,7 +10,7 @@ public class Main {
 
 	//The app's icon image, needed for all frames
 	public static Image getIcon() {
-		ImageIcon appIcon = new ImageIcon("Resources/sandwich.png");
+		ImageIcon appIcon = new ImageIcon("Resources/appicon.png");
     	Image icon = appIcon.getImage();
     	return icon;
 	}
