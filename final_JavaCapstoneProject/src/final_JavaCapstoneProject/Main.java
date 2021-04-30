@@ -2,7 +2,6 @@ package final_JavaCapstoneProject;
 
 import java.awt.Color;
 import java.awt.Image;
-
 import javax.swing.ImageIcon;
 
 public class Main {

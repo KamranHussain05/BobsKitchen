@@ -21,6 +21,7 @@ public class SandwichCondiments extends JFrame implements ActionListener {
 	
 	private JButton back;
 	private JButton next;
+	private JComboBox<String> options;
 
 	public SandwichCondiments() {
 		super("Level 1: Sandwich");
@@ -58,13 +59,15 @@ public class SandwichCondiments extends JFrame implements ActionListener {
 		sauceImage.setIcon(image);
 		saucePanel.add(sauceImage, BorderLayout.CENTER);
 		 
-		JComboBox<String> options = new JComboBox<String>();
+		options = new JComboBox<String>();
 		options.addItem("");
 		options.addItem("Honey Mustard");
 		options.addItem("Mayonnaise");
 		options.addItem("Ketchup");
 		options.addItem("1000 Island Dressing");
 		options.addItem("None");
+		options.addActionListener(this);
+		this.add(options);
 		saucePanel.add(options, BorderLayout.AFTER_LAST_LINE);
 		
 		main.add(saucePanel);
@@ -138,6 +141,8 @@ public class SandwichCondiments extends JFrame implements ActionListener {
 			
 			setVisible(false);
 			dispose();
+		} if(e.getSource() == options.getSelectedItem()) {
+			System.out.println("Test");
 		}
 	}
 

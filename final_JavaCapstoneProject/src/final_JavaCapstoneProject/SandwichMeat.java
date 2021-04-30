@@ -20,7 +20,7 @@ public class SandwichMeat extends JFrame implements ActionListener{
 	
 	private JButton turkey;
 	private JButton ham;
-	private JButton steak;
+	private JButton steak; 
 	private JButton bacon;
 	private JButton back;
 	private JButton next;
