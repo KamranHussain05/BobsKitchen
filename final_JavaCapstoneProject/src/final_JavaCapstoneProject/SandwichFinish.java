@@ -5,14 +5,8 @@ import java.awt.Color;
 import java.awt.Container;
 import java.awt.Font;
 import java.awt.GridLayout;
-import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.image.BufferedImage;
-import java.io.File;
-import java.io.IOException;
-
-import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -54,6 +48,13 @@ public class SandwichFinish extends JFrame implements ActionListener {
 	    
 	    JPanel left = new JPanel();
 	    left.setBackground(Color.WHITE);
+	    JLabel bread = new JLabel();
+	    bread.setText("Bread Type: "+SandwichStart.getBread());
+	    bread.setFont(new Font("Montserrat", Font.PLAIN, 16));
+	    left.add(bread, BorderLayout.WEST);
+	    JLabel veggies = new JLabel();
+	    veggies.setText("<html>Veggies: " + SandwichVeggies.getVeg1()+ "<br>"+"        "+ SandwichVeggies.getVeg2() + "<br>"+"        " + SandwichVeggies.getVeg3());
+	    left.add(veggies);
 	    main.add(left);
 	    
 	    JPanel footer = new JPanel();

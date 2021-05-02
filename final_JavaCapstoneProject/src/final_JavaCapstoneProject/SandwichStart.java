@@ -23,7 +23,7 @@ public class SandwichStart extends JFrame implements ActionListener {
 	private JButton whiteBread;
 	private JButton sweetBread;
 	private JButton garlicBread;
-	private String breadType = "";
+	private static String breadType = "";
 
 	//Constructor
 	public SandwichStart() {
@@ -137,22 +137,28 @@ public class SandwichStart extends JFrame implements ActionListener {
 		if(e.getSource() == whiteBread) {
 			System.out.println("White Bread Selected");
 			breadType = "White Bread";
-			whiteBread.setBackground(new Color(34,222,34));
+			whiteBread.setBackground(new Color(211,211,211));
+			sweetBread.setEnabled(false);
+			garlicBread.setEnabled(false);
 		}
 		if(e.getSource() == sweetBread) {
 			System.out.println("Sweet Bread Selected");
 			breadType = "Sweet Bread";
-			sweetBread.setBackground(new Color(34,222,34));
+			sweetBread.setBackground(new Color(211,211,211));
+			whiteBread.setEnabled(false);
+			garlicBread.setEnabled(false);
 		}
 		if(e.getSource() == garlicBread) {
 			System.out.println("Garlic Bread");
 			breadType = "Garlic Bread";
-			garlicBread.setBackground(new Color(34,222,34));
+			garlicBread.setBackground(new Color(211,211,211));
+			whiteBread.setEnabled(false);
+			sweetBread.setEnabled(false);
 		}
 	}
 	
 	//Method
-	public String getBread() {
+	public static String getBread() {
 		return breadType;
 	}
 
