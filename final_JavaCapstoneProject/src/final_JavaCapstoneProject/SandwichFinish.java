@@ -5,15 +5,12 @@ import java.awt.Color;
 import java.awt.Container;
 import java.awt.Font;
 import java.awt.GridLayout;
-import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.File;
-import java.io.IOException;
-
-import javax.imageio.ImageIO;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextPane;
 
@@ -44,8 +41,21 @@ public class SandwichFinish extends JFrame implements ActionListener {
 	    header.add(title);
 	    
 	    JPanel right = new JPanel();
-	    right.setBackground(new Color(79,93,117));
-	    JButton sandwichImage = new JButton();
+	    right.setBackground(Color.WHITE);
+	    JLabel imgLabel = new JLabel(new ImageIcon("Resources/appicon.png"));
+	    right.add(imgLabel);
+	    main.add(right);
+	    
+	    JPanel left = new JPanel();
+	    left.setBackground(Color.WHITE);
+	    JLabel bread = new JLabel();
+	    bread.setText("Bread Type: "+SandwichStart.getBread());
+	    bread.setFont(new Font("Montserrat", Font.PLAIN, 16));
+	    left.add(bread, BorderLayout.WEST);
+	    JLabel veggies = new JLabel();
+	    veggies.setText("<html>Veggies: " + SandwichVeggies.getVeg1()+ "<br>"+"        "+ SandwichVeggies.getVeg2() + "<br>"+"        " + SandwichVeggies.getVeg3());
+	    left.add(veggies);
+	    main.add(left);
 	    
 	    JPanel footer = new JPanel();
 	    back = new JButton();

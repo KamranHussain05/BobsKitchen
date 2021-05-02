@@ -19,8 +19,17 @@ import javax.swing.JTextPane;
 @SuppressWarnings("serial")
 public class SandwichVeggies extends JFrame implements ActionListener {
 	
+	private static String veg1;
+	private static String veg2;
+	private static String veg3;
 	private JButton back;
 	private JButton next;
+	private JComboBox<String> options;
+	private JComboBox<String> options2;
+	private JComboBox<String> options3;
+	private JButton veg1Image;
+	private JButton veg2Image;
+	private JButton veg3Image;
 
 	public SandwichVeggies() {
 		super("Level 1: Sandwich");
@@ -52,18 +61,18 @@ public class SandwichVeggies extends JFrame implements ActionListener {
 		veg1.setEditable(false);
 		left.add(veg1, BorderLayout.BEFORE_FIRST_LINE);
 		 
-		JButton veg1Image = new JButton();
+		veg1Image = new JButton();
 		ImageIcon image = new ImageIcon("Resources/tomato.png");
 		veg1Image.setIcon(image);
 		left.add(veg1Image, BorderLayout.CENTER);
 		 
-		JComboBox<String> options = new JComboBox<String>();
+		options = new JComboBox<String>();
 		options.addItem("Select One");
 		options.addItem("Tomato");
 		options.addItem("Lettuce");
 		options.addItem("Cucumbers");
 		options.addItem("Avacado");
-		options.addItem("None");
+		options.addItem("Nothing");
 		left.add(options, BorderLayout.AFTER_LAST_LINE);
 		
 		main.add(left);
@@ -75,18 +84,18 @@ public class SandwichVeggies extends JFrame implements ActionListener {
 		veg2.setEditable(false);
 		center.add(veg2, BorderLayout.NORTH);
 		 
-		JButton veg2Image = new JButton();
+		veg2Image = new JButton();
 		ImageIcon image2 = new ImageIcon("Resources/lettuce.png");
 		veg2Image.setIcon(image2);
 		center.add(veg2Image, BorderLayout.CENTER);
 		 
-		JComboBox<String> options2 = new JComboBox<String>();
+		options2 = new JComboBox<String>();
 		options2.addItem("Select One");
 		options2.addItem("Tomato");
 		options2.addItem("Lettuce");
 		options2.addItem("Cucumbers");
 		options2.addItem("Avacado");
-		options2.addItem("None");
+		options2.addItem("Nothing");
 		center.add(options2, BorderLayout.SOUTH);
 		
 		main.add(center);
@@ -98,18 +107,18 @@ public class SandwichVeggies extends JFrame implements ActionListener {
 		veg3.setEditable(false);
 		right.add(veg3, BorderLayout.NORTH);
 		 
-		JButton veg3Image = new JButton();
+		veg3Image = new JButton();
 		ImageIcon image3 = new ImageIcon("Resources/avocado.png");
 		veg3Image.setIcon(image3);
 		right.add(veg3Image, BorderLayout.CENTER);
 		 
-		JComboBox<String> options3 = new JComboBox<String>();
+		options3 = new JComboBox<String>();
 		options3.addItem("Select One");
 		options3.addItem("Tomato");
 		options3.addItem("Lettuce");
 		options3.addItem("Cucumbers");
 		options3.addItem("Avocado");
-		options3.addItem("None");
+		options3.addItem("Nothing");
 		right.add(options3, BorderLayout.SOUTH);
 		
 		main.add(right);
@@ -160,6 +169,97 @@ public class SandwichVeggies extends JFrame implements ActionListener {
 			setVisible(false);
 			dispose();
 		}
+		
+		String a = (String) options.getSelectedItem();
+		switch (a) {
+		case "Tomato":
+			veg1 = "Tomato";
+			ImageIcon tomato = new ImageIcon("Resources/tomato.png");
+			veg1Image.setIcon(tomato);
+		case "Lettuce":
+			veg1 = "Lettuce";
+			ImageIcon lettuce = new ImageIcon("Resources/lettuce.ong");
+			veg1Image.setIcon(lettuce);
+		case "Cucumbers":
+			veg1 = "Cucumber";
+			ImageIcon cucumber = new ImageIcon("Resources/cucumber.png");
+			veg1Image.setIcon(cucumber);
+		case "Avocado":
+			veg1 = "Avocado";
+			ImageIcon avocado = new ImageIcon("Resources/avocado.png");
+			veg1Image.setIcon(avocado);
+//		case "Nothing":
+//			veg1 = "none";
+//			ImageIcon none = new ImageIcon("Resources/none.png");
+//			veg1Image.setIcon(none);
+		}
+		
+		String b = (String) options2.getSelectedItem();
+		switch (b) {
+		case "Tomato":
+			veg2 = "Tomato";
+			ImageIcon tomato = new ImageIcon("Resources/tomato.png");
+			veg2Image.setIcon(tomato);
+		case "Lettuce":
+			veg2 = "Lettuce";
+			ImageIcon lettuce = new ImageIcon("Resources/lettuce.ong");
+			veg2Image.setIcon(lettuce);
+		case "Cucumbers":
+			veg2 = "Cucumber";
+			ImageIcon cucumber = new ImageIcon("Resources/cucumber.png");
+			veg2Image.setIcon(cucumber);
+		case "Avocado":
+			veg2 = "Avocado";
+			ImageIcon avocado = new ImageIcon("Resources/avocado.png");
+			veg2Image.setIcon(avocado);
+//		case "Nothing":
+//			veg2 = "none";
+//			ImageIcon none = new ImageIcon("Resources/none.png");
+//			veg2Image.setIcon(none);
+		}
+		
+		String c = (String) options3.getSelectedItem();
+		switch (c) {
+		case "Tomato":
+			veg3 = "Tomato";
+			ImageIcon tomato = new ImageIcon("Resources/tomato.png");
+			veg3Image.setIcon(tomato);
+		case "Lettuce":
+			veg3 = "Lettuce";
+			ImageIcon lettuce = new ImageIcon("Resources/lettuce.ong");
+			veg3Image.setIcon(lettuce);
+		case "Cucumbers":
+			veg3 = "Cucumber";
+			ImageIcon cucumber = new ImageIcon("Resources/cucumber.png");
+			veg3Image.setIcon(cucumber);
+		case "Avocado":
+			veg3 = "Avocado";
+			ImageIcon avocado = new ImageIcon("Resources/avocado.png");
+			veg3Image.setIcon(avocado);
+//		case "Nothing":
+//			veg3 = "none";
+//			ImageIcon none = new ImageIcon("Resources/none.png");
+//			veg3Image.setIcon(none);
+		}
+		
+		refresh();
+	}
+	
+	private void refresh() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public static String getVeg1() {
+		return veg1;
+	}
+	
+	public static String getVeg2() {
+		return veg2;
+	}
+	
+	public static String getVeg3() {
+		return veg3;
 	}
 
 }
