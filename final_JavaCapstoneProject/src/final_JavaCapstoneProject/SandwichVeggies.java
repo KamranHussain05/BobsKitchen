@@ -19,6 +19,7 @@ import javax.swing.JTextPane;
 @SuppressWarnings("serial")
 public class SandwichVeggies extends JFrame implements ActionListener {
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 	
 	private static String veg1;
 	private static String veg2;
@@ -32,6 +33,12 @@ public class SandwichVeggies extends JFrame implements ActionListener {
 	private JButton veg2Image;
 	private JButton veg3Image;
 
+=======
+//Fields
+	private JButton back;
+	private JButton next;
+//Constructors
+>>>>>>> Stashed changes
 =======
 //Fields
 	private JButton back;
