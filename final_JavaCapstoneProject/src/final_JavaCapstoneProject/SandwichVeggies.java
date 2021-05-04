@@ -18,6 +18,7 @@ import javax.swing.JTextPane;
 
 @SuppressWarnings("serial")
 public class SandwichVeggies extends JFrame implements ActionListener {
+<<<<<<< Updated upstream
 	
 	private static String veg1;
 	private static String veg2;
@@ -31,6 +32,12 @@ public class SandwichVeggies extends JFrame implements ActionListener {
 	private JButton veg2Image;
 	private JButton veg3Image;
 
+=======
+//Fields
+	private JButton back;
+	private JButton next;
+//Constructors
+>>>>>>> Stashed changes
 	public SandwichVeggies() {
 		super("Level 1: Sandwich");
 		
@@ -146,6 +153,7 @@ public class SandwichVeggies extends JFrame implements ActionListener {
 	}
 
 	@Override
+	//Method
 	public void actionPerformed(ActionEvent e) {
 		if(e.getSource() == back) {
 			System.out.println("back selected");

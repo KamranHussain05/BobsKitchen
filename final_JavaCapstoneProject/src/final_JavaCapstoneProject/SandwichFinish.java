@@ -16,10 +16,10 @@ import javax.swing.JTextPane;
 
 @SuppressWarnings("serial")
 public class SandwichFinish extends JFrame implements ActionListener {
-	
+//Fields	
 	private JButton submit;
 	private JButton back;
-
+//Constructors
 	public SandwichFinish() {
 		super("Level 1: Sandwich");
 		
@@ -80,6 +80,7 @@ public class SandwichFinish extends JFrame implements ActionListener {
 	}
 
 	@Override
+	//Methods
 	public void actionPerformed(ActionEvent e) {
 		if(e.getSource() == back) {
 			System.out.println("back selected");
