@@ -40,22 +40,36 @@ public class SandwichFinish extends JFrame implements ActionListener {
 	    title.setBackground(new Color(79, 93, 117));
 	    header.add(title);
 	    
-	    JPanel right = new JPanel();
-	    right.setBackground(Color.WHITE);
-	    JLabel imgLabel = new JLabel(new ImageIcon("Resources/appicon.png"));
-	    right.add(imgLabel);
-	    main.add(right);
-	    
 	    JPanel left = new JPanel();
 	    left.setBackground(Color.WHITE);
+	    JLabel imgLabel = new JLabel(new ImageIcon("Resources/appicon.png"));
+	    left.add(imgLabel);
+	    main.add(left);
+	    
+	    //******************************************************
+	    JPanel right = new JPanel();
+	    GridLayout rightLayout = new GridLayout(8,1);
+	    right.setLayout(rightLayout);
+	    right.setBackground(Color.WHITE);
+	    
+	    JTextPane ingredients = new JTextPane();
+	    ingredients.setText("Ingredients");
+	    ingredients.setFont(new Font("Montserrat", Font.PLAIN, 40));
+	    ingredients.setForeground(new Color(255, 255, 255));
+	    ingredients.setBackground(new Color(79, 93, 117));
+	    ingredients.setAlignmentX(CENTER_ALIGNMENT);
+	    right.add(ingredients);
+	    
 	    JLabel bread = new JLabel();
 	    bread.setText("Bread Type: "+SandwichStart.getBread());
 	    bread.setFont(new Font("Montserrat", Font.PLAIN, 16));
-	    left.add(bread, BorderLayout.WEST);
+	    right.add(bread, BorderLayout.WEST);
+	    
 	    JLabel veggies = new JLabel();
 	    veggies.setText("<html>Veggies: " + SandwichVeggies.getVeg1()+ "<br>"+"        "+ SandwichVeggies.getVeg2() + "<br>"+"        " + SandwichVeggies.getVeg3());
-	    left.add(veggies);
-	    main.add(left);
+	    right.add(veggies);
+	    main.add(right);
+	    //*****************************************************
 	    
 	    JPanel footer = new JPanel();
 	    back = new JButton();
