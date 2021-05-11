@@ -22,6 +22,7 @@ public class SandwichCondiments extends JFrame implements ActionListener {
 	private JButton back;
 	private JButton next;
 	private JComboBox<String> options;
+	private static JComboBox<String> cheeseOptions;
 
 	public SandwichCondiments() {
 		super("Level 1: Sandwich");
@@ -84,7 +85,7 @@ public class SandwichCondiments extends JFrame implements ActionListener {
 		cheeseImage.setIcon(image2);
 		cheesePanel.add(cheeseImage, BorderLayout.CENTER);
 		 
-		JComboBox<String> cheeseOptions = new JComboBox<String>();
+		cheeseOptions = new JComboBox<String>();
 		cheeseOptions.addItem("");
 		cheeseOptions.addItem("Chedder");
 		cheeseOptions.addItem("Mozzarella");
@@ -144,6 +145,11 @@ public class SandwichCondiments extends JFrame implements ActionListener {
 		} if(e.getSource() == options.getSelectedItem()) {
 			System.out.println("Test");
 		}
+	}
+	
+	public static String getCheese() {
+		String cheese = (String) cheeseOptions.getSelectedItem();
+		return cheese;
 	}
 
 }

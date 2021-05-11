@@ -68,6 +68,10 @@ public class SandwichFinish extends JFrame implements ActionListener {
 	    JLabel veggies = new JLabel();
 	    veggies.setText("<html>Veggies: " + SandwichVeggies.getVeg1()+ "<br>"+"        "+ SandwichVeggies.getVeg2() + "<br>"+"        " + SandwichVeggies.getVeg3());
 	    right.add(veggies);
+	    
+	    JLabel score = new JLabel();
+	    score.setText("Your Score is: " + SandwichScorer.getScore());
+	    right.add(score);
 	    main.add(right);
 	    //*****************************************************
 	    
