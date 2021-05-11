@@ -113,7 +113,7 @@ public class SandwichFinish extends JFrame implements ActionListener {
 		}
 		if(e.getSource() == submit) {
 			System.out.println("submit dish selected");
-			
+			SandwichScorer.grilledCheeseScore(SandwichStart.getBread(), SandwichCondiments.getCheese());
 		}
 	}
 

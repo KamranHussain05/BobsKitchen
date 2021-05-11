@@ -4,11 +4,11 @@ public class SandwichScorer {
 	
 	private static int score; 
 	
-	public void grilledCheeseScore () {
-		if (SandwichStart.getBread() == "White Bread") {
+	public static void grilledCheeseScore (String bread, String cheese) {
+		if (bread == "White Bread") {
 			score++;
 		}
-		if (SandwichCondiments.getCheese() == "Provolone") {
+		if (cheese == "Provolone") {
 			score++;
 		}
 		System.out.println(score);
