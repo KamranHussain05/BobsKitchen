@@ -19,6 +19,7 @@ public class SandwichFinish extends JFrame implements ActionListener {
 //Fields	
 	private JButton submit;
 	private JButton back;
+	private static JLabel score;
 //Constructors
 	public SandwichFinish() {
 		super("Level 1: Sandwich");
@@ -69,8 +70,8 @@ public class SandwichFinish extends JFrame implements ActionListener {
 	    veggies.setText("<html>Veggies: " + SandwichVeggies.getVeg1()+ "<br>"+"        "+ SandwichVeggies.getVeg2() + "<br>"+"        " + SandwichVeggies.getVeg3());
 	    right.add(veggies);
 	    
-	    JLabel score = new JLabel();
-	    score.setText("Your Score is: " + SandwichScorer.getScore());
+	    score = new JLabel();
+	    score.setText("Your Score is: " + SandwichScorer.getScore()+"/2");
 	    right.add(score);
 	    main.add(right);
 	    //*****************************************************
@@ -114,7 +115,12 @@ public class SandwichFinish extends JFrame implements ActionListener {
 		if(e.getSource() == submit) {
 			System.out.println("submit dish selected");
 			SandwichScorer.grilledCheeseScore(SandwichStart.getBread(), SandwichCondiments.getCheese());
+			SandwichFinish.refresh();
 		}
 	}
 
+	
+	public static void refresh() {
+		score.setText("Your Score is: "+ SandwichScorer.getScore()+"/2");
+	}
 }
