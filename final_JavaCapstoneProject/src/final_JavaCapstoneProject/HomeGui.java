@@ -1,37 +1,46 @@
 package final_JavaCapstoneProject;
 
 import java.awt.BorderLayout;
+import java.awt.CardLayout;
 import java.awt.Color;
+import java.awt.Component;
 import java.awt.Container;
 import java.awt.Font;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.ItemEvent;
 
 import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
+import javax.swing.JComboBox;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextPane;
 
 @SuppressWarnings("serial")
-public class Home extends JFrame implements ActionListener {
+public class HomeGui extends JFrame {
 	
-	//fields
 	private static JButton sandwich;
 	private static JButton burger;
 	private static JButton pancake;
 	private static JButton ramen;
 	private static JButton beefWellington;
 	private static JButton help;
-	private static JPanel homeBody;
+	private static ActionListener listener;
+	private static JLabel score;
+	
+	final static String BUTTONPANEL = "Card with JButtons";
+	final static String TEXTPANEL = "Card with JTextField";
 
-	//Constructor
-	public Home() {
-		super("Bob's Kitchen");
+	public HomeGui() {
 		
-		//Base panel where all content is overlayed
+	}
+	
+	public static Component getBody() {
+		
 		JPanel main = new JPanel();
 		GridLayout mainLayout = new GridLayout(2, 1);
 		main.setBorder(BorderFactory.createEmptyBorder(10,10,10,10));
@@ -39,18 +48,6 @@ public class Home extends JFrame implements ActionListener {
 		mainLayout.setHgap(5);
 		main.setLayout(mainLayout);
 		main.setBackground(new Color(200,200,200));
-		
-		//The title header with colors
-		JPanel header = new JPanel();
-	    header.setBackground(new Color(79, 93, 117));
-	    JTextPane title = new JTextPane();
-	    title.setText("Bob's Kitchen!");
-	    title.setEditable(false);
-	    title.setAlignmentX(CENTER_ALIGNMENT);
-	    title.setFont(new Font("Montserrat", Font.PLAIN, 40));
-	    title.setForeground(new Color(255, 255, 255));
-	    title.setBackground(new Color(79, 93, 117));
-	    header.add(title);
 		
 	    JPanel topButtons = new JPanel();
 	    GridLayout topLayout = new GridLayout(1,2);
@@ -66,8 +63,6 @@ public class Home extends JFrame implements ActionListener {
 		sandwich.setIcon(sandwichImage);
 		sandwich.setHorizontalAlignment(JButton.CENTER);
 		sandwich.setBackground(Color.WHITE);
-		sandwich.addActionListener(this);
-		this.add(sandwich);
 		topButtons.add(sandwich);
 		
 		//Level 2, make a burger
@@ -76,8 +71,6 @@ public class Home extends JFrame implements ActionListener {
 		burger.setIcon(burgerImage);
 		burger.setHorizontalAlignment(JButton.CENTER);
 		burger.setBackground(Color.WHITE);
-		burger.addActionListener(this);;
-		this.add(burger);
 		topButtons.add(burger);
 		
 		JPanel lowerButtons = new JPanel();
@@ -93,9 +86,7 @@ public class Home extends JFrame implements ActionListener {
 		pancake = new JButton();
 		pancake.setIcon(pancakeImage);
 		pancake.setHorizontalAlignment(JButton.CENTER);
-		pancake.setBackground(Color.WHITE);
-		pancake.addActionListener(this);;
-		this.add(pancake);		
+		pancake.setBackground(Color.WHITE);	
 		lowerButtons.add(pancake);
 		
 		//Level 4, 
@@ -104,8 +95,6 @@ public class Home extends JFrame implements ActionListener {
 		ramen.setIcon(ramenImage);
 		ramen.setHorizontalAlignment(JButton.CENTER);
 		ramen.setBackground(Color.WHITE);
-		ramen.addActionListener(this);;
-		this.add(ramen);
 		lowerButtons.add(ramen);
 		
 		ImageIcon wellingtonImage = new ImageIcon("Resources/wellingtonthumbnail.png");
@@ -113,80 +102,78 @@ public class Home extends JFrame implements ActionListener {
 		beefWellington.setIcon(wellingtonImage);
 		beefWellington.setHorizontalAlignment(JButton.CENTER);
 		beefWellington.setBackground(Color.WHITE);
-		beefWellington.addActionListener(this);;
-		this.add(beefWellington);
 		lowerButtons.add(beefWellington);
 		
 	    help = new JButton();
 	    help.setText("Help!");
 	    help.setFont(new Font("Montserrat", Font.PLAIN, 20));
 	    help.setBackground(new Color(191, 192, 192));
-	    help.addActionListener(this);;
-	    this.add(help);
 	    
 	    main.add(topButtons);
 	    main.add(lowerButtons);
 		
-		Container base = getContentPane();
-		base.add(header, BorderLayout.BEFORE_FIRST_LINE);
-		base.add(main, BorderLayout.CENTER);
-		base.add(help, BorderLayout.AFTER_LAST_LINE);
+		return main;
+	}
+	
+	public static Component getSecondCard() {
+		JPanel main = new JPanel();
+		GridLayout layout = new GridLayout(1,2);
+		layout.setHgap(5);
+		main.setLayout(layout);
+		main.setBackground(new Color(211,211,211));
+		
+		JPanel header = new JPanel();
+	    header.setBackground(new Color(79, 93, 117));
+	    JTextPane title = new JTextPane();
+	    title.setText("Finish");
+	    title.setEditable(false);
+	    title.setAlignmentX(CENTER_ALIGNMENT);
+	    title.setFont(new Font("Montserrat", Font.PLAIN, 40));
+	    title.setForeground(new Color(255, 255, 255));
+	    title.setBackground(new Color(79, 93, 117));
+	    header.add(title);
+	    
+	    JPanel left = new JPanel();
+	    left.setBackground(Color.WHITE);
+	    JLabel imgLabel = new JLabel(new ImageIcon("Resources/appicon.png"));
+	    left.add(imgLabel);
+	    main.add(left);
+	    
+	    //******************************************************
+	    JPanel right = new JPanel();
+	    GridLayout rightLayout = new GridLayout(8,1);
+	    right.setLayout(rightLayout);
+	    right.setBackground(Color.WHITE);
+	    
+	    JTextPane ingredients = new JTextPane();
+	    ingredients.setText("Ingredients");
+	    ingredients.setFont(new Font("Montserrat", Font.PLAIN, 40));
+	    ingredients.setForeground(new Color(255, 255, 255));
+	    ingredients.setBackground(new Color(79, 93, 117));
+	    ingredients.setAlignmentX(CENTER_ALIGNMENT);
+	    right.add(ingredients);
+	    
+	    JLabel bread = new JLabel();
+	    bread.setText("Bread Type: "+SandwichStart.getBread());
+	    bread.setFont(new Font("Montserrat", Font.PLAIN, 16));
+	    right.add(bread, BorderLayout.WEST);
+	    
+	    JLabel veggies = new JLabel();
+	    veggies.setText("<html>Veggies: " + SandwichVeggies.getVeg1()+ "<br>"+"        "+ SandwichVeggies.getVeg2() + "<br>"+"        " + SandwichVeggies.getVeg3());
+	    right.add(veggies);
+	    
+	    score = new JLabel();
+	    score.setText("Your Score is: " + SandwichScorer.getScore()+"/2");
+	    right.add(score);
+	    main.add(right);
+		
+		return main;
 	}
 
-	@Override
-	//Method
 	public void actionPerformed(ActionEvent e) {
-		if(e.getSource() == sandwich) {
-			System.out.println("Level 1, Sandwich, was selected");
-			
-			ConfirmSandwichPlay confirm = new ConfirmSandwichPlay();
-			confirm.setBounds(300,300, 300,100);
-			confirm.setBackground(new Color(211,211,211));
-			confirm.setVisible(true);
-			confirm.setIconImage(Main.getIcon());
-			
+		if(e.getActionCommand() == "sandwich") {
+			System.out.println("listener");
 		}
-		if(e.getSource() == burger) {
-			System.out.println("Level 2, Burger, was selected");
-			ConfirmBurgerPlay confirm = new ConfirmBurgerPlay();
-			confirm.setBounds(300,300, 300,100);
-			confirm.setBackground(new Color(211,211,211));
-			confirm.setVisible(true);
-			confirm.setIconImage(Main.getIcon());
-		}
-		if(e.getSource() == pancake) {
-			System.out.println("Level 3, Souffle Pancake, was selected");
-			ConfirmPancakePlay confirm = new ConfirmPancakePlay();
-			confirm.setBounds(300,300, 300,100);
-			confirm.setBackground(new Color(211,211,211));
-			confirm.setVisible(true);
-			confirm.setIconImage(Main.getIcon());
-		}
-		if(e.getSource() == ramen) {
-			System.out.println("Level 4, Waygu Ramen, was selected");
-			ConfirmRamenPlay confirm = new ConfirmRamenPlay();
-			confirm.setBounds(300,300, 300,100);
-			confirm.setBackground(new Color(211,211,211));
-			confirm.setVisible(true);
-			confirm.setIconImage(Main.getIcon());
-		}
-		if(e.getSource() == beefWellington) {
-			System.out.println("Level 5, Beef Wellington, was selected");
-			ConfirmWellingtonPlay confirm = new ConfirmWellingtonPlay();
-			confirm.setBounds(300,300, 300,100);
-			confirm.setBackground(new Color(211,211,211));
-			confirm.setVisible(true);
-			confirm.setIconImage(Main.getIcon());
-		}
-		if(e.getSource() == help) {
-			System.out.println("Help was selected");
-			Help help = new Help();
-			help.setBounds(1000,70,500,900);
-			help.setBackground(new Color(211, 211, 211));
-			help.setVisible(true);
-			help.setResizable(false);
-			help.setIconImage(Main.getIcon());
-		}
+		
 	}
-
 }
