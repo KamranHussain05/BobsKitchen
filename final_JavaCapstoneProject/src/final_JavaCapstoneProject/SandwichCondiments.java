@@ -66,6 +66,7 @@ public class SandwichCondiments extends JFrame implements ActionListener {
 		options.addItem("Mayonnaise");
 		options.addItem("Ketchup");
 		options.addItem("1000 Island Dressing");
+		options.addItem("Soy Sauce");
 		options.addItem("None");
 		options.addActionListener(this);
 		this.add(options);
@@ -90,6 +91,7 @@ public class SandwichCondiments extends JFrame implements ActionListener {
 		cheeseOptions.addItem("Chedder");
 		cheeseOptions.addItem("Mozzarella");
 		cheeseOptions.addItem("Provolone");
+		cheeseOptions.addItem("American");
 		cheeseOptions.addItem("Cream Cheese");
 		cheeseOptions.addItem("None");
 		cheesePanel.add(cheeseOptions, BorderLayout.AFTER_LAST_LINE);

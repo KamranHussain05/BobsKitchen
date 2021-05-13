@@ -21,7 +21,7 @@ public class SandwichStart extends JFrame implements ActionListener {
 	private JButton back;
 	private JButton next;
 	private JButton whiteBread;
-	private JButton sweetBread;
+	private JButton baguette;
 	private JButton garlicBread;
 	private static String breadType = "";
 
@@ -60,14 +60,14 @@ public class SandwichStart extends JFrame implements ActionListener {
 		main.add(whiteBread);
 		
 		//Level 2, make a burger
-		ImageIcon sweetBreadImage = new ImageIcon("Resources/sweetbread.png");
-		sweetBread = new JButton();
-		sweetBread.setIcon(sweetBreadImage);
-		sweetBread.setHorizontalAlignment(JButton.CENTER);
-		sweetBread.setBackground(Color.WHITE);
-		sweetBread.addActionListener(this);;
-		this.add(sweetBread);
-		main.add(sweetBread);
+		ImageIcon baguetteImage = new ImageIcon("Resources/baguette.png");
+		baguette = new JButton();
+		baguette.setIcon(baguetteImage);
+		baguette.setHorizontalAlignment(JButton.CENTER);
+		baguette.setBackground(Color.WHITE);
+		baguette.addActionListener(this);;
+		this.add(baguette);
+		main.add(baguette);
 		
 		//Level 3, make a souffle pancake
 		ImageIcon garlicBreadImage = new ImageIcon("Resources/garlicbread.png");
@@ -138,13 +138,13 @@ public class SandwichStart extends JFrame implements ActionListener {
 			System.out.println("White Bread Selected");
 			breadType = "White Bread";
 			whiteBread.setBackground(new Color(211,211,211));
-			sweetBread.setEnabled(false);
+			baguette.setEnabled(false);
 			garlicBread.setEnabled(false);
 		}
-		if(e.getSource() == sweetBread) {
+		if(e.getSource() == baguette) {
 			System.out.println("Sweet Bread Selected");
 			breadType = "Sweet Bread";
-			sweetBread.setBackground(new Color(211,211,211));
+			baguette.setBackground(new Color(211,211,211));
 			whiteBread.setEnabled(false);
 			garlicBread.setEnabled(false);
 		}
@@ -153,7 +153,7 @@ public class SandwichStart extends JFrame implements ActionListener {
 			breadType = "Garlic Bread";
 			garlicBread.setBackground(new Color(211,211,211));
 			whiteBread.setEnabled(false);
-			sweetBread.setEnabled(false);
+			baguette.setEnabled(false);
 		}
 	}
 	

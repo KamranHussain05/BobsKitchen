@@ -20,7 +20,7 @@ public class SandwichMeat extends JFrame implements ActionListener{
 	
 	private JButton turkey;
 	private JButton ham;
-	private JButton steak; 
+	private JButton pork; 
 	private JButton bacon;
 	private JButton back;
 	private JButton next;
@@ -70,13 +70,13 @@ public class SandwichMeat extends JFrame implements ActionListener{
 		
 		//Level 3, make a souffle pancake
 		ImageIcon steakImage = new ImageIcon("Resources/steak.png");
-		steak = new JButton();
-		steak.setIcon(steakImage);
-		steak.setHorizontalAlignment(JButton.CENTER);
-		steak.setBackground(Color.WHITE);
-		steak.addActionListener(this);;
-		this.add(steak);
-		main.add(steak);
+		pork = new JButton();
+		pork.setIcon(steakImage);
+		pork.setHorizontalAlignment(JButton.CENTER);
+		pork.setBackground(Color.WHITE);
+		pork.addActionListener(this);;
+		this.add(pork);
+		main.add(pork);
 
 		ImageIcon baconImage = new ImageIcon("Resources/bacon.png");
 		bacon = new JButton();
