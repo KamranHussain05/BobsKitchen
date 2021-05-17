@@ -38,11 +38,11 @@ public class ConfirmSandwichPlay extends JFrame implements ActionListener{
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		System.out.println("Sandwich Playthrough Confirmed");
-		SandwichStart sStart = new SandwichStart();
-		sStart.setBounds(50,50,1440,900);
-		sStart.setBackground(new Color(211,211,211));;
-		sStart.setVisible(true);
-		sStart.setIconImage(Main.getIcon());
+		SandwichStart start = new SandwichStart();
+		start.setBounds(50,50,1440,900);
+		start.setBackground(new Color(211,211,211));;
+		start.setVisible(true);
+		start.setIconImage(Main.getIcon());
 		
 		Main.closeHome();
 		setVisible(false);

@@ -71,6 +71,7 @@ public class Home extends JFrame implements ActionListener {
 		topButtons.add(sandwich);
 		
 		//Level 2, make a burger
+<<<<<<< Updated upstream
 		ImageIcon pizzaImage = new ImageIcon("Resources/none.png");
 		pizza = new JButton();
 		pizza.setIcon(pizzaImage);
@@ -79,6 +80,16 @@ public class Home extends JFrame implements ActionListener {
 		pizza.addActionListener(this);;
 		this.add(pizza);
 		topButtons.add(pizza);
+=======
+		ImageIcon pizzaImage = new ImageIcon("Resources/pizzathumbnail.png");
+		neopolitan = new JButton();
+		neopolitan.setIcon(pizzaImage);
+		neopolitan.setHorizontalAlignment(JButton.CENTER);
+		neopolitan.setBackground(Color.WHITE);
+		neopolitan.addActionListener(this);;
+		this.add(neopolitan);
+		topButtons.add(neopolitan);
+>>>>>>> Stashed changes
 		
 		JPanel lowerButtons = new JPanel();
 	    GridLayout lowerLayout = new GridLayout(1,2);
@@ -89,7 +100,7 @@ public class Home extends JFrame implements ActionListener {
 		lowerButtons.setBackground(new Color(200,200,200));
 		
 		//Level 3, 
-		ImageIcon phoImage = new ImageIcon("Resources/none.png");
+		ImageIcon phoImage = new ImageIcon("Resources/phothumbnail.png");
 		pho = new JButton();
 		pho.setIcon(phoImage);
 		pho.setHorizontalAlignment(JButton.CENTER);
@@ -98,7 +109,7 @@ public class Home extends JFrame implements ActionListener {
 		this.add(pho);
 		lowerButtons.add(pho);
 		
-		ImageIcon cakeImage = new ImageIcon("Resources/none.png");
+		ImageIcon cakeImage = new ImageIcon("Resources/cakethumbnail.png");
 		cake = new JButton();
 		cake.setIcon(cakeImage);
 		cake.setHorizontalAlignment(JButton.CENTER);

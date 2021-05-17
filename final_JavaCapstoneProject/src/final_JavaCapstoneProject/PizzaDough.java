@@ -9,6 +9,7 @@ import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -25,14 +26,22 @@ public class PizzaDough extends JFrame implements ActionListener {
 	private final static JPanel main = new JPanel();
 
 	public PizzaDough() {
+<<<<<<< Updated upstream
 		super("Bob's Kitchen");
 		
 		GridLayout layout = new GridLayout(3,1);
 		layout.setVgap(5);
 		layout.setHgap(5);
+=======
+		GridLayout mainLayout = new GridLayout(1, 2);
+		main.setBorder(BorderFactory.createEmptyBorder(10,10,10,10));
+		mainLayout.setVgap(5);
+		mainLayout.setHgap(5);
+		main.setLayout(mainLayout);
+>>>>>>> Stashed changes
 		main.setBackground(new Color(200,200,200));
-		main.setLayout(layout);
 		
+		//The title header with colors
 		JPanel header = new JPanel();
 	    header.setBackground(new Color(79, 93, 117));
 	    JTextPane title = new JTextPane();
@@ -43,25 +52,28 @@ public class PizzaDough extends JFrame implements ActionListener {
 	    title.setForeground(new Color(255, 255, 255));
 	    title.setBackground(new Color(79, 93, 117));
 	    header.add(title);
-
-		ImageIcon newYorkImage = new ImageIcon("Resources/none.png");
+	    
+	    //*********************************************************************************
+	    ImageIcon newYorkImage = new ImageIcon("Resources/newYork.png");
 		newYork = new JButton();
 		newYork.setIcon(newYorkImage);
 		newYork.setHorizontalAlignment(JButton.CENTER);
 		newYork.setBackground(Color.WHITE);
 		newYork.addActionListener(this);
-		this.add(neopolitan);
+		this.add(newYork);
+		main.add(newYork);
 		
-		ImageIcon neopolitanImage = new ImageIcon("Resources/none.png");
-		neopolitan.setIcon(neopolitanImage);
+		//Level 2, make a burger
+		ImageIcon baguetteImage = new ImageIcon("Resources/neopolitan.png");
+		neopolitan = new JButton();
+		neopolitan.setIcon(baguetteImage);
 		neopolitan.setHorizontalAlignment(JButton.CENTER);
 		neopolitan.setBackground(Color.WHITE);
-		neopolitan.addActionListener(this);
+		neopolitan.addActionListener(this);;
 		this.add(neopolitan);
-		main.add(newYork);
 		main.add(neopolitan);
-		
-		JPanel footer = new JPanel();
+	    
+	    JPanel footer = new JPanel();
 	    back = new JButton();
 	    back.setText("Back");
 	    back.setFont(new Font("Montserrat", Font.PLAIN, 20));
@@ -77,7 +89,7 @@ public class PizzaDough extends JFrame implements ActionListener {
 	    this.add(next);
 	    footer.add(back, BorderLayout.EAST);
 	    footer.add(next, BorderLayout.WEST);
-		
+
 		Container base = getContentPane();
 		base.add(header, BorderLayout.BEFORE_FIRST_LINE);
 		base.add(main, BorderLayout.CENTER);
@@ -90,11 +102,16 @@ public class PizzaDough extends JFrame implements ActionListener {
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		if(e.getSource() == neopolitan) {
-			System.out.println("Neopolitan Style Selected");
+		if(e.getSource() == newYork) {
+			System.out.println("NewYork Style Selected");
 		}
+<<<<<<< Updated upstream
 		if(e.getSource()==newYork) {
 			System.out.println("New York Style Selected");
+=======
+		if(e.getSource()==neopolitan) {
+			System.out.println("Neopolitan York Style Selected");
+>>>>>>> Stashed changes
 		}
 		if(e.getSource() == back) {
 			System.out.println("Back button selected");
