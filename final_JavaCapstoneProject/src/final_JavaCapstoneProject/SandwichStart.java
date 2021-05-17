@@ -22,12 +22,11 @@ public class SandwichStart extends CardLayoutDemo {
 	private JButton whiteBread;
 	private JButton baguette;
 	private JButton garlicBread;
-	private static String breadType = "";
+	private static String breadType;
 	private final static JPanel main = new JPanel();
 
 	//Constructor
 	public SandwichStart() {
-		
 		GridLayout mainLayout = new GridLayout(1, 3);
 		main.setBorder(BorderFactory.createEmptyBorder(10,10,10,10));
 		mainLayout.setVgap(5);

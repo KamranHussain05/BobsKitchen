@@ -2,28 +2,33 @@ package final_JavaCapstoneProject;
 
 public class SandwichScorer {
 	
-	private  int score; 
+	private static  int score; 
 	
-	public  void grilledCheeseScore (String bread, String cheese, String sauce, String veg1,String veg2, String veg3, String meat) {
+	public static void grilledCheeseScore (String bread, String cheese, String sauce, String veg1,String veg2, String veg3, String meat) {
 		if (bread == "White Bread") {
 			score++;
+			System.out.println("1 Point for bread");
 		}
-		if (cheese == "American") {
+		if (cheese == "american") {
 			score++;
+			System.out.println("1 point for cheese");
 		}
 		if (sauce == "none") {
 			score++;
+			System.out.println("1 point for no cheese");
 		}
 		if (veg1 == "none"&& veg2 == "none" && veg3 == "none") {
 			score++;
+			System.out.println("1 point for no veggies");
 		}
 		if (meat == "none") {
 			score++;
+			System.out.println("1 point for no meat");
 		}
-		System.out.println(score);
+		System.out.println(score + "/5");
 		
 	}
-	public  void banhMiScore (String bread, String sauce, String veg1, String veg2, String veg3, String meat) {
+	public static void banhMiScore (String bread, String sauce, String veg1, String veg2, String veg3, String meat) {
 		if (bread == "Baguette") {
 			score=score+2;
 		}
@@ -45,7 +50,7 @@ public class SandwichScorer {
 		}
 		System.out.println(score);
 	}
-	public  void bLT (String bread, String sauce, String veg1, String veg2, String veg3, String meat) {
+	public static void bLT (String bread, String sauce, String veg1, String veg2, String veg3, String meat) {
 		if (bread == "Garlic Bread") {
 			score++;
 		}
@@ -88,8 +93,8 @@ public class SandwichScorer {
 	 * if (cheese == "Mozzarella") { score++; } if (sauce == "Tomato") { score++; }
 	 * if (dough == "Thin crust") { score++; } }
 	 */
-	public String getScore() {
-		String answer = String.valueOf(score);
+	public static int getScore() {
+		int answer = score;
 		return answer;
 	}
 	

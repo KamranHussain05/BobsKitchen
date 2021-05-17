@@ -131,7 +131,7 @@ public class HomeGui extends JFrame {
 	    
 	    JPanel left = new JPanel();
 	    left.setBackground(Color.WHITE);
-	    JLabel imgLabel = new JLabel(new ImageIcon("Resources/appicon.png"));
+	    JLabel imgLabel = new JLabel(new ImageIcon("Resources/none.png"));
 	    left.add(imgLabel);
 	    main.add(left);
 	    

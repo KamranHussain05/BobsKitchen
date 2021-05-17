@@ -55,24 +55,43 @@ public class SandwichFinish extends JFrame implements ActionListener {
 	    
 	    JTextPane ingredients = new JTextPane();
 	    ingredients.setText("Ingredients");
-	    ingredients.setFont(new Font("Montserrat", Font.PLAIN, 40));
+	    ingredients.setFont(new Font("Montserrat", Font.PLAIN, 35));
 	    ingredients.setForeground(new Color(255, 255, 255));
 	    ingredients.setBackground(new Color(79, 93, 117));
 	    ingredients.setAlignmentX(CENTER_ALIGNMENT);
-	    right.add(ingredients);
+	    right.add(ingredients, BorderLayout.CENTER);
 	    
 	    JLabel bread = new JLabel();
-	    bread.setText("Bread Type: "+SandwichStart.getBread());
+	    bread.setText("<html><b>Bread Type:</b> " + SandwichStart.getBread());
 	    bread.setFont(new Font("Montserrat", Font.PLAIN, 16));
 	    right.add(bread, BorderLayout.WEST);
 	    
 	    JLabel veggies = new JLabel();
-	    veggies.setText("<html>Veggies: " + SandwichVeggies.getVeg1()+ "<br>"+"        "+ SandwichVeggies.getVeg2() + "<br>"+"        " + SandwichVeggies.getVeg3());
+	    veggies.setText("<html><b>Veggies:</b> " + "<br>" + SandwichVeggies.getVeg1()+ 
+	    		"<br>"+"        "+ SandwichVeggies.getVeg2() + "<br>"+
+	    		"        " + SandwichVeggies.getVeg3());
+	    veggies.setFont(new Font("Montserrat", Font.PLAIN, 16));
 	    right.add(veggies);
 	    
+	    JLabel meat = new JLabel();
+	    meat.setText("<html><b>Meat:</b>        " + SandwichMeat.getMeat());
+	    meat.setFont(new Font("Montserrat", Font.PLAIN, 16));
+	    right.add(meat);
+	    
+	    JLabel sauce = new JLabel();
+	    sauce.setText("<html><b>Sauce:</b>        "+ SandwichCondiments.getSauce());
+	    sauce.setFont(new Font("Montserrat", Font.PLAIN, 16));
+	    right.add(sauce);
+	    
+	    JLabel cheese = new JLabel();
+	    cheese.setText("<html><b>Cheese:</b>        " + SandwichCondiments.getCheese());
+	    cheese.setFont(new Font("Montserrat", Font.PLAIN, 16));
+	    right.add(cheese);
+	    
 	    score = new JLabel();
-	    score.setText("Your Score is: " + SandwichScorer.getScore()+"/2");
-	    right.add(score);
+	    score.setText("<html><b>Your Score is:</b> " + SandwichScorer.getScore()+"/5");
+	    score.setFont(new Font("Montserrat", Font.PLAIN, 16));
+	    right.add(score, BorderLayout.CENTER);
 	    main.add(right);
 	    //*****************************************************
 	    
@@ -114,13 +133,26 @@ public class SandwichFinish extends JFrame implements ActionListener {
 		}
 		if(e.getSource() == submit) {
 			System.out.println("submit dish selected");
-			SandwichScorer.grilledCheeseScore(SandwichStart.getBread(), SandwichCondiments.getCheese());
-			SandwichFinish.refresh();
+			SandwichScorer.grilledCheeseScore(SandwichStart.getBread(), 
+					SandwichCondiments.getCheese(), SandwichCondiments.getSauce(),
+					SandwichVeggies.getVeg1(), SandwichVeggies.getVeg2(), 
+					SandwichVeggies.getVeg3(), SandwichMeat.getMeat());
+			submit.setEnabled(false);
+			refresh();
+			
+			ScoreWindow window = new ScoreWindow();
+			window.setBounds(50,50,1440,900);
+			window.setVisible(true);
+			window.setIconImage(Main.getIcon());
+			window.setBackground(new Color(211,211,211));
+			
+			dispose();
+			setVisible(false);
 		}
 	}
 
 	
 	public static void refresh() {
-		score.setText("Your Score is: "+ SandwichScorer.getScore()+"/2");
+		score.setText("<html><b>Your Score is:</b> "+ SandwichScorer.getScore()+"/5");
 	}
 }
