@@ -2,21 +2,20 @@
 
 import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.Component;
 import java.awt.Container;
 import java.awt.Font;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
-import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JTextPane;
 
-public class SandwichStart extends JFrame implements ActionListener {
+@SuppressWarnings("serial")
+public class SandwichStart extends CardLayoutDemo {
 
-	private static final long serialVersionUID = 1L;
 	//Fields
 	private JButton back;
 	private JButton next;
@@ -24,12 +23,11 @@ public class SandwichStart extends JFrame implements ActionListener {
 	private JButton baguette;
 	private JButton garlicBread;
 	private static String breadType = "";
+	private final static JPanel main = new JPanel();
 
 	//Constructor
 	public SandwichStart() {
-		super("Level 1: Sandwich");
 		
-		JPanel main = new JPanel();
 		GridLayout mainLayout = new GridLayout(1, 3);
 		main.setBorder(BorderFactory.createEmptyBorder(10,10,10,10));
 		mainLayout.setVgap(5);
@@ -57,7 +55,6 @@ public class SandwichStart extends JFrame implements ActionListener {
 		whiteBread.setBackground(Color.WHITE);
 		whiteBread.addActionListener(this);
 		this.add(whiteBread);
-		main.add(whiteBread);
 		
 		//Level 2, make a burger
 		ImageIcon baguetteImage = new ImageIcon("Resources/baguette.png");
@@ -67,7 +64,6 @@ public class SandwichStart extends JFrame implements ActionListener {
 		baguette.setBackground(Color.WHITE);
 		baguette.addActionListener(this);;
 		this.add(baguette);
-		main.add(baguette);
 		
 		//Level 3, make a souffle pancake
 		ImageIcon garlicBreadImage = new ImageIcon("Resources/garlicbread.png");
@@ -77,8 +73,9 @@ public class SandwichStart extends JFrame implements ActionListener {
 		garlicBread.setBackground(Color.WHITE);
 		garlicBread.addActionListener(this);;
 		this.add(garlicBread);
+		main.add(whiteBread);
+		main.add(baguette);
 		main.add(garlicBread);
-	    
 	    
 	    JPanel footer = new JPanel();
 	    back = new JButton();
@@ -101,6 +98,10 @@ public class SandwichStart extends JFrame implements ActionListener {
 		base.add(header, BorderLayout.BEFORE_FIRST_LINE);
 		base.add(main, BorderLayout.CENTER);
 		base.add(footer, BorderLayout.AFTER_LAST_LINE);
+	}
+	
+	public static Component getBody() {
+		return main;
 	}
 
 	@Override

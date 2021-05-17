@@ -12,9 +12,9 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 @SuppressWarnings("serial")
-public class ConfirmWellingtonPlay extends JFrame implements ActionListener {
+public class ConfirmCakePlay extends JFrame implements ActionListener {
 
-	public ConfirmWellingtonPlay() {
+	public ConfirmCakePlay() {
 		super("Confirm Playthrough");
 		
 		JPanel main = new JPanel();

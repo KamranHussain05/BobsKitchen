@@ -11,9 +11,9 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 @SuppressWarnings("serial")
-public class ConfirmRamenPlay extends JFrame implements ActionListener{
+public class ConfirmPhoPlay extends JFrame implements ActionListener{
 
-	public ConfirmRamenPlay() {
+	public ConfirmPhoPlay() {
 		super("Confirm Playthrough");
 			
 			JPanel main = new JPanel();
