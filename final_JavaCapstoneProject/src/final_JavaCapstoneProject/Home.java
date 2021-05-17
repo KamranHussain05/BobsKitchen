@@ -25,14 +25,14 @@ public class Home extends JFrame implements ActionListener {
 	final JButton pho;
 	final JButton cake;
 	final JButton help;
-	private final static JPanel main = new JPanel();
+	private static JPanel main;
 
 	//Constructor
 	public Home() {
 		super("Bob's Kitchen");
 		
 		//Base panel where all content is overlayed
-		
+		main = new JPanel();
 		GridLayout mainLayout = new GridLayout(2, 1);
 		main.setBorder(BorderFactory.createEmptyBorder(10,10,10,10));
 		mainLayout.setVgap(5);

@@ -28,7 +28,7 @@ public class SandwichScorer {
 		System.out.println(score + "/5");
 		
 	}
-	public static void banhMiScore (String bread, String sauce, String veg1, String veg2, String veg3, String meat) {
+	public static void banhMiScore (String bread, String cheeese, String sauce, String veg1, String veg2, String veg3, String meat) {
 		if (bread == "Baguette") {
 			score=score+2;
 		}
@@ -50,7 +50,7 @@ public class SandwichScorer {
 		}
 		System.out.println(score);
 	}
-	public static void bLT (String bread, String sauce, String veg1, String veg2, String veg3, String meat) {
+	public static void bLT (String bread, String cheese, String sauce, String veg1, String veg2, String veg3, String meat) {
 		if (bread == "Garlic Bread") {
 			score++;
 		}

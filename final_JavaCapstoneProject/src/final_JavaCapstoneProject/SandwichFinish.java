@@ -133,12 +133,33 @@ public class SandwichFinish extends JFrame implements ActionListener {
 		}
 		if(e.getSource() == submit) {
 			System.out.println("submit dish selected");
-			SandwichScorer.grilledCheeseScore(SandwichStart.getBread(), 
-					SandwichCondiments.getCheese(), SandwichCondiments.getSauce(),
-					SandwichVeggies.getVeg1(), SandwichVeggies.getVeg2(), 
-					SandwichVeggies.getVeg3(), SandwichMeat.getMeat());
-			submit.setEnabled(false);
-			refresh();
+			
+			if(SandwichType.getSandwichStyle() == "grilled cheese") {
+				SandwichScorer.grilledCheeseScore(SandwichStart.getBread(), 
+						SandwichCondiments.getCheese(), SandwichCondiments.getSauce(),
+						SandwichVeggies.getVeg1(), SandwichVeggies.getVeg2(), 
+						SandwichVeggies.getVeg3(), SandwichMeat.getMeat());
+				submit.setEnabled(false);
+				refresh();	
+			}
+			
+			if(SandwichType.getSandwichStyle() == "banhmi") {
+				SandwichScorer.banhMiScore(SandwichStart.getBread(), 
+						SandwichCondiments.getCheese(), SandwichCondiments.getSauce(),
+						SandwichVeggies.getVeg1(), SandwichVeggies.getVeg2(), 
+						SandwichVeggies.getVeg3(), SandwichMeat.getMeat());
+				submit.setEnabled(false);
+				refresh();	
+			}
+			
+			if(SandwichType.getSandwichStyle() == "blt") {
+				SandwichScorer.bLT(SandwichStart.getBread(), 
+						SandwichCondiments.getCheese(), SandwichCondiments.getSauce(),
+						SandwichVeggies.getVeg1(), SandwichVeggies.getVeg2(), 
+						SandwichVeggies.getVeg3(), SandwichMeat.getMeat());
+				submit.setEnabled(false);
+				refresh();	
+			}
 			
 			ScoreWindow window = new ScoreWindow();
 			window.setBounds(50,50,1440,900);

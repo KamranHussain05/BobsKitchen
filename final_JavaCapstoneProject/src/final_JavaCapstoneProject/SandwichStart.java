@@ -23,10 +23,11 @@ public class SandwichStart extends CardLayoutDemo {
 	private JButton baguette;
 	private JButton garlicBread;
 	private static String breadType;
-	private final static JPanel main = new JPanel();
+	private static JPanel main;
 
 	//Constructor
 	public SandwichStart() {
+		main = new JPanel();
 		GridLayout mainLayout = new GridLayout(1, 3);
 		main.setBorder(BorderFactory.createEmptyBorder(10,10,10,10));
 		mainLayout.setVgap(5);
@@ -109,17 +110,14 @@ public class SandwichStart extends CardLayoutDemo {
 		if(e.getSource() == back) {
 			System.out.println("Back button pressed");
 			
-			ConfirmExit confirm = new ConfirmExit();
-			confirm.setBounds(500, 500, 300,200);
-			confirm.setBackground(new Color(211,211,211));
-	    	confirm.setVisible(true);
-	    	confirm.setIconImage(Main.getIcon());
+			SandwichType window = new SandwichType();
+			window.setBounds(500, 500, 300,200);
+			window.setBackground(new Color(211,211,211));
+	    	window.setVisible(true);
+	    	window.setIconImage(Main.getIcon());
 	    	
-	    	if(ConfirmExit.isDismissed() == true) {
-	    		setVisible(false);
-	    		dispose();
-	    	}
-	    	
+	    	setVisible(false);
+	    	dispose();
 		}
 		if(e.getSource() == next) {
 			System.out.println("Next button pressed");

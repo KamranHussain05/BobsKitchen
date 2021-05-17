@@ -39,7 +39,7 @@ public class ConfirmPizzaPlay extends JFrame implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		System.out.println("Pizza Playthrough Confirmed");
-		PizzaDough start = new PizzaDough();
+		PizzaStyle start = new PizzaStyle();
 		start.setBounds(50,50,1440,900);
 		start.setBackground(new Color(211,211,211));;
 		start.setVisible(true);

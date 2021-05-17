@@ -17,7 +17,7 @@ import javax.swing.JPanel;
 import javax.swing.JTextPane;
 
 @SuppressWarnings("serial")
-public class PizzaDough extends JFrame implements ActionListener { 
+public class PizzaStyle extends JFrame implements ActionListener { 
 	
 	private JButton newYork;
 	private JButton neopolitan;
@@ -25,7 +25,7 @@ public class PizzaDough extends JFrame implements ActionListener {
 	private JButton next;
 	private final static JPanel main = new JPanel();
 
-	public PizzaDough() {
+	public PizzaStyle() {
 		super("Bob's Kitchen");
 		GridLayout mainLayout = new GridLayout(1, 2);
 		main.setBorder(BorderFactory.createEmptyBorder(10,10,10,10));
