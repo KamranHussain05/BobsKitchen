@@ -11,9 +11,9 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 @SuppressWarnings("serial")
-public class ConfirmBurgerPlay extends JFrame implements ActionListener {
+public class ConfirmPizzaPlay extends JFrame implements ActionListener {
 
-	public ConfirmBurgerPlay() {
+	public ConfirmPizzaPlay() {
 	super("Confirm Playthrough");
 		
 		JPanel main = new JPanel();
@@ -41,6 +41,11 @@ public class ConfirmBurgerPlay extends JFrame implements ActionListener {
 		setVisible(false);
 		dispose();
 		
+		PizzaDough window = new PizzaDough();
+		window.setBounds(50,50,1440,900);
+		window.setBackground(new Color(211,211,211));
+		window.setVisible(true);
+		window.setIconImage(Main.getIcon());
 	}
 
 }

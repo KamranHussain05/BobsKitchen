@@ -1,20 +1,15 @@
 package final_JavaCapstoneProject;
 
 import java.awt.BorderLayout;
-import java.awt.CardLayout;
 import java.awt.Color;
 import java.awt.Component;
-import java.awt.Container;
 import java.awt.Font;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.ItemEvent;
 
 import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
-import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -29,7 +24,6 @@ public class HomeGui extends JFrame {
 	private static JButton ramen;
 	private static JButton beefWellington;
 	private static JButton help;
-	private static ActionListener listener;
 	private static JLabel score;
 	
 	final static String BUTTONPANEL = "Card with JButtons";
@@ -40,7 +34,6 @@ public class HomeGui extends JFrame {
 	}
 	
 	public static Component getBody() {
-		
 		JPanel main = new JPanel();
 		GridLayout mainLayout = new GridLayout(2, 1);
 		main.setBorder(BorderFactory.createEmptyBorder(10,10,10,10));
@@ -117,10 +110,13 @@ public class HomeGui extends JFrame {
 	
 	public static Component getSecondCard() {
 		JPanel main = new JPanel();
-		GridLayout layout = new GridLayout(1,2);
-		layout.setHgap(5);
-		main.setLayout(layout);
-		main.setBackground(new Color(211,211,211));
+		GridLayout mainLayout = new GridLayout(1, 2);
+		main.setBorder(BorderFactory.createEmptyBorder(10,10,10,10));
+		mainLayout.setVgap(5);
+		mainLayout.setHgap(5);
+		main.setLayout(mainLayout);
+		main.setBackground(new Color(200,200,200));
+		
 		
 		JPanel header = new JPanel();
 	    header.setBackground(new Color(79, 93, 117));
@@ -159,7 +155,8 @@ public class HomeGui extends JFrame {
 	    right.add(bread, BorderLayout.WEST);
 	    
 	    JLabel veggies = new JLabel();
-	    veggies.setText("<html>Veggies: " + SandwichVeggies.getVeg1()+ "<br>"+"        "+ SandwichVeggies.getVeg2() + "<br>"+"        " + SandwichVeggies.getVeg3());
+	    veggies.setText("<html>Veggies: " + "<br>" +SandwichVeggies.getVeg1()+ "<br>"+"        "
+	    + SandwichVeggies.getVeg2() + "<br>"+"        " + SandwichVeggies.getVeg3());
 	    right.add(veggies);
 	    
 	    score = new JLabel();
@@ -171,7 +168,7 @@ public class HomeGui extends JFrame {
 	}
 
 	public void actionPerformed(ActionEvent e) {
-		if(e.getActionCommand() == "sandwich") {
+		if(e.equals(null)) {
 			System.out.println("listener");
 		}
 		

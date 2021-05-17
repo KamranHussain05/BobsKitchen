@@ -2,6 +2,7 @@ package final_JavaCapstoneProject;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.Component;
 import java.awt.Container;
 import java.awt.Font;
 import java.awt.GridLayout;
@@ -19,20 +20,19 @@ import javax.swing.JTextPane;
 public class Home extends JFrame implements ActionListener {
 	
 	//fields
-	private static JButton sandwich;
-	private static JButton burger;
-	private static JButton pancake;
-	private static JButton ramen;
-	private static JButton beefWellington;
-	private static JButton help;
-	private static JPanel homeBody;
+	final JButton sandwich;
+	final JButton neopolitan;
+	final JButton pho;
+	final JButton cake;
+	final JButton help;
+	private final static JPanel main = new JPanel();
 
 	//Constructor
 	public Home() {
 		super("Bob's Kitchen");
 		
 		//Base panel where all content is overlayed
-		JPanel main = new JPanel();
+		
 		GridLayout mainLayout = new GridLayout(2, 1);
 		main.setBorder(BorderFactory.createEmptyBorder(10,10,10,10));
 		mainLayout.setVgap(5);
@@ -54,9 +54,9 @@ public class Home extends JFrame implements ActionListener {
 		
 	    JPanel topButtons = new JPanel();
 	    GridLayout topLayout = new GridLayout(1,2);
-	    topButtons.setBorder(BorderFactory.createEmptyBorder(0,120,0,120));
+	    topButtons.setBorder(BorderFactory.createEmptyBorder(0,15,0,15));
 		topLayout.setVgap(5);
-		topLayout.setHgap(150);
+		topLayout.setHgap(5);
 		topButtons.setLayout(topLayout);
 		topButtons.setBackground(new Color(200,200,200));
 	    
@@ -71,14 +71,14 @@ public class Home extends JFrame implements ActionListener {
 		topButtons.add(sandwich);
 		
 		//Level 2, make a burger
-		ImageIcon burgerImage = new ImageIcon("Resources/burgerthumbnail.png");
-		burger = new JButton();
-		burger.setIcon(burgerImage);
-		burger.setHorizontalAlignment(JButton.CENTER);
-		burger.setBackground(Color.WHITE);
-		burger.addActionListener(this);;
-		this.add(burger);
-		topButtons.add(burger);
+		ImageIcon pizzaImage = new ImageIcon("Resources/none.png");
+		neopolitan = new JButton();
+		neopolitan.setIcon(pizzaImage);
+		neopolitan.setHorizontalAlignment(JButton.CENTER);
+		neopolitan.setBackground(Color.WHITE);
+		neopolitan.addActionListener(this);;
+		this.add(neopolitan);
+		topButtons.add(neopolitan);
 		
 		JPanel lowerButtons = new JPanel();
 	    GridLayout lowerLayout = new GridLayout(1,2);
@@ -88,34 +88,24 @@ public class Home extends JFrame implements ActionListener {
 		lowerButtons.setLayout(lowerLayout);
 		lowerButtons.setBackground(new Color(200,200,200));
 		
-		//Level 3, make a souffle pancake
-		ImageIcon pancakeImage = new ImageIcon("Resources/pancakethumbnail.png");
-		pancake = new JButton();
-		pancake.setIcon(pancakeImage);
-		pancake.setHorizontalAlignment(JButton.CENTER);
-		pancake.setBackground(Color.WHITE);
-		pancake.addActionListener(this);;
-		this.add(pancake);		
-		lowerButtons.add(pancake);
+		//Level 3, 
+		ImageIcon phoImage = new ImageIcon("Resources/none.png");
+		pho = new JButton();
+		pho.setIcon(phoImage);
+		pho.setHorizontalAlignment(JButton.CENTER);
+		pho.setBackground(Color.WHITE);
+		pho.addActionListener(this);;
+		this.add(pho);
+		lowerButtons.add(pho);
 		
-		//Level 4, 
-		ImageIcon ramenImage = new ImageIcon("Resources/ramenthumbnail.png");
-		ramen = new JButton();
-		ramen.setIcon(ramenImage);
-		ramen.setHorizontalAlignment(JButton.CENTER);
-		ramen.setBackground(Color.WHITE);
-		ramen.addActionListener(this);;
-		this.add(ramen);
-		lowerButtons.add(ramen);
-		
-		ImageIcon wellingtonImage = new ImageIcon("Resources/wellingtonthumbnail.png");
-		beefWellington = new JButton();
-		beefWellington.setIcon(wellingtonImage);
-		beefWellington.setHorizontalAlignment(JButton.CENTER);
-		beefWellington.setBackground(Color.WHITE);
-		beefWellington.addActionListener(this);;
-		this.add(beefWellington);
-		lowerButtons.add(beefWellington);
+		ImageIcon cakeImage = new ImageIcon("Resources/none.png");
+		cake = new JButton();
+		cake.setIcon(cakeImage);
+		cake.setHorizontalAlignment(JButton.CENTER);
+		cake.setBackground(Color.WHITE);
+		cake.addActionListener(this);
+		this.add(cake);
+		lowerButtons.add(cake);
 		
 	    help = new JButton();
 	    help.setText("Help!");
@@ -132,6 +122,10 @@ public class Home extends JFrame implements ActionListener {
 		base.add(main, BorderLayout.CENTER);
 		base.add(help, BorderLayout.AFTER_LAST_LINE);
 	}
+	
+	public static Component getBody() {
+		return main;
+	}
 
 	@Override
 	//Method
@@ -146,33 +140,25 @@ public class Home extends JFrame implements ActionListener {
 			confirm.setIconImage(Main.getIcon());
 			
 		}
-		if(e.getSource() == burger) {
-			System.out.println("Level 2, Burger, was selected");
-			ConfirmBurgerPlay confirm = new ConfirmBurgerPlay();
+		if(e.getSource() == neopolitan) {
+			System.out.println("Level 2, Pizza, was selected");
+			ConfirmPizzaPlay confirm = new ConfirmPizzaPlay();
 			confirm.setBounds(300,300, 300,100);
 			confirm.setBackground(new Color(211,211,211));
 			confirm.setVisible(true);
 			confirm.setIconImage(Main.getIcon());
 		}
-		if(e.getSource() == pancake) {
-			System.out.println("Level 3, Souffle Pancake, was selected");
-			ConfirmPancakePlay confirm = new ConfirmPancakePlay();
-			confirm.setBounds(300,300, 300,100);
-			confirm.setBackground(new Color(211,211,211));
-			confirm.setVisible(true);
-			confirm.setIconImage(Main.getIcon());
-		}
-		if(e.getSource() == ramen) {
+		if(e.getSource() == pho) {
 			System.out.println("Level 4, Waygu Ramen, was selected");
-			ConfirmRamenPlay confirm = new ConfirmRamenPlay();
+			ConfirmPhoPlay confirm = new ConfirmPhoPlay();
 			confirm.setBounds(300,300, 300,100);
 			confirm.setBackground(new Color(211,211,211));
 			confirm.setVisible(true);
 			confirm.setIconImage(Main.getIcon());
 		}
-		if(e.getSource() == beefWellington) {
-			System.out.println("Level 5, Beef Wellington, was selected");
-			ConfirmWellingtonPlay confirm = new ConfirmWellingtonPlay();
+		if(e.getSource() == cake) {
+			System.out.println("Level 5, Beef pho, was selected");
+			ConfirmCakePlay confirm = new ConfirmCakePlay();
 			confirm.setBounds(300,300, 300,100);
 			confirm.setBackground(new Color(211,211,211));
 			confirm.setVisible(true);
