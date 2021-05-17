@@ -30,7 +30,7 @@ public class CardLayoutDemo extends JFrame implements ActionListener {
         card2.add(HomeGui.getSecondCard());
         
         card3 = new JPanel();
-        card3.add(HomeGui.getBody());
+//        card3.add(SandwichVeggies.getVeggiePanel());
         
         //Create the panel that contains the "cards".
         cards = new JPanel(new CardLayout());

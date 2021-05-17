@@ -15,12 +15,15 @@ import javax.swing.JPanel;
 import javax.swing.JTextPane;
 
 public class ScoreWindow extends JFrame implements ActionListener{
+	
 	private JButton home;
-
+	private JButton star1;
+	private JPanel main;
+	
 	public ScoreWindow() {
 		super("How Good is Your Sandwich?");
 		
-		JPanel main = new JPanel();
+		main = new JPanel();
 		GridLayout layout = new GridLayout(1,5);
 		layout.setHgap(5);
 		main.setLayout(layout);
@@ -40,9 +43,11 @@ public class ScoreWindow extends JFrame implements ActionListener{
 	    ImageIcon star = new ImageIcon("Resources/star1.png");
 	   
 	    for (int i = 0; i<SandwichScorer.getScore(); i++) {
-	    	JButton star1 = new JButton();
+	    	star1 = new JButton();
 		    star1.setBackground(Color.WHITE);
 		    star1.setIcon(star);
+		    star1.addActionListener(this);
+		    this.add(star1);
 		    main.add(star1);
 	    }
 	    
@@ -75,7 +80,15 @@ public class ScoreWindow extends JFrame implements ActionListener{
 	    	dispose();
 	    	setVisible(false);
 		}
-		
+		if(e.getSource() == star1) {
+			ImageIcon surprise = new ImageIcon("Resources/prize.gif");
+			star1.setIcon(surprise);
+			
+			refresh();
+		}
 	}
 
+	private void refresh() {
+		main.add(star1);
+	}
 }

@@ -17,8 +17,8 @@ import javax.swing.JPanel;
 import javax.swing.JTextPane;
 
 @SuppressWarnings("serial")
-public class SandwichVeggies extends JFrame implements ActionListener {
-	
+public class PizzaDough extends JFrame implements ActionListener {
+
 	private static String veg1;
 	private static String veg2;
 	private static String veg3;
@@ -33,17 +33,15 @@ public class SandwichVeggies extends JFrame implements ActionListener {
 	private JComboBox<String> veg2Options;
 	private JComboBox<String> veg3Options;
 	
-	private static Container base;
-	
 	private String select = "Select One";
 	private String tomato = "Tomato";
 	private String lettuce = "Lettuce";
 	private String cucumber = "Cucumber";
 	private String avocado = "Avocado";
 	private String none = "None";
-//Constructors
-	public SandwichVeggies() {
-		super("Level 1: Sandwich");
+	
+	public PizzaDough() {
+		super("Bob's Kitchen");
 		
 		JPanel main = new JPanel();
 		GridLayout mainLayout = new GridLayout(1, 3);
@@ -156,130 +154,16 @@ public class SandwichVeggies extends JFrame implements ActionListener {
 	    footer.add(back, BorderLayout.EAST);
 	    footer.add(next, BorderLayout.WEST);
 
-		base = getContentPane();
+		Container base = getContentPane();
 		base.add(header, BorderLayout.BEFORE_FIRST_LINE);
 		base.add(main, BorderLayout.CENTER);
 		base.add(footer, BorderLayout.AFTER_LAST_LINE);
 	}
-	
-	public static Container getVeggiePanel() {
-		return base;
-		
-	}
 
 	@Override
-	//Method
 	public void actionPerformed(ActionEvent e) {
-		if(e.getSource() == back) {
-			System.out.println("back selected");
-			SandwichStart back = new SandwichStart();
-			back.setBounds(50,50,1440,900);
-			back.setBackground(new Color(211,211,211));;
-			back.setVisible(true);
-			back.setIconImage(Main.getIcon());
-			
-			setVisible(false);
-			dispose();
-		}
-		if(e.getSource() == next) {
-			System.out.println("next selected");
-			SandwichMeat next = new SandwichMeat();
-			next.setBounds(50,50,1440,900);
-			next.setBackground(new Color(211,211,211));;
-			next.setVisible(true);
-			next.setIconImage(Main.getIcon());
-			
-			setVisible(false);
-			dispose();
-		}
+		// TODO Auto-generated method stub
 		
-		if(veg1Options.getSelectedItem() == tomato) {
-			veg1 = "tomato";
-			ImageIcon tomatoImage = new ImageIcon("Resources/tomato.png");
-			veg1Image.setIcon(tomatoImage);
-		}
-		if(veg2Options.getSelectedItem() == tomato) {
-			veg2 = "tomato";
-			ImageIcon tomatoImage = new ImageIcon("Resources/tomato.png");
-			veg2Image.setIcon(tomatoImage);
-		}
-		if(veg3Options.getSelectedItem() == tomato) {
-			veg3 = "tomato";
-			ImageIcon tomatoImage = new ImageIcon("Resources/tomato.png");
-			veg3Image.setIcon(tomatoImage);
-		}
-		if(veg1Options.getSelectedItem() == lettuce) {
-			veg1 = "lettuce";
-			ImageIcon lettuceImage = new ImageIcon("Resources/lettuce.png");
-			veg1Image.setIcon(lettuceImage);
-		}
-		if(veg2Options.getSelectedItem() == lettuce) {
-			veg2 = "lettuce";
-			ImageIcon lettuceImage = new ImageIcon("Resources/lettuce.png");
-			veg2Image.setIcon(lettuceImage);
-		}
-		if(veg3Options.getSelectedItem() == lettuce) {
-			veg3 = "lettuce";
-			ImageIcon lettuceImage = new ImageIcon("Resources/lettuce.png");
-			veg3Image.setIcon(lettuceImage);
-		}
-		if(veg1Options.getSelectedItem() == cucumber) {
-			veg1 = "cucumber";
-			ImageIcon cucumberImage = new ImageIcon("Resources/cucumber.png");
-			veg1Image.setIcon(cucumberImage);
-		}
-		if(veg2Options.getSelectedItem() == cucumber) {
-			veg2 = "cucumber";
-			ImageIcon cucumberImage = new ImageIcon("Resources/cucumber.png");
-			veg2Image.setIcon(cucumberImage);
-		}
-		if(veg3Options.getSelectedItem() == cucumber) {
-			veg3 = "cucumber";
-			ImageIcon cucumberImage = new ImageIcon("Resources/cucumber.png");
-			veg3Image.setIcon(cucumberImage);
-		}
-		if(veg1Options.getSelectedItem() == avocado) {
-			veg1 = "avocado";
-			ImageIcon avocadoImage = new ImageIcon("Resources/avocado.png");
-			veg1Image.setIcon(avocadoImage);
-		}
-		if(veg2Options.getSelectedItem() == avocado) {
-			veg2 = "avocado";
-			ImageIcon avocadoImage = new ImageIcon("Resources/avocado.png");
-			veg2Image.setIcon(avocadoImage);
-		}
-		if(veg3Options.getSelectedItem() == avocado) {
-			veg3 = "avocado";
-			ImageIcon avocadoImage = new ImageIcon("Resources/avocado.png");
-			veg3Image.setIcon(avocadoImage);
-		}
-		if(veg1Options.getSelectedItem() == none) {
-			veg1 = "none";
-			ImageIcon noneImage = new ImageIcon("Resources/none.png");
-			veg1Image.setIcon(noneImage);
-		}
-		if(veg2Options.getSelectedItem() == none) {
-			veg2 = "none";
-			ImageIcon noneImage = new ImageIcon("Resources/none.png");
-			veg2Image.setIcon(noneImage);
-		}
-		if(veg3Options.getSelectedItem() == none) {
-			veg3 = "none";
-			ImageIcon noneImage = new ImageIcon("Resources/none.png");
-			veg3Image.setIcon(noneImage);
-		}
-	}
-	
-	public static String getVeg1() {
-		return veg1;
-	}
-	
-	public static String getVeg2() {
-		return veg2;
-	}
-	
-	public static String getVeg3() {
-		return veg3;
 	}
 
 }

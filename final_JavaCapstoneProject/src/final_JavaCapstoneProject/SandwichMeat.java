@@ -20,7 +20,7 @@ public class SandwichMeat extends JFrame implements ActionListener{
 	
 	private JButton turkey;
 	private JButton ham;
-	private JButton pork; 
+	private JButton beef; 
 	private JButton bacon;
 	private JButton none;
 	private JButton back;
@@ -88,13 +88,13 @@ public class SandwichMeat extends JFrame implements ActionListener{
 		
 		//Level 3, make a souffle pancake
 		ImageIcon steakImage = new ImageIcon("Resources/steak.png");
-		pork = new JButton();
-		pork.setIcon(steakImage);
-		pork.setHorizontalAlignment(JButton.CENTER);
-		pork.setBackground(Color.WHITE);
-		pork.addActionListener(this);;
-		this.add(pork);
-		lowButtons.add(pork);
+		beef = new JButton();
+		beef.setIcon(steakImage);
+		beef.setHorizontalAlignment(JButton.CENTER);
+		beef.setBackground(Color.WHITE);
+		beef.addActionListener(this);;
+		this.add(beef);
+		lowButtons.add(beef);
 
 		ImageIcon baconImage = new ImageIcon("Resources/bacon.png");
 		bacon = new JButton();
@@ -146,7 +146,7 @@ public class SandwichMeat extends JFrame implements ActionListener{
 			meat = "turkey";
 			ham.setEnabled(false);
 			bacon.setEnabled(false);
-			pork.setEnabled(false);
+			beef.setEnabled(false);
 			none.setEnabled(false);
 		}
 		if(e.getSource() == ham) {
@@ -154,12 +154,12 @@ public class SandwichMeat extends JFrame implements ActionListener{
 			meat = "ham";
 			turkey.setEnabled(false);
 			bacon.setEnabled(false);
-			pork.setEnabled(false);
+			beef.setEnabled(false);
 			none.setEnabled(false);
 		}
-		if(e.getSource() == pork) {
-			System.out.println("Pork meat Selected");
-			meat = "pork";
+		if(e.getSource() == beef) {
+			System.out.println("Beef meat Selected");
+			meat = "beef";
 			ham.setEnabled(false);
 			bacon.setEnabled(false);
 			turkey.setEnabled(false);
@@ -170,7 +170,7 @@ public class SandwichMeat extends JFrame implements ActionListener{
 			meat = "bacon";
 			ham.setEnabled(false);
 			turkey.setEnabled(false);
-			pork.setEnabled(false);
+			beef.setEnabled(false);
 			none.setEnabled(false);
 		}
 		if(e.getSource() == none) {
@@ -178,7 +178,7 @@ public class SandwichMeat extends JFrame implements ActionListener{
 			meat = "none";
 			ham.setEnabled(false);
 			turkey.setEnabled(false);
-			pork.setEnabled(false);
+			beef.setEnabled(false);
 			bacon.setEnabled(false);
 		}
 		if(e.getSource() == back) {

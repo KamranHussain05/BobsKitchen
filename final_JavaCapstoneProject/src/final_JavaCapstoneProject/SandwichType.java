@@ -49,7 +49,7 @@ public class SandwichType extends JFrame implements ActionListener{
 	    header.add(title);
 	    
 	  //*********************************************************************************
-	    ImageIcon grilledCheeseImage = new ImageIcon("Resources/none.png");
+	    ImageIcon grilledCheeseImage = new ImageIcon("Resources/grilledcheese.png");
 		grilledCheese = new JButton();
 		grilledCheese.setIcon(grilledCheeseImage);
 		grilledCheese.setHorizontalAlignment(JButton.CENTER);
@@ -58,7 +58,7 @@ public class SandwichType extends JFrame implements ActionListener{
 		this.add(grilledCheese);
 		
 		//Level 2, make a burger
-		ImageIcon bltImage = new ImageIcon("Resources/none.png");
+		ImageIcon bltImage = new ImageIcon("Resources/blt.png");
 		blt = new JButton();
 		blt.setIcon(bltImage);
 		blt.setHorizontalAlignment(JButton.CENTER);
@@ -67,7 +67,7 @@ public class SandwichType extends JFrame implements ActionListener{
 		this.add(blt);
 		
 		//Level 3, make a souffle pancake
-		ImageIcon banhmiImage = new ImageIcon("Resources/none.png");
+		ImageIcon banhmiImage = new ImageIcon("Resources/banhmi.png");
 		banhmi = new JButton();
 		banhmi.setIcon(banhmiImage);
 		banhmi.setHorizontalAlignment(JButton.CENTER);
