@@ -69,10 +69,8 @@ public class Home extends JFrame implements ActionListener {
 		sandwich.addActionListener(this);
 		this.add(sandwich);
 		topButtons.add(sandwich);
-		
-		//Level 2, make a burger
-<<<<<<< Updated upstream
-		ImageIcon pizzaImage = new ImageIcon("Resources/none.png");
+
+		ImageIcon pizzaImage = new ImageIcon("Resources/pizzathumbnail.png");
 		pizza = new JButton();
 		pizza.setIcon(pizzaImage);
 		pizza.setHorizontalAlignment(JButton.CENTER);
@@ -80,16 +78,6 @@ public class Home extends JFrame implements ActionListener {
 		pizza.addActionListener(this);;
 		this.add(pizza);
 		topButtons.add(pizza);
-=======
-		ImageIcon pizzaImage = new ImageIcon("Resources/pizzathumbnail.png");
-		neopolitan = new JButton();
-		neopolitan.setIcon(pizzaImage);
-		neopolitan.setHorizontalAlignment(JButton.CENTER);
-		neopolitan.setBackground(Color.WHITE);
-		neopolitan.addActionListener(this);;
-		this.add(neopolitan);
-		topButtons.add(neopolitan);
->>>>>>> Stashed changes
 		
 		JPanel lowerButtons = new JPanel();
 	    GridLayout lowerLayout = new GridLayout(1,2);
@@ -153,7 +141,7 @@ public class Home extends JFrame implements ActionListener {
 		}
 		if(e.getSource() == pizza) {
 			System.out.println("Level 2, Pizza, was selected");
-			PizzaDough confirm = new PizzaDough();
+			ConfirmPizzaPlay confirm = new ConfirmPizzaPlay();
 			confirm.setBounds(300,300, 300,100);
 			confirm.setBackground(new Color(211,211,211));
 			confirm.setVisible(true);

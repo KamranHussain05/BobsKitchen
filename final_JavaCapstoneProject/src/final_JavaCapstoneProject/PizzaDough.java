@@ -26,19 +26,12 @@ public class PizzaDough extends JFrame implements ActionListener {
 	private final static JPanel main = new JPanel();
 
 	public PizzaDough() {
-<<<<<<< Updated upstream
 		super("Bob's Kitchen");
-		
-		GridLayout layout = new GridLayout(3,1);
-		layout.setVgap(5);
-		layout.setHgap(5);
-=======
 		GridLayout mainLayout = new GridLayout(1, 2);
 		main.setBorder(BorderFactory.createEmptyBorder(10,10,10,10));
 		mainLayout.setVgap(5);
 		mainLayout.setHgap(5);
 		main.setLayout(mainLayout);
->>>>>>> Stashed changes
 		main.setBackground(new Color(200,200,200));
 		
 		//The title header with colors
@@ -64,9 +57,9 @@ public class PizzaDough extends JFrame implements ActionListener {
 		main.add(newYork);
 		
 		//Level 2, make a burger
-		ImageIcon baguetteImage = new ImageIcon("Resources/neopolitan.png");
+		ImageIcon neopolitanImage = new ImageIcon("Resources/neopolitan.png");
 		neopolitan = new JButton();
-		neopolitan.setIcon(baguetteImage);
+		neopolitan.setIcon(neopolitanImage);
 		neopolitan.setHorizontalAlignment(JButton.CENTER);
 		neopolitan.setBackground(Color.WHITE);
 		neopolitan.addActionListener(this);;
@@ -102,16 +95,11 @@ public class PizzaDough extends JFrame implements ActionListener {
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		if(e.getSource() == newYork) {
-			System.out.println("NewYork Style Selected");
-		}
-<<<<<<< Updated upstream
 		if(e.getSource()==newYork) {
 			System.out.println("New York Style Selected");
-=======
+		}
 		if(e.getSource()==neopolitan) {
 			System.out.println("Neopolitan York Style Selected");
->>>>>>> Stashed changes
 		}
 		if(e.getSource() == back) {
 			System.out.println("Back button selected");

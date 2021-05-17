@@ -17,7 +17,6 @@ public class ConfirmPizzaPlay extends JFrame implements ActionListener {
 	
 	public ConfirmPizzaPlay() {
 	super("Confirm Playthrough");
-		
 		JPanel main = new JPanel();
 		main.setBackground(new Color(200,200,200));
 		
@@ -39,21 +38,6 @@ public class ConfirmPizzaPlay extends JFrame implements ActionListener {
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-<<<<<<< Updated upstream
-		
-		if(e.getSource() == dismiss) {
-			System.out.println("Pizza Playthrough Confirmed");
-			
-			PizzaDough window = new PizzaDough();
-			window.setBounds(50,50,1440,900);
-			window.setBackground(new Color(211,211,211));
-			window.setVisible(true);
-			window.setIconImage(Main.getIcon());
-			
-			setVisible(false);
-			dispose();
-		}
-=======
 		System.out.println("Pizza Playthrough Confirmed");
 		PizzaDough start = new PizzaDough();
 		start.setBounds(50,50,1440,900);
@@ -64,7 +48,6 @@ public class ConfirmPizzaPlay extends JFrame implements ActionListener {
 		Main.closeHome();
 		setVisible(false);
 		dispose();
->>>>>>> Stashed changes
 	}
 
 }
