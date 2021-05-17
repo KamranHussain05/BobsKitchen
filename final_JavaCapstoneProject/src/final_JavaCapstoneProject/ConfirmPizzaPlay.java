@@ -13,6 +13,8 @@ import javax.swing.JPanel;
 @SuppressWarnings("serial")
 public class ConfirmPizzaPlay extends JFrame implements ActionListener {
 
+	private JButton dismiss;
+	
 	public ConfirmPizzaPlay() {
 	super("Confirm Playthrough");
 		
@@ -23,7 +25,7 @@ public class ConfirmPizzaPlay extends JFrame implements ActionListener {
 		warning.setText("Are you Ready to Play?");
 		main.add(warning);
 		
-		JButton dismiss = new JButton();
+		dismiss = new JButton();
 		dismiss.setText("Yes! Im Hungry!");
 		dismiss.setBackground(new Color(79,93,117));
 		dismiss.setForeground(Color.WHITE);
@@ -37,15 +39,19 @@ public class ConfirmPizzaPlay extends JFrame implements ActionListener {
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		System.out.println("Burger Playthrough Confirmed");
-		setVisible(false);
-		dispose();
 		
-		PizzaDough window = new PizzaDough();
-		window.setBounds(50,50,1440,900);
-		window.setBackground(new Color(211,211,211));
-		window.setVisible(true);
-		window.setIconImage(Main.getIcon());
+		if(e.getSource() == dismiss) {
+			System.out.println("Pizza Playthrough Confirmed");
+			
+			PizzaDough window = new PizzaDough();
+			window.setBounds(50,50,1440,900);
+			window.setBackground(new Color(211,211,211));
+			window.setVisible(true);
+			window.setIconImage(Main.getIcon());
+			
+			setVisible(false);
+			dispose();
+		}
 	}
 
 }

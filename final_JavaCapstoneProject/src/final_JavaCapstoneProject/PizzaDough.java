@@ -15,6 +15,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JTextPane;
 
+@SuppressWarnings("serial")
 public class PizzaDough extends JFrame implements ActionListener { 
 	
 	private JButton newYork;
@@ -24,7 +25,7 @@ public class PizzaDough extends JFrame implements ActionListener {
 	private final static JPanel main = new JPanel();
 
 	public PizzaDough() {
-		super("Select Pizza Style");
+		super("Bob's Kitchen");
 		
 		GridLayout layout = new GridLayout(3,1);
 		layout.setVgap(5);
@@ -83,7 +84,7 @@ public class PizzaDough extends JFrame implements ActionListener {
 		base.add(footer, BorderLayout.AFTER_LAST_LINE);
 	}
 
-	public Component getContent() {
+	public static Component getContent() {
 		return main;
 	}
 
@@ -92,8 +93,8 @@ public class PizzaDough extends JFrame implements ActionListener {
 		if(e.getSource() == neopolitan) {
 			System.out.println("Neopolitan Style Selected");
 		}
-		if(e.getSource()==neopolitan) {
-			System.out.println("Neopolitan Style Selected");
+		if(e.getSource()==newYork) {
+			System.out.println("New York Style Selected");
 		}
 		if(e.getSource() == back) {
 			System.out.println("Back button selected");

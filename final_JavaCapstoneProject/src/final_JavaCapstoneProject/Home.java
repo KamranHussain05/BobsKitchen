@@ -21,7 +21,7 @@ public class Home extends JFrame implements ActionListener {
 	
 	//fields
 	final JButton sandwich;
-	final JButton neopolitan;
+	final JButton pizza;
 	final JButton pho;
 	final JButton cake;
 	final JButton help;
@@ -72,13 +72,13 @@ public class Home extends JFrame implements ActionListener {
 		
 		//Level 2, make a burger
 		ImageIcon pizzaImage = new ImageIcon("Resources/none.png");
-		neopolitan = new JButton();
-		neopolitan.setIcon(pizzaImage);
-		neopolitan.setHorizontalAlignment(JButton.CENTER);
-		neopolitan.setBackground(Color.WHITE);
-		neopolitan.addActionListener(this);;
-		this.add(neopolitan);
-		topButtons.add(neopolitan);
+		pizza = new JButton();
+		pizza.setIcon(pizzaImage);
+		pizza.setHorizontalAlignment(JButton.CENTER);
+		pizza.setBackground(Color.WHITE);
+		pizza.addActionListener(this);;
+		this.add(pizza);
+		topButtons.add(pizza);
 		
 		JPanel lowerButtons = new JPanel();
 	    GridLayout lowerLayout = new GridLayout(1,2);
@@ -140,9 +140,9 @@ public class Home extends JFrame implements ActionListener {
 			confirm.setIconImage(Main.getIcon());
 			
 		}
-		if(e.getSource() == neopolitan) {
+		if(e.getSource() == pizza) {
 			System.out.println("Level 2, Pizza, was selected");
-			ConfirmPizzaPlay confirm = new ConfirmPizzaPlay();
+			PizzaDough confirm = new PizzaDough();
 			confirm.setBounds(300,300, 300,100);
 			confirm.setBackground(new Color(211,211,211));
 			confirm.setVisible(true);

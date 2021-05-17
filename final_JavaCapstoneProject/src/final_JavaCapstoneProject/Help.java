@@ -41,7 +41,7 @@ public class Help extends JFrame implements ActionListener {
 	    step1.setFont(new Font("Montserrat", Font.PLAIN, 17));
 	    panel.add(step1, BorderLayout.WEST);
 	    JButton step1Left = new JButton();
-	    step1Left.setText("Select a dish to make! Each level up is a harder dish!");
+	    step1Left.setText("<html>Select a dish to make! <br> Each level up is a harder dish!</html>");
 	    step1Left.setBackground(Color.gray);
 	    step1Left.setEnabled(false);
 	    panel.add(step1Left, BorderLayout.EAST);
@@ -50,7 +50,7 @@ public class Help extends JFrame implements ActionListener {
 	    step2.setFont(new Font("Montserrat", Font.PLAIN, 17));
 	    panel.add(step2, BorderLayout.WEST);
 	    JButton step2Left = new JButton();
-	    step2Left.setText("Add your touch to the food! Add ingredients and amounts!");
+	    step2Left.setText("<html>Add your touch to the food! <br>Add ingredients and amounts!</html>");
 	    step2Left.setBackground(Color.gray);
 	    step2Left.setEnabled(false);
 	    panel.add(step2Left, BorderLayout.EAST);
@@ -68,7 +68,7 @@ public class Help extends JFrame implements ActionListener {
 	    step4.setFont(new Font("Montserrat", Font.PLAIN, 17));
 	    panel.add(step4, BorderLayout.WEST);
 	    JButton step4Left = new JButton();
-	    step4Left.setText("Get your score! Can you make a better dish next time?");
+	    step4Left.setText("<html>Get your score! <br>Can you make a better dish next time?</html>");
 	    step4Left.setBackground(Color.gray);
 	    step4Left.setEnabled(false);
 	    panel.add(step4Left, BorderLayout.EAST);
