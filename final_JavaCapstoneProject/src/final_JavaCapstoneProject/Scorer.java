@@ -38,11 +38,12 @@ public class Scorer {
 		if (veg1 == "Cucumber" && veg2 == "none" && veg3 == "none") {
 			score++;
 		}
-		else if (veg2 == "Cucumber" && veg2 == "none" && veg3 == "none") {
+		else if (veg2 == "Cucumber" && veg1 == "none" && veg3 == "none") {
 			score++;
 		}
-		else if (veg3 == "Cucumber" && veg2 == "none" && veg3 == "none") {
+		else if (veg3 == "Cucumber" && veg2 == "none" && veg1 == "none") {
 			score++;
+		
 		}
 		
 		if (meat == "beef" && veg2 == "none" && veg3 == "none") {
@@ -50,7 +51,7 @@ public class Scorer {
 		}
 		System.out.println(score);
 	}
-	public static void bLT (String bread, String cheese, String sauce, String veg1, String veg2, String veg3, String meat) {
+	public static void bltScore (String bread, String cheese, String sauce, String veg1, String veg2, String veg3, String meat) {
 		if (bread == "Garlic Bread") {
 			score++;
 		}
@@ -85,12 +86,23 @@ public class Scorer {
 		if (sauce == "tomato sauce" ) {
 			score++; 
 		} 
-		if (crust == "thin crust") { 
+		if (crust == "thick crust") { 
 			score++; 
 		} 
 		if (meat == "none") { 
 			score++; 
 		}
+		if (cheese == "mozzarella") {
+			score++;
+		}
+		if (veg1 == "basil" && veg2 == "none") {
+			score++;
+		}
+		else if (veg2 == "basil" && veg2 == "none" ) {
+			score++;
+		}
+		
+		
 	}
 	
 	public static void newYorkScore (String crust, String sauce, String cheese, String veg1, String veg2, String meat) {

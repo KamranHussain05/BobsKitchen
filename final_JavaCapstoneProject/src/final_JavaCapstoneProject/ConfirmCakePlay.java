@@ -13,7 +13,7 @@ import javax.swing.JPanel;
 
 @SuppressWarnings("serial")
 public class ConfirmCakePlay extends JFrame implements ActionListener {
-
+	//constructor
 	public ConfirmCakePlay() {
 		super("Confirm Playthrough");
 		
@@ -37,6 +37,7 @@ public class ConfirmCakePlay extends JFrame implements ActionListener {
 	}
 
 	@Override
+	//method
 	public void actionPerformed(ActionEvent e) {
 		System.out.println("Wellington playthrough confirmed");
 		
