@@ -150,7 +150,7 @@ public class SandwichFinish extends JFrame implements ActionListener {
 			}
 			
 			if(SandwichType.getSandwichStyle() == "blt") {
-				Scorer.bLT(SandwichBread.getBread(), 
+				Scorer.bltScore(SandwichBread.getBread(), 
 						SandwichCondiments.getCheese(), SandwichCondiments.getSauce(),
 						SandwichVeggies.getVeg1(), SandwichVeggies.getVeg2(), 
 						SandwichVeggies.getVeg3(), SandwichMeat.getMeat());

@@ -2,7 +2,7 @@ package final_JavaCapstoneProject;
 
 public class Scorer {
 	
-	private static  int score; 
+	private static int score = 0; 
 	
 	public static void grilledCheeseScore (String bread, String cheese, String sauce, String veg1,String veg2, String veg3, String meat) {
 		if (bread == "White Bread") {
@@ -53,28 +53,28 @@ public class Scorer {
 	}
 	public static void bltScore (String bread, String cheese, String sauce, String veg1, String veg2, String veg3, String meat) {
 		if (bread == "Garlic Bread") {
-			score++;
+			score=score+2;
 		}
 		if (sauce == "Honey Mustard") {
-			score++;
+			score=score+2;
 		}
 		if (veg1 == "Lettuce" && veg2 == "tomato" && veg3 == "none") {
-			score++;
+			score=score+2;
 		}
 		else if (veg1 == "lettuce" && veg2 == "none" && veg3 == "tomato") {
-			score++;
+			score=score+2;
 		}
 		else if (veg1 == "none" && veg2 == "tomato" && veg3 == "lettuce") {
-			score++;
+			score=score+2;
 		}
 		else if (veg1 == "tomato" && veg2 == "lettuce" && veg3 == "none") {
-			score++;
+			score=score+2;
 		}
 		else if (veg1 == "none" && veg2 == "lettuce" && veg3 == "tomato") {
-			score++;
+			score=score+2;
 		}
 		else if (veg1 == "tomato" && veg2 == "none" && veg3 == "lettuce") {
-			score++;
+			score=score+2;
 		}
 		if (meat == "bacon") {
 			score=score+2;
