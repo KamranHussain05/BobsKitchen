@@ -73,7 +73,7 @@ public class SandwichVeggies extends JFrame implements ActionListener {
 		left.add(veg1, BorderLayout.BEFORE_FIRST_LINE);
 		 
 		veg1Image = new JButton();
-		ImageIcon image = new ImageIcon("Resources/tomato.png");
+		ImageIcon image = new ImageIcon("Resources/noimage.png");
 		veg1Image.setIcon(image);
 		veg1Image.setBackground(Color.WHITE);
 		left.add(veg1Image, BorderLayout.CENTER);
@@ -98,7 +98,7 @@ public class SandwichVeggies extends JFrame implements ActionListener {
 		center.add(veg2, BorderLayout.NORTH);
 		 
 		veg2Image = new JButton();
-		ImageIcon image2 = new ImageIcon("Resources/lettuce.png");
+		ImageIcon image2 = new ImageIcon("Resources/noimage.png");
 		veg2Image.setIcon(image2);
 		veg2Image.setBackground(Color.WHITE);
 		center.add(veg2Image, BorderLayout.CENTER);
@@ -123,7 +123,7 @@ public class SandwichVeggies extends JFrame implements ActionListener {
 		right.add(veg3, BorderLayout.NORTH);
 		 
 		veg3Image = new JButton();
-		ImageIcon image3 = new ImageIcon("Resources/avocado.png");
+		ImageIcon image3 = new ImageIcon("Resources/noimage.png");
 		veg3Image.setIcon(image3);
 		veg3Image.setBackground(Color.WHITE);
 		right.add(veg3Image, BorderLayout.CENTER);
@@ -172,7 +172,7 @@ public class SandwichVeggies extends JFrame implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		if(e.getSource() == back) {
 			System.out.println("back selected");
-			SandwichStart back = new SandwichStart();
+			SandwichBread back = new SandwichBread();
 			back.setBounds(50,50,1440,900);
 			back.setBackground(new Color(211,211,211));;
 			back.setVisible(true);

@@ -125,7 +125,7 @@ public class SandwichType extends JFrame implements ActionListener{
 		}
 		if(e.getSource() == next) {
 			System.out.println("Next Button Selected");
-			SandwichStart window = new SandwichStart();
+			SandwichBread window = new SandwichBread();
 			window.setBounds(50,50, 1440,900);
 			window.setBackground(new Color(211,211,211));
 			window.setVisible(true);

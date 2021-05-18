@@ -150,7 +150,7 @@ public class HomeGui extends JFrame {
 	    right.add(ingredients);
 	    
 	    JLabel bread = new JLabel();
-	    bread.setText("Bread Type: "+SandwichStart.getBread());
+	    bread.setText("Bread Type: "+SandwichBread.getBread());
 	    bread.setFont(new Font("Montserrat", Font.PLAIN, 16));
 	    right.add(bread, BorderLayout.WEST);
 	    
@@ -160,7 +160,7 @@ public class HomeGui extends JFrame {
 	    right.add(veggies);
 	    
 	    score = new JLabel();
-	    score.setText("Your Score is: " + SandwichScorer.getScore()+"/2");
+	    score.setText("Your Score is: " + Scorer.getScore()+"/2");
 	    right.add(score);
 	    main.add(right);
 		

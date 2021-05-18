@@ -23,10 +23,13 @@ public class PizzaStyle extends JFrame implements ActionListener {
 	private JButton neopolitan;
 	private JButton back;
 	private JButton next;
-	private final static JPanel main = new JPanel();
+	private static String pizzaStyle;
+	private static JPanel main;
 
 	public PizzaStyle() {
 		super("Bob's Kitchen");
+		
+		main = new JPanel();
 		GridLayout mainLayout = new GridLayout(1, 2);
 		main.setBorder(BorderFactory.createEmptyBorder(10,10,10,10));
 		mainLayout.setVgap(5);
@@ -38,7 +41,7 @@ public class PizzaStyle extends JFrame implements ActionListener {
 		JPanel header = new JPanel();
 	    header.setBackground(new Color(79, 93, 117));
 	    JTextPane title = new JTextPane();
-	    title.setText("Select Type of Bread");
+	    title.setText("Select Style of Pizza");
 	    title.setEditable(false);
 	    title.setAlignmentX(CENTER_ALIGNMENT);
 	    title.setFont(new Font("Montserrat", Font.PLAIN, 40));
@@ -97,15 +100,32 @@ public class PizzaStyle extends JFrame implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		if(e.getSource()==newYork) {
 			System.out.println("New York Style Selected");
+			neopolitan.setEnabled(false);
+			pizzaStyle = "new york";
 		}
 		if(e.getSource()==neopolitan) {
-			System.out.println("Neopolitan York Style Selected");
+			System.out.println("Neapolitan York Style Selected");
+			newYork.setEnabled(false);
+			pizzaStyle = "Neapolitan";
 		}
 		if(e.getSource() == back) {
 			System.out.println("Back button selected");
 		}
 		if(e.getSource() == next) {
 			System.out.println("Next button selected");
+			
+			PizzaDough window = new PizzaDough();
+			window.setBounds(50,50,1440,900);
+			window.setBackground(new Color(211,211,211));;
+			window.setVisible(true);
+			window.setIconImage(Main.getIcon());
+			
+			setVisible(false);
+			dispose();
 		}
+	}
+	
+	public static String getPizzaType() {
+		return pizzaStyle;
 	}
 }

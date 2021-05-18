@@ -19,31 +19,38 @@ import javax.swing.JTextPane;
 @SuppressWarnings("serial")
 public class PizzaDough extends JFrame implements ActionListener {
 
-	private static String veg1;
-	private static String veg2;
-	private static String veg3;
+	private static String dough;
+	private static String sauce;
+	private static String cheese;
 	
 	private JButton back;
 	private JButton next;
-	private JButton veg1Image;
-	private JButton veg2Image;
-	private JButton veg3Image;
+	private JButton doughImage;
+	private JButton sauceImage;
+	private JButton cheeseImage;
 
-	private JComboBox<String> veg1Options;
-	private JComboBox<String> veg2Options;
-	private JComboBox<String> veg3Options;
+	private JComboBox<String> doughOptions;
+	private JComboBox<String> sauceOptions;
+	private JComboBox<String> cheeseOptions;
 	
-	private String select = "Select One";
-	private String tomato = "Tomato";
-	private String lettuce = "Lettuce";
-	private String cucumber = "Cucumber";
-	private String avocado = "Avocado";
-	private String none = "None";
+	private String select = "";
+	private String thinCrust = "Thin Crust";
+	private String thickCrust = "Thick Crust";
+	private String deepDish = "Deep Dish";
+	
+	private String tomatoSauce = "Marinara";
+	private String pestoSauce = "Pesto Sauce";
+	
+	private String mozzarella = "Mozzarella";
+	private String cheddar = "Cheddar";
+	private String provolone = "Provolone";
+	
+	private JPanel main;
 	
 	public PizzaDough() {
 		super("Bob's Kitchen");
 		
-		JPanel main = new JPanel();
+		main = new JPanel();
 		GridLayout mainLayout = new GridLayout(1, 3);
 		main.setBorder(BorderFactory.createEmptyBorder(10,10,10,10));
 		mainLayout.setVgap(5);
@@ -64,77 +71,70 @@ public class PizzaDough extends JFrame implements ActionListener {
 	    header.add(title);
 	    
 		JPanel left = new JPanel();
-		JTextPane veg1 = new JTextPane();
-		veg1.setText("Veggie 1");
-		veg1.setFont(new Font("Montserrat", Font.PLAIN, 30));
-		veg1.setEditable(false);
-		left.add(veg1, BorderLayout.BEFORE_FIRST_LINE);
+		JTextPane doughLabel = new JTextPane();
+		doughLabel.setText("Dough");
+		doughLabel.setFont(new Font("Montserrat", Font.PLAIN, 30));
+		doughLabel.setEditable(false);
+		left.add(doughLabel, BorderLayout.BEFORE_FIRST_LINE);
 		 
-		veg1Image = new JButton();
-		ImageIcon image = new ImageIcon("Resources/tomato.png");
-		veg1Image.setIcon(image);
-		veg1Image.setBackground(Color.WHITE);
-		left.add(veg1Image, BorderLayout.CENTER);
+		doughImage = new JButton();
+		ImageIcon doughIcon = new ImageIcon("Resources/noimage.png");
+		doughImage.setIcon(doughIcon);
+		doughImage.setBackground(Color.WHITE);
+		left.add(doughImage, BorderLayout.CENTER);
 		 
-		veg1Options = new JComboBox<String>();
-		veg1Options.addItem(select);
-		veg1Options.addItem(tomato);
-		veg1Options.addItem(lettuce);
-		veg1Options.addItem(cucumber);
-		veg1Options.addItem(avocado);
-		veg1Options.addItem(none);
-		veg1Options.addActionListener(this);
-		left.add(veg1Options, BorderLayout.AFTER_LAST_LINE);
+		doughOptions = new JComboBox<String>();
+		doughOptions.addItem(select);
+		doughOptions.addItem(thinCrust);
+		doughOptions.addItem(thickCrust);
+		doughOptions.addItem(deepDish);
+		doughOptions.addActionListener(this);
+		left.add(doughOptions, BorderLayout.AFTER_LAST_LINE);
 		main.add(left);
 		
 		//*****************************************************
 		JPanel center = new JPanel();
-		JTextPane veg2 = new JTextPane();
-		veg2.setText("Veggie 2");
-		veg2.setFont(new Font("Montserrat", Font.PLAIN, 30));
-		veg2.setEditable(false);
-		center.add(veg2, BorderLayout.NORTH);
+		JTextPane sauceLabel = new JTextPane();
+		sauceLabel.setText("Sauce");
+		sauceLabel.setFont(new Font("Montserrat", Font.PLAIN, 30));
+		sauceLabel.setEditable(false);
+		center.add(sauceLabel, BorderLayout.NORTH);
 		 
-		veg2Image = new JButton();
-		ImageIcon image2 = new ImageIcon("Resources/lettuce.png");
-		veg2Image.setIcon(image2);
-		veg2Image.setBackground(Color.WHITE);
-		center.add(veg2Image, BorderLayout.CENTER);
+		sauceImage = new JButton();
+		ImageIcon sauceIcon = new ImageIcon("Resources/noimage.png");
+		sauceImage.setIcon(sauceIcon);
+		sauceImage.setBackground(Color.WHITE);
+		center.add(sauceImage, BorderLayout.CENTER);
 		 
-		veg2Options = new JComboBox<String>();
-		veg2Options.addItem(select);
-		veg2Options.addItem(tomato);
-		veg2Options.addItem(lettuce);
-		veg2Options.addItem(cucumber);
-		veg2Options.addItem(avocado);
-		veg2Options.addItem(none);
-		veg2Options.addActionListener(this);
-		center.add(veg2Options, BorderLayout.SOUTH);
+		sauceOptions = new JComboBox<String>();
+		sauceOptions.addItem(select);
+		sauceOptions.addItem(tomatoSauce);
+		sauceOptions.addItem(pestoSauce);
+		sauceOptions.addActionListener(this);
+		center.add(sauceOptions, BorderLayout.SOUTH);
 		
 		main.add(center);
 		//***********************************************************
 		JPanel right = new JPanel();
-		JTextPane veg3 = new JTextPane();
-		veg3.setText("Veggie 3");
-		veg3.setFont(new Font("Montserrat", Font.PLAIN, 30));
-		veg3.setEditable(false);
-		right.add(veg3, BorderLayout.NORTH);
+		JTextPane cheeseLabel = new JTextPane();
+		cheeseLabel.setText("Cheese");
+		cheeseLabel.setFont(new Font("Montserrat", Font.PLAIN, 30));
+		cheeseLabel.setEditable(false);
+		right.add(cheeseLabel, BorderLayout.NORTH);
 		 
-		veg3Image = new JButton();
-		ImageIcon image3 = new ImageIcon("Resources/avocado.png");
-		veg3Image.setIcon(image3);
-		veg3Image.setBackground(Color.WHITE);
-		right.add(veg3Image, BorderLayout.CENTER);
+		cheeseImage = new JButton();
+		ImageIcon cheeseIcon = new ImageIcon("Resources/noimage.png");
+		cheeseImage.setIcon(cheeseIcon);
+		cheeseImage.setBackground(Color.WHITE);
+		right.add(cheeseImage, BorderLayout.CENTER);
 		 
-		veg3Options = new JComboBox<String>();
-		veg3Options.addItem(select);
-		veg3Options.addItem(tomato);
-		veg3Options.addItem(lettuce);
-		veg3Options.addItem(cucumber);
-		veg3Options.addItem(avocado);
-		veg3Options.addItem(none);
-		veg3Options.addActionListener(this);
-		right.add(veg3Options, BorderLayout.SOUTH);
+		cheeseOptions = new JComboBox<String>();
+		cheeseOptions.addItem(select);
+		cheeseOptions.addItem(mozzarella);
+		cheeseOptions.addItem(cheddar);
+		cheeseOptions.addItem(provolone);
+		cheeseOptions.addActionListener(this);
+		right.add(cheeseOptions, BorderLayout.SOUTH);
 		
 		main.add(right);
 	    
@@ -162,8 +162,89 @@ public class PizzaDough extends JFrame implements ActionListener {
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		// TODO Auto-generated method stub
+		if(e.getSource() == back) {
+			System.out.println("back selected");
+			PizzaStyle back = new PizzaStyle();
+			back.setBounds(50,50,1440,900);
+			back.setBackground(new Color(211,211,211));;
+			back.setVisible(true);
+			back.setIconImage(Main.getIcon());
+			
+			setVisible(false);
+			dispose();
+		}
+		if(e.getSource() == next) {
+			System.out.println("next selected");
+			PizzaToppings next = new PizzaToppings();
+			next.setBounds(50,50,1440,900);
+			next.setBackground(new Color(211,211,211));;
+			next.setVisible(true);
+			next.setIconImage(Main.getIcon());
+			
+			setVisible(false);
+			dispose();
+		}
 		
+		if(doughOptions.getSelectedItem() == thinCrust) {
+			System.out.println("Thin Crust Dough Selected");
+			dough = "thincrust";
+			ImageIcon doughIcon = new ImageIcon("Resources/thincrust.png");
+			doughImage.setIcon(doughIcon);
+		}
+		if(doughOptions.getSelectedItem() == thickCrust) {
+			System.out.println("Thick Crust Dough Selected");
+			dough = "thickcrust";
+			ImageIcon doughIcon = new ImageIcon("Resources/thickcrust.png");
+			doughImage.setIcon(doughIcon);
+		}
+		if(doughOptions.getSelectedItem() == deepDish) {
+			System.out.println("Deep Dish Dough Selected");
+			dough = "deepdish";
+			ImageIcon doughIcon = new ImageIcon("Resources/deepdish.png");
+			doughImage.setIcon(doughIcon);
+		}
+		if(sauceOptions.getSelectedItem() == tomatoSauce) {
+			System.out.println("Marinara Sauce Selected");
+			sauce = "tomatosauce";
+			ImageIcon sauceIcon = new ImageIcon("Resources/tomatosauce.png");
+			sauceImage.setIcon(sauceIcon);
+		}
+		if(sauceOptions.getSelectedItem() == pestoSauce) {
+			System.out.println("Pesto Sauce Selected");
+			sauce = "pestosauce";
+			ImageIcon sauceIcon = new ImageIcon("Resources/pesto.png");
+			sauceImage.setIcon(sauceIcon);
+		}
+		if(cheeseOptions.getSelectedItem() == mozzarella) {
+			System.out.println("Mozzarella Cheese Selected");
+			cheese = "mozzarella";
+			ImageIcon cheeseIcon = new ImageIcon("Resources/mozzarella.png");
+			cheeseImage.setIcon(cheeseIcon);
+		}
+		if(cheeseOptions.getSelectedItem() == cheddar) {
+			System.out.println("Cheddar Cheese Selected");
+			cheddar = "cheddar";
+			ImageIcon cheeseIcon = new ImageIcon("Resources/chedder.png");
+			cheeseImage.setIcon(cheeseIcon);
+		}
+		if(cheeseOptions.getSelectedItem() == provolone) {
+			System.out.println("Provolone Cheese Selected");
+			cheese = "provolone";
+			ImageIcon cheeseIcon = new ImageIcon("Resources/provolone.png");
+			cheeseImage.setIcon(cheeseIcon);
+		}
+		
+	}
+	
+	public static String getDough() {
+		return dough;
+	}
+	
+	public static String getSauce() {
+		return sauce;
+	}
+	public static String getCheese() {
+		return cheese;
 	}
 
 }

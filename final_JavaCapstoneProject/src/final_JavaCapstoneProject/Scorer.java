@@ -1,6 +1,6 @@
 package final_JavaCapstoneProject;
 
-public class SandwichScorer {
+public class Scorer {
 	
 	private static  int score; 
 	
@@ -80,19 +80,31 @@ public class SandwichScorer {
 		}
 		System.out.println(score);
 	}
-	/*
-	 * public void neopolitan (String sauce, String meat, String crust, String veg1,
-	 * String cheese) { if (sauce == "tomato sauce" ) { score++; } if (crust ==
-	 * "thin crust") { score++; } if (meat == "none") { score++; }
-	 * 
-	 * }
-	 */
 	
-	/*
-	 * public static void pizzaScorer (String cheese, String sauce, String dough) {
-	 * if (cheese == "Mozzarella") { score++; } if (sauce == "Tomato") { score++; }
-	 * if (dough == "Thin crust") { score++; } }
-	 */
+	public static void neopolitanScore (String crust, String sauce, String cheese, String veg1, String veg2, String meat) { 
+		if (sauce == "tomato sauce" ) {
+			score++; 
+		} 
+		if (crust == "thin crust") { 
+			score++; 
+		} 
+		if (meat == "none") { 
+			score++; 
+		}
+	}
+	
+	public static void newYorkScore (String crust, String sauce, String cheese, String veg1, String veg2, String meat) {
+		if (cheese == "Mozzarella") { 
+			score++; 
+		} 
+		if (sauce == "Tomato") { 
+			score++; 
+		}
+		if (crust == "Thin crust") {
+			score++; 
+		} 
+	  }
+	 
 	public static int getScore() {
 		int answer = score;
 		return answer;

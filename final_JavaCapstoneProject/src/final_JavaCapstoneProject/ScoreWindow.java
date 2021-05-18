@@ -32,7 +32,7 @@ public class ScoreWindow extends JFrame implements ActionListener{
 		JPanel header = new JPanel();
 	    header.setBackground(new Color(79, 93, 117));
 	    JTextPane title = new JTextPane();
-	    title.setText("Your Sandwich Gets: " + SandwichScorer.getScore() + "/5");
+	    title.setText("Your Sandwich Gets: " + Scorer.getScore() + "/5");
 	    title.setEditable(false);
 	    title.setAlignmentX(CENTER_ALIGNMENT);
 	    title.setFont(new Font("Montserrat", Font.PLAIN, 40));
@@ -42,7 +42,7 @@ public class ScoreWindow extends JFrame implements ActionListener{
 	    
 	    ImageIcon star = new ImageIcon("Resources/star1.png");
 	   
-	    for (int i = 0; i<SandwichScorer.getScore(); i++) {
+	    for (int i = 0; i<Scorer.getScore(); i++) {
 	    	star1 = new JButton();
 		    star1.setBackground(Color.WHITE);
 		    star1.setIcon(star);

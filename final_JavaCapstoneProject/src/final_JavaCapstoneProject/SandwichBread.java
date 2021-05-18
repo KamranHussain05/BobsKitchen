@@ -14,7 +14,7 @@ import javax.swing.JPanel;
 import javax.swing.JTextPane;
 
 @SuppressWarnings("serial")
-public class SandwichStart extends CardLayoutDemo {
+public class SandwichBread extends CardLayoutDemo {
 
 	//Fields
 	private JButton back;
@@ -26,7 +26,7 @@ public class SandwichStart extends CardLayoutDemo {
 	private static JPanel main;
 
 	//Constructor
-	public SandwichStart() {
+	public SandwichBread() {
 		main = new JPanel();
 		GridLayout mainLayout = new GridLayout(1, 3);
 		main.setBorder(BorderFactory.createEmptyBorder(10,10,10,10));
