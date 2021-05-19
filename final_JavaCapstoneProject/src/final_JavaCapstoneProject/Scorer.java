@@ -3,12 +3,14 @@ package final_JavaCapstoneProject;
 public class Scorer {
 	
 	private static int score = 0; 
-	
+	//calculates score for Grilled Cheese out of 5 points, for white bread and cheese
 	public static void grilledCheeseScore (String bread, String cheese, String sauce, String veg1,String veg2, String veg3, String meat) {
+		// if white bread is chosen they get a point
 		if (bread == "White Bread") {
 			score++;
 			System.out.println("1 Point for bread");
 		}
+		//if american cheese is the type of cheese selected they get a point
 		if (cheese == "american") {
 			score++;
 			System.out.println("1 point for cheese");
@@ -17,10 +19,12 @@ public class Scorer {
 			score++;
 			System.out.println("1 point for no cheese");
 		}
+		// if there are any vegetables they get a point
 		if (veg1 == "none"&& veg2 == "none" && veg3 == "none") {
 			score++;
 			System.out.println("1 point for no veggies");
 		}
+		// if there are not meats they get a point
 		if (meat == "none") {
 			score++;
 			System.out.println("1 point for no meat");
@@ -28,7 +32,10 @@ public class Scorer {
 		System.out.println(score + "/5");
 		
 	}
+	//Banh Mi is a vietnamese style of sandwich consisting of pickled vegetables bread some sort of meat, and sauce
+	// This is a beef style of banh mi
 	public static void banhMiScore (String bread, String cheeese, String sauce, String veg1, String veg2, String veg3, String meat) {
+		
 		if (bread == "Baguette") {
 			score=score+2;
 		}
@@ -46,11 +53,13 @@ public class Scorer {
 		
 		}
 		
-		if (meat == "beef" && veg2 == "none" && veg3 == "none") {
+		if (meat == "pork" && veg2 == "none" && veg3 == "none") {
 			score++;
 		}
 		System.out.println(score);
 	}
+	//        
+	// 
 	public static void bltScore (String bread, String cheese, String sauce, String veg1, String veg2, String veg3, String meat) {
 		if (bread == "Garlic Bread") {
 			score=score+2;
