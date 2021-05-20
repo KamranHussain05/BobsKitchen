@@ -39,10 +39,8 @@ public class ConfirmCakePlay extends JFrame implements ActionListener {
 	@Override
 	//method
 	public void actionPerformed(ActionEvent e) {
-		System.out.println("Wellington playthrough confirmed");
+		System.out.println("Cake playthrough confirmed");
 		
-<<<<<<< Updated upstream
-=======
 		CakeStyle window = new CakeStyle();
 		window.setBounds(50, 50, 1440,900);
 		window.setBackground(new Color(211,211,211));
@@ -51,7 +49,6 @@ public class ConfirmCakePlay extends JFrame implements ActionListener {
     	
     	Main.closeHome();
     	
->>>>>>> Stashed changes
 		setVisible(false);
 		dispose();
 	}
