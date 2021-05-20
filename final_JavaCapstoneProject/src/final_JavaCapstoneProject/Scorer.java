@@ -33,7 +33,7 @@ public class Scorer {
 		
 	}
 	//Banh Mi is a vietnamese style of sandwich consisting of pickled vegetables bread some sort of meat, and sauce
-	// This is a beef style of banh mi
+	// This is a pork style of banh mi
 	public static void banhMiScore (String bread, String cheeese, String sauce, String veg1, String veg2, String veg3, String meat) {
 		
 		if (bread == "Baguette") {
@@ -58,8 +58,7 @@ public class Scorer {
 		}
 		System.out.println(score);
 	}
-	//        
-	// 
+	// Blt is bacon lettuce tomato sandwich with garlic bread and honey mustard
 	public static void bltScore (String bread, String cheese, String sauce, String veg1, String veg2, String veg3, String meat) {
 		if (bread == "Garlic Bread") {
 			score=score+2;
@@ -90,7 +89,7 @@ public class Scorer {
 		}
 		System.out.println(score);
 	}
-	
+	// Neopolitan Pizza consists of tomato sauce, thick crust, mozzarella cheese, and basil.
 	public static void neopolitanScore (String crust, String sauce, String cheese, String veg1, String veg2, String meat) { 
 		if (sauce == "tomato sauce" ) {
 			score++; 
@@ -113,7 +112,7 @@ public class Scorer {
 		
 		
 	}
-	
+	//New York pizza consists of a thin crust, tomato sauce, and mozzarella cheese
 	public static void newYorkScore (String crust, String sauce, String cheese, String veg1, String veg2, String meat) {
 		if (cheese == "Mozzarella") { 
 			score++; 
@@ -124,6 +123,7 @@ public class Scorer {
 		if (crust == "Thin crust") {
 			score++; 
 		} 
+		
 	  }
 	 
 	public static int getScore() {
