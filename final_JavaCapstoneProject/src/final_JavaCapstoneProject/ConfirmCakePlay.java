@@ -3,7 +3,6 @@ package final_JavaCapstoneProject;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Container;
-import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -42,14 +41,6 @@ public class ConfirmCakePlay extends JFrame implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		System.out.println("Wellington playthrough confirmed");
 		
-		CakeStyle window = new CakeStyle();
-		window.setBounds(500, 500, 1440,900);
-		window.setBackground(new Color(211,211,211));
-    	window.setVisible(true);
-    	window.setIconImage(Main.getIcon());
-    	
-    	Main.closeHome();
-    	
 		setVisible(false);
 		dispose();
 	}
