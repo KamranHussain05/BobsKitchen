@@ -125,7 +125,9 @@ public class Scorer {
 		} 
 		
 	  }
-	 
+	public static void beefPhoScore (String broth, String noodles, String meat, String toppings) {
+		
+	}
 	public static int getScore() {
 		int answer = score;
 		return answer;
