@@ -213,7 +213,7 @@ public class PizzaToppings extends JFrame implements ActionListener {
 		}
 		if(veg1Options.getSelectedItem() == none) {
 			System.out.println("None Veggie Selected");
-			veggie1 = "pestosauce";
+			veggie1 = "none";
 			ImageIcon vegIcon = new ImageIcon("Resources/none.png");
 			veg1Image.setIcon(vegIcon);
 		}
@@ -245,7 +245,7 @@ public class PizzaToppings extends JFrame implements ActionListener {
 		}
 		if(veg2Options.getSelectedItem() == none) {
 			System.out.println("None Veggie Selected");
-			veggie2 = "pestosauce";
+			veggie2 = "none";
 			ImageIcon vegIcon = new ImageIcon("Resources/none.png");
 			veg2Image.setIcon(vegIcon);
 		}
@@ -254,13 +254,13 @@ public class PizzaToppings extends JFrame implements ActionListener {
 		if(meatOptions.getSelectedItem() == sausage) {
 			System.out.println("Sausage Meat Selected");
 			meat = "sausage";
-			ImageIcon meatIcon = new ImageIcon("Resources/sausage.png");
+			ImageIcon meatIcon = new ImageIcon("Resources/sasuage.png");
 			meatImage.setIcon(meatIcon);
 		}
 		if(meatOptions.getSelectedItem() == peperoni) {
 			System.out.println("Peperoni Meat Selected");
 			meat = "peperoni";
-			ImageIcon meatIcon = new ImageIcon("Resources/peperoni.png");
+			ImageIcon meatIcon = new ImageIcon("Resources/pepperoni.png");
 			meatImage.setIcon(meatIcon);
 		}
 		if(meatOptions.getSelectedItem() == none) {
