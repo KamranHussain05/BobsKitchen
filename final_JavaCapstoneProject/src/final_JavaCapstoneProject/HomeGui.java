@@ -150,7 +150,7 @@ public class HomeGui extends JFrame {
 	    right.add(ingredients);
 	    
 	    JLabel bread = new JLabel();
-	    bread.setText("Bread Type: "+SandwichBread.getBread());
+	    bread.setText("Bread Type: "+ SandwichBread.getBread());
 	    bread.setFont(new Font("Montserrat", Font.PLAIN, 16));
 	    right.add(bread, BorderLayout.WEST);
 	    

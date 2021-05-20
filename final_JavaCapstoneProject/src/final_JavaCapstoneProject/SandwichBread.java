@@ -1,4 +1,4 @@
- package final_JavaCapstoneProject;
+package final_JavaCapstoneProject;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
