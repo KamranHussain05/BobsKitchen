@@ -138,7 +138,7 @@ public class SandwichFinish extends JFrame implements ActionListener {
 		if(e.getSource() == back) {
 			System.out.println("back selected");
 			SandwichCondiments back = new SandwichCondiments();
-			back.setBounds(50,50,1440,900);
+			back.setBounds(50,50,1000,900);
 			back.setBackground(new Color(211,211,211));;
 			back.setVisible(true);
 			back.setIconImage(Main.getIcon());
@@ -174,7 +174,7 @@ public class SandwichFinish extends JFrame implements ActionListener {
 			}
 			
 			ScoreWindow window = new ScoreWindow();
-			window.setBounds(50,50,1440,900);
+			window.setBounds(50,50,1000,900);
 			window.setVisible(true);
 			window.setIconImage(Main.getIcon());
 			window.setBackground(new Color(211,211,211));

@@ -24,7 +24,7 @@ public class Main {
 	}
 	//Main method that runs the home frame, starts the game
 	public static void main(String[] args) {
-    	home.setBounds(50, 50, 1440, 900);
+    	home.setBounds(50, 50, 1000, 900);
     	home.setBackground(new Color(211,211,211));
     	home.setVisible(true);
     	home.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

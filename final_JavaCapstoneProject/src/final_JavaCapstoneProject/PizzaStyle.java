@@ -114,12 +114,21 @@ public class PizzaStyle extends JFrame implements ActionListener {
 		}
 		if(e.getSource() == back) {
 			System.out.println("Back button selected");
+			
+			Home window = new Home();
+			window.setBounds(50,50,1000,900);
+			window.setBackground(new Color(211,211,211));;
+			window.setVisible(true);
+			window.setIconImage(Main.getIcon());
+			
+			setVisible(false);
+			dispose();
 		}
 		if(e.getSource() == next) {
 			System.out.println("Next button selected");
 			
 			PizzaDough window = new PizzaDough();
-			window.setBounds(50,50,1440,900);
+			window.setBounds(50,50,1000,900);
 			window.setBackground(new Color(211,211,211));;
 			window.setVisible(true);
 			window.setIconImage(Main.getIcon());

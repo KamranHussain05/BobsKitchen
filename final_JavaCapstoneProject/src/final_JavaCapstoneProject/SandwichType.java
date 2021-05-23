@@ -130,7 +130,7 @@ public class SandwichType extends JFrame implements ActionListener{
 		if(e.getSource() == next) {
 			System.out.println("Next Button Selected");
 			SandwichBread window = new SandwichBread();
-			window.setBounds(50,50, 1440,900);
+			window.setBounds(50,50, 1000,900);
 			window.setBackground(new Color(211,211,211));
 			window.setVisible(true);
 			window.setIconImage(Main.getIcon());
@@ -140,16 +140,14 @@ public class SandwichType extends JFrame implements ActionListener{
 		}
 		if(e.getSource() == back) {
 			System.out.println("Back Button Selected");
-			ConfirmExit confirm = new ConfirmExit();
-			confirm.setBounds(500, 500, 300,200);
+			Home confirm = new Home();
+			confirm.setBounds(50, 50, 1000,900);
 			confirm.setBackground(new Color(211,211,211));
 	    	confirm.setVisible(true);
 	    	confirm.setIconImage(Main.getIcon());
-	    	
-	    	if(ConfirmExit.isDismissed() == true) {
-	    		setVisible(false);
-	    		dispose();
-	    	}
+
+	    	setVisible(false);
+	    	dispose();
 		}
 	}
 	

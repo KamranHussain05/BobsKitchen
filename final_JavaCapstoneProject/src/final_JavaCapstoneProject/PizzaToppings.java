@@ -170,7 +170,7 @@ public class PizzaToppings extends JFrame implements ActionListener {
 		if(e.getSource() == back) {
 			System.out.println("back selected");
 			PizzaDough back = new PizzaDough();
-			back.setBounds(50,50,1440,900);
+			back.setBounds(50,50,1000,900);
 			back.setBackground(new Color(211,211,211));;
 			back.setVisible(true);
 			back.setIconImage(Main.getIcon());
@@ -181,7 +181,7 @@ public class PizzaToppings extends JFrame implements ActionListener {
 		if(e.getSource() == next) {
 			System.out.println("next selected");
 			PizzaFinish next = new PizzaFinish();
-			next.setBounds(50,50,1440,900);
+			next.setBounds(50,50,1000,900);
 			next.setBackground(new Color(211,211,211));;
 			next.setVisible(true);
 			next.setIconImage(Main.getIcon());

@@ -147,7 +147,7 @@ import javax.swing.JTextPane;
 		if(e.getSource() == back) {
 			System.out.println("back selected");
 			SandwichMeat next = new SandwichMeat();
-			next.setBounds(50,50,1440,900);
+			next.setBounds(50,50,1000,900);
 			next.setBackground(new Color(211,211,211));;
 			next.setVisible(true);
 			next.setIconImage(Main.getIcon());
@@ -158,7 +158,7 @@ import javax.swing.JTextPane;
 		if(e.getSource() == next) {
 			System.out.println("next selected");
 			SandwichFinish next = new SandwichFinish();
-			next.setBounds(50,50,1440,900);
+			next.setBounds(50,50,1000,900);
 			next.setBackground(new Color(211,211,211));;
 			next.setVisible(true);
 			next.setIconImage(Main.getIcon());

@@ -105,7 +105,7 @@ public class PhoStock extends JFrame implements ActionListener{
 			System.out.println("Back button pressed");
 			
 			PhoStyle window = new PhoStyle();
-			window.setBounds(50, 50, 1440,900);
+			window.setBounds(50, 50, 1000,900);
 			window.setBackground(new Color(211,211,211));
 	    	window.setVisible(true);
 	    	window.setIconImage(Main.getIcon());
@@ -116,7 +116,7 @@ public class PhoStock extends JFrame implements ActionListener{
 		if(e.getSource() == next) {
 			System.out.println("Next button pressed");
 			PhoMeat nextWindow = new PhoMeat();
-			nextWindow.setBounds(50,50, 1440,900);
+			nextWindow.setBounds(50,50, 1000,900);
 			nextWindow.setBackground(new Color(211,211,211));
 			nextWindow.setVisible(true);
 			nextWindow.setIconImage(Main.getIcon());

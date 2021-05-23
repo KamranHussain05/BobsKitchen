@@ -131,46 +131,62 @@ public class Home extends JFrame implements ActionListener {
 		if(e.getSource() == sandwich) {
 			System.out.println("Level 1, Sandwich, was selected");
 			
-			ConfirmSandwichPlay confirm = new ConfirmSandwichPlay();
-			confirm.setBounds(300,300, 300,100);
-			confirm.setBackground(new Color(211,211,211));
-			confirm.setVisible(true);
-			confirm.setIconImage(Main.getIcon());
+			SandwichType next = new SandwichType();
+			next.setBounds(50,50, 1000,900);
+			next.setBackground(new Color(211,211,211));
+			next.setVisible(true);
+			next.setIconImage(Main.getIcon());
+			
+			setVisible(false);
+			dispose();
 			
 //			CardLayoutDemo.c1.show(CardLayoutDemo.cards, CardLayoutDemo.next);
 		}
 		if(e.getSource() == pizza) {
 			System.out.println("Level 2, Pizza, was selected");
-			ConfirmPizzaPlay confirm = new ConfirmPizzaPlay();
-			confirm.setBounds(300,300, 300,100);
-			confirm.setBackground(new Color(211,211,211));
-			confirm.setVisible(true);
-			confirm.setIconImage(Main.getIcon());
+			
+			PizzaStyle next = new PizzaStyle();
+			next.setBounds(50,50, 1000,900);
+			next.setBackground(new Color(211,211,211));
+			next.setVisible(true);
+			next.setIconImage(Main.getIcon());
+			
+			setVisible(false);
+			dispose();
 		}
 		if(e.getSource() == pho) {
 			System.out.println("Level 4, Waygu Ramen, was selected");
-			ConfirmPhoPlay confirm = new ConfirmPhoPlay();
-			confirm.setBounds(300,300, 300,100);
-			confirm.setBackground(new Color(211,211,211));
-			confirm.setVisible(true);
-			confirm.setIconImage(Main.getIcon());
+			PhoStyle next = new PhoStyle();
+			next.setBounds(50,50, 1000,900);
+			next.setBackground(new Color(211,211,211));
+			next.setVisible(true);
+			next.setIconImage(Main.getIcon());
+			
+			setVisible(false);
+			dispose();
 		}
 		if(e.getSource() == cake) {
 			System.out.println("Level 5, Beef pho, was selected");
-			ConfirmCakePlay confirm = new ConfirmCakePlay();
-			confirm.setBounds(300,300, 300,100);
-			confirm.setBackground(new Color(211,211,211));
-			confirm.setVisible(true);
-			confirm.setIconImage(Main.getIcon());
+			CakeStyle next = new CakeStyle();
+			next.setBounds(50,50, 1000,900);
+			next.setBackground(new Color(211,211,211));
+			next.setVisible(true);
+			next.setIconImage(Main.getIcon());
+			
+			setVisible(false);
+			dispose();
 		}
 		if(e.getSource() == help) {
 			System.out.println("Help was selected");
 			Help help = new Help();
-			help.setBounds(1000,70,500,900);
+			help.setBounds(50,50,1000,900);
 			help.setBackground(new Color(211, 211, 211));
 			help.setVisible(true);
 			help.setResizable(false);
 			help.setIconImage(Main.getIcon());
+			
+			setVisible(false);
+			dispose();
 		}
 	}
 

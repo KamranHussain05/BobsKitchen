@@ -85,7 +85,7 @@ public class ScoreWindow extends JFrame implements ActionListener{
 		if(e.getSource() == home) {
 			System.out.println("Woohoo! Never Gonna give you up \n never gonna let you down...");
 			Home window = new Home();
-			window.setBounds(50, 50, 1440, 900);
+			window.setBounds(50, 50, 1000, 900);
 	    	window.setBackground(new Color(211,211,211));
 	    	window.setVisible(true);
 	    	window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

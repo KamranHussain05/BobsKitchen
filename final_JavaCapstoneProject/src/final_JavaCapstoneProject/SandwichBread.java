@@ -109,7 +109,7 @@ public class SandwichBread extends CardLayoutDemo {
 			System.out.println("Back button pressed");
 			
 			SandwichType window = new SandwichType();
-			window.setBounds(500, 500, 300,200);
+			window.setBounds(50, 50, 1000,900);
 			window.setBackground(new Color(211,211,211));
 	    	window.setVisible(true);
 	    	window.setIconImage(Main.getIcon());
@@ -120,7 +120,7 @@ public class SandwichBread extends CardLayoutDemo {
 		if(e.getSource() == next) {
 			System.out.println("Next button pressed");
 			SandwichVeggies nextWindow = new SandwichVeggies();
-			nextWindow.setBounds(50,50, 1440,900);
+			nextWindow.setBounds(50,50, 1000,900);
 			nextWindow.setBackground(new Color(211,211,211));
 			nextWindow.setVisible(true);
 			nextWindow.setIconImage(Main.getIcon());

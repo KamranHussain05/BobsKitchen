@@ -13,10 +13,8 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextPane;
 
+@SuppressWarnings("serial")
 public class Help extends JFrame implements ActionListener {
-
-	private static final long serialVersionUID = 1L;
-	private static boolean dismissed = false;
 
 	public Help() {
 		super("How to Play!");
@@ -89,13 +87,14 @@ public class Help extends JFrame implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		System.out.println("Help menu was closed");
+		
+		Home window = new Home();
+		window.setBounds(50,50, 1000,900);
+		window.setBackground(new Color(211,211,211));
+		window.setVisible(true);
+		window.setIconImage(Main.getIcon());
+		
 		setVisible(false);
 	    dispose();
-		dismissed = true;
 	}
-	
-	public static boolean isDismissed() {
-		return dismissed;
-	}
-
 }
