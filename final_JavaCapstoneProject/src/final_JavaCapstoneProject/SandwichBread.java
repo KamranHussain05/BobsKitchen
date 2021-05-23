@@ -55,8 +55,7 @@ public class SandwichBread extends CardLayoutDemo {
 		whiteBread.setBackground(Color.WHITE);
 		whiteBread.addActionListener(this);
 		this.add(whiteBread);
-		
-		//Level 2, make a burger
+
 		ImageIcon baguetteImage = new ImageIcon("Resources/baguette.png");
 		baguette = new JButton();
 		baguette.setIcon(baguetteImage);
@@ -64,8 +63,7 @@ public class SandwichBread extends CardLayoutDemo {
 		baguette.setBackground(Color.WHITE);
 		baguette.addActionListener(this);;
 		this.add(baguette);
-		
-		//Level 3, make a souffle pancake
+
 		ImageIcon garlicBreadImage = new ImageIcon("Resources/garlicbread.png");
 		garlicBread = new JButton();
 		garlicBread.setIcon(garlicBreadImage);

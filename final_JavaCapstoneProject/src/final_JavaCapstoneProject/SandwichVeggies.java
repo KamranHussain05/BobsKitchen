@@ -137,7 +137,6 @@ public class SandwichVeggies extends JFrame implements ActionListener {
 		veg3Options.addItem(none);
 		veg3Options.addActionListener(this);
 		right.add(veg3Options, BorderLayout.SOUTH);
-		
 		main.add(right);
 	    
 	    JPanel footer = new JPanel();

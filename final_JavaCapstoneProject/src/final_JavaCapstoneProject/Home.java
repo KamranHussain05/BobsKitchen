@@ -1,6 +1,7 @@
 package final_JavaCapstoneProject;
 
 import java.awt.BorderLayout;
+import java.awt.CardLayout;
 import java.awt.Color;
 import java.awt.Component;
 import java.awt.Container;
@@ -15,6 +16,7 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JTextPane;
+import javax.swing.SwingUtilities;
 
 @SuppressWarnings("serial")
 public class Home extends JFrame implements ActionListener {
@@ -121,8 +123,8 @@ public class Home extends JFrame implements ActionListener {
 		base.add(main, BorderLayout.CENTER);
 		base.add(help, BorderLayout.AFTER_LAST_LINE);
 	}
-	
-	public static Component getBody() {
+
+	public static Container getBody() {
 		return main;
 	}
 
@@ -138,6 +140,7 @@ public class Home extends JFrame implements ActionListener {
 			confirm.setVisible(true);
 			confirm.setIconImage(Main.getIcon());
 			
+//			CardLayoutDemo.c1.show(CardLayoutDemo.cards, CardLayoutDemo.next);
 		}
 		if(e.getSource() == pizza) {
 			System.out.println("Level 2, Pizza, was selected");

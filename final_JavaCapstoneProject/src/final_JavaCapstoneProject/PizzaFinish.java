@@ -146,14 +146,14 @@ public class PizzaFinish extends JFrame implements ActionListener {
 				submit.setEnabled(false);	
 			}
 			
-			ScoreWindow window = new ScoreWindow();
-			window.setBounds(50,50,1440,900);
-			window.setVisible(true);
-			window.setIconImage(Main.getIcon());
-			window.setBackground(new Color(211,211,211));
-			
-			dispose();
-			setVisible(false);
+		ScoreWindow window = new ScoreWindow();
+		window.setBounds(50,50,1440,900);
+		window.setVisible(true);
+		window.setIconImage(Main.getIcon());
+		window.setBackground(new Color(211,211,211));
+		
+		dispose();
+		setVisible(false);
 		}
 	}
 }

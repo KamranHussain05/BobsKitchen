@@ -2,6 +2,7 @@ package final_JavaCapstoneProject;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.Component;
 import java.awt.Container;
 import java.awt.Font;
 import java.awt.GridLayout;
@@ -18,7 +19,7 @@ import javax.swing.JTextPane;
 @SuppressWarnings("serial")
 public class SandwichType extends JFrame implements ActionListener{
 
-	private JButton grilledCheese;
+	private static JButton grilledCheese;
 	private JButton blt;
 	private JButton banhmi;
 	private JButton back;
@@ -40,7 +41,7 @@ public class SandwichType extends JFrame implements ActionListener{
 		JPanel header = new JPanel();
 	    header.setBackground(new Color(79, 93, 117));
 	    JTextPane title = new JTextPane();
-	    title.setText("Select Type Sandwich, you can only choose once!");
+	    title.setText("Select Type of Sandwich, you can only choose once!");
 	    title.setEditable(false);
 	    title.setAlignmentX(CENTER_ALIGNMENT);
 	    title.setFont(new Font("Montserrat", Font.PLAIN, 40));
@@ -75,7 +76,7 @@ public class SandwichType extends JFrame implements ActionListener{
 		banhmi.addActionListener(this);;
 		this.add(banhmi);
 		
-		main.add(grilledCheese);
+		main.add(getGrilledCheese());
 		main.add(blt);
 		main.add(banhmi);
 	    
@@ -102,10 +103,14 @@ public class SandwichType extends JFrame implements ActionListener{
 		base.add(footer, BorderLayout.AFTER_LAST_LINE);
 		
 	}
+	
+	public static Container getBody() {
+		return main;	
+	}
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		if(e.getSource() == grilledCheese) {
+		if(e.getSource() == getGrilledCheese()) {
 			System.out.println("Grilled Cheese Style selected");
 			sandwichType = "grilled cheese";
 			blt.setEnabled(false);
@@ -114,14 +119,14 @@ public class SandwichType extends JFrame implements ActionListener{
 		if(e.getSource() == blt) {
 			System.out.println("BLT Style Selected");
 			sandwichType = "blt";
-			grilledCheese.setEnabled(false);
+			getGrilledCheese().setEnabled(false);
 			banhmi.setEnabled(false);
 		}
 		if(e.getSource() == banhmi) {
 			System.out.println("banhmi");
 			sandwichType = "banhmi";
 			blt.setEnabled(false);
-			grilledCheese.setEnabled(false);
+			getGrilledCheese().setEnabled(false);
 		}
 		if(e.getSource() == next) {
 			System.out.println("Next Button Selected");
@@ -151,6 +156,10 @@ public class SandwichType extends JFrame implements ActionListener{
 	
 	public static String getSandwichStyle() {
 		return sandwichType;
+	}
+
+	public static JButton getGrilledCheese() {
+		return grilledCheese;
 	}
 
 }

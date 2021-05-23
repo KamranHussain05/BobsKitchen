@@ -37,7 +37,14 @@ public class ConfirmPhoPlay extends JFrame implements ActionListener{
 
 		@Override
 		public void actionPerformed(ActionEvent e) {
-			System.out.println("Ramen Playthrough Confirmed");
+			System.out.println("Pho Playthrough Confirmed");
+			PhoStyle window = new PhoStyle();
+			window.setBounds(50, 50, 1440,900);
+			window.setBackground(new Color(211,211,211));
+	    	window.setVisible(true);
+	    	window.setIconImage(Main.getIcon());
+			
+	    	Main.closeHome();
 			setVisible(false);
 			dispose();
 		}

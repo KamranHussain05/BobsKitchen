@@ -2,6 +2,7 @@ package final_JavaCapstoneProject;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.Component;
 import java.awt.Container;
 import java.awt.Font;
 import java.awt.GridLayout;
@@ -19,7 +20,7 @@ public class SandwichFinish extends JFrame implements ActionListener {
 //Fields	
 	private JButton submit;
 	private JButton back;
-	private JPanel main;
+	private static JPanel main;
 //Constructors
 	public SandwichFinish() {
 		super("Level 1: Sandwich");
@@ -114,6 +115,10 @@ public class SandwichFinish extends JFrame implements ActionListener {
 		base.add(header, BorderLayout.BEFORE_FIRST_LINE);
 		base.add(main, BorderLayout.CENTER);
 		base.add(footer, BorderLayout.AFTER_LAST_LINE);
+	}
+	
+	public static Component getBody() {
+		return main;
 	}
 
 	@Override

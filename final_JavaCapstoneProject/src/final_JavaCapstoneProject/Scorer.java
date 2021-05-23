@@ -5,6 +5,7 @@ public class Scorer {
 	private static int score = 0; 
 	//calculates score for Grilled Cheese out of 5 points, for white bread and cheese
 	public static void grilledCheeseScore (String bread, String cheese, String sauce, String veg1,String veg2, String veg3, String meat) {
+		score=0;
 		// if white bread is chosen they get a point
 		if (bread == "White Bread") {
 			score++;
@@ -35,7 +36,7 @@ public class Scorer {
 	//Banh Mi is a vietnamese style of sandwich consisting of pickled vegetables bread some sort of meat, and sauce
 	// This is a beef style of banh mi
 	public static void banhMiScore (String bread, String cheeese, String sauce, String veg1, String veg2, String veg3, String meat) {
-		
+		score=0;
 		if (bread == "Baguette") {
 			score=score+2;
 		}
@@ -61,6 +62,7 @@ public class Scorer {
 	//        
 	// 
 	public static void bltScore (String bread, String cheese, String sauce, String veg1, String veg2, String veg3, String meat) {
+		score=0;
 		if (bread == "Garlic Bread") {
 			score=score+2;
 		}
@@ -92,10 +94,11 @@ public class Scorer {
 	}
 	
 	public static void neopolitanScore (String crust, String sauce, String cheese, String veg1, String veg2, String meat) { 
-		if (sauce == "tomato sauce" ) {
+		score=0;
+		if (sauce == "tomatosauce" ) {
 			score++; 
 		} 
-		if (crust == "thick crust") { 
+		if (crust == "thickcrust") { 
 			score++; 
 		} 
 		if (meat == "none") { 
@@ -104,10 +107,10 @@ public class Scorer {
 		if (cheese == "mozzarella") {
 			score++;
 		}
-		if (veg1 == "basil" && veg2 == "none") {
+		if (veg1 == "basil" && veg2 == "None") {
 			score++;
 		}
-		else if (veg2 == "basil" && veg2 == "none" ) {
+		else if (veg2 == "basil" && veg1 == "None" ) {
 			score++;
 		}
 		
@@ -115,14 +118,15 @@ public class Scorer {
 	}
 	
 	public static void newYorkScore (String crust, String sauce, String cheese, String veg1, String veg2, String meat) {
-		if (cheese == "Mozzarella") { 
+		score=0;
+		if (cheese == "cheddar") { 
 			score++; 
 		} 
-		if (sauce == "Tomato") { 
+		if (sauce == "tomatosauce") { 
 			score++; 
 		}
-		if (crust == "Thin crust") {
-			score++; 
+		if (crust == "thincrust") {
+			score+=3; 
 		} 
 	  }
 	 

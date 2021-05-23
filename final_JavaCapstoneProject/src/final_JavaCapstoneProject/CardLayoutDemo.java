@@ -7,13 +7,17 @@ import javax.swing.*;
 @SuppressWarnings("serial")
 public class CardLayoutDemo extends JFrame implements ActionListener {
 	
-    JPanel cards; 
-    JPanel card1;
-    JPanel card2;
-    JPanel card3;//a panel that uses CardLayout
-    final String next = "next";
-    final String previous = "previous";
-    final String specific = "other";
+    static JPanel cards; 
+    static JPanel card1;
+    private JPanel card2;
+    private JPanel card3; //a panel that uses CardLayout
+    private JPanel card4;
+    static CardLayout c1;
+    static String next = "next";
+    static String previous = "previous";
+    static String home = "home";
+    static String sandwichType = "st";
+    static String sandwichBread = "sb";
     JTextPane title;
     
     public CardLayoutDemo() {
@@ -29,15 +33,18 @@ public class CardLayoutDemo extends JFrame implements ActionListener {
         card2 = new JPanel();
         card2.add(HomeGui.getSecondCard());
         
-        card3 = new JPanel();
-//        card3.add(SandwichVeggies.getVeggiePanel());
+//        card3 = new JPanel();
+//        card3.add(CakeStyle.getBody());
+//       
+//        card4 = new JPanel();
+//        card4.add(SandwichType.getBody());
         
         //Create the panel that contains the "cards".
         cards = new JPanel(new CardLayout());
         cards.setBorder(BorderFactory.createEmptyBorder(10,10,10,10));
         cards.add(card1, next);
         cards.add(card2, previous);
-        cards.add(card3, specific);
+//        cards.add(card3, home);
         
     	JPanel header = new JPanel();
 	    header.setBackground(new Color(79, 93, 117));
@@ -66,7 +73,7 @@ public class CardLayoutDemo extends JFrame implements ActionListener {
         footer.add(cb2);
         
         JButton cb3 = new JButton("other");
-        cb3.setActionCommand(specific);
+        cb3.setActionCommand(home);
         cb3.addActionListener(this);
         cb3.setText("other");
         this.add(cb3);
@@ -81,7 +88,7 @@ public class CardLayoutDemo extends JFrame implements ActionListener {
     }
     
     public void actionPerformed(ActionEvent e) {
-    	CardLayout c1 = (CardLayout)(cards.getLayout());
+    	c1 = (CardLayout)(cards.getLayout());
     	String button = e.getActionCommand();
     	if(button.equals(next)) {
     		c1.next(cards);
@@ -89,8 +96,11 @@ public class CardLayoutDemo extends JFrame implements ActionListener {
     	if(button.equals(previous)) {
     		c1.previous(cards);
     	}
-    	if(button.equals(specific)) {
-    		c1.show(cards, specific);
+    	if(button.equals(home)) {
+    		c1.show(cards, home);
+    	}
+    	if(button.equals(SandwichType.getGrilledCheese())) {
+    		System.out.println("Sandwich listener is working");
     	}
     }
     

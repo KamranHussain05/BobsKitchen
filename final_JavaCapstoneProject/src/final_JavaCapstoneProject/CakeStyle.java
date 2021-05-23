@@ -24,7 +24,7 @@ public class CakeStyle extends JFrame implements ActionListener{
 	private String password;
 	private String typed = "";
 	private JTextField update;
-	private JPanel main;
+	private static JPanel main;
 	private boolean accepted;
 
 	public CakeStyle() {
@@ -38,7 +38,7 @@ public class CakeStyle extends JFrame implements ActionListener{
 		JPanel header = new JPanel();
 	    header.setBackground(new Color(79, 93, 117));
 	    JTextPane title = new JTextPane();
-	    title.setText("Enter the Passcode");
+	    title.setText("Enter the 9 Digit Passcode");
 	    title.setEditable(false);
 	    title.setAlignmentX(CENTER_ALIGNMENT);
 	    title.setFont(new Font("Montserrat", Font.PLAIN, 40));
@@ -56,7 +56,9 @@ public class CakeStyle extends JFrame implements ActionListener{
 	    update.setForeground(new Color(255, 255, 255));
 	    update.setBackground(new Color(79, 93, 117));
 	    header.add(update);
-		
+	    
+	    JPanel numButtons = new JPanel();
+	    numButtons.setBackground(new Color(200,200,200));
 		for (int i = 0; i < 10; i++) {
 			button = new JButton();
 			String s = Integer.toString(value);
@@ -66,7 +68,7 @@ public class CakeStyle extends JFrame implements ActionListener{
 			button.addActionListener(this);
 			this.add(button);
 			value++;
-			main.add(button);
+			numButtons.add(button);
 		}
 		
 		JPanel footer = new JPanel();
@@ -77,12 +79,18 @@ public class CakeStyle extends JFrame implements ActionListener{
 	    enter.addActionListener(this);;
 	    this.add(enter);
 	    footer.add(enter, BorderLayout.EAST);
+	    
+	    main.add(numButtons);	
 		
 		Container base = getContentPane();
 		base.add(header, BorderLayout.BEFORE_FIRST_LINE);
 		base.add(pressed, BorderLayout.NORTH);
 		base.add(main, BorderLayout.CENTER);
 		base.add(footer, BorderLayout.AFTER_LAST_LINE);
+	}
+	
+	public static Container getBody() {
+		return main;
 	}
 
 	@Override
@@ -143,13 +151,24 @@ public class CakeStyle extends JFrame implements ActionListener{
 		}
 		if(e.getSource() == enter && accepted == true) {
 			System.out.println("Password Entered and Accepted");
+			
+			GameOver window = new GameOver();
+			window.setBounds(50,50,1440,900);
+			window.setVisible(true);
+			window.setIconImage(Main.getIcon());
+			window.setBackground(new Color(211,211,211));
+			
+			dispose();
+			setVisible(false);
+			
 		} else if(e.getSource() == enter && accepted == false){
 			System.out.println("Incorrect Password");
+			typed = "";
 		}
 	}
 	
 	public void refresh() {
-		update.setText("again");
+		update.setText(typed);
 	}
 
 }
