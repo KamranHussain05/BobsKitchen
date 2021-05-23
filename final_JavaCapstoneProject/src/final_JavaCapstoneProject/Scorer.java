@@ -92,7 +92,8 @@ public class Scorer {
 		}
 		System.out.println(score);
 	}
-	
+	//
+	//
 	public static void neopolitanScore (String crust, String sauce, String cheese, String veg1, String veg2, String meat) { 
 		score=0;
 		if (sauce == "tomatosauce" ) {
@@ -116,7 +117,8 @@ public class Scorer {
 		
 		
 	}
-	
+	//
+	//
 	public static void newYorkScore (String crust, String sauce, String cheese, String veg1, String veg2, String meat) {
 		score=0;
 		if (cheese == "cheddar") { 
@@ -129,7 +131,57 @@ public class Scorer {
 			score+=3; 
 		} 
 	  }
-	 
+	 public static void beefPho(String broth1, String broth2, String broth3, String broth4, String noodle, String beef1, String beef2, String chicken1, String chicken2, String toppings1, String toppings2, String toppings3, String toppings4, String toppings5, String toppings6, String toppings7, String toppings8, String toppings9) {
+		 if (broth1 == "beef bones" && broth2 == "aromatics" && broth3 == "fish sauce" && broth4 == "grilled onions") {
+			 score=score+2;
+		 }
+		 if (noodle == "vermicelli") {
+			 score++;
+		 }
+		 if (beef1 == "fatty brisket" && beef2 == "tendon" && chicken1 == "none" && chicken2 == "none") {
+			 score++;
+		 }
+		 if (beef1 == "tendon" && beef2 == "fatty brisket" && chicken1 == "none" && chicken2 == "none") {
+			 score++;
+		 }
+		 if (toppings1 == "green onions" || toppings2 == "basil" || toppings3 == "scallions" || toppings4 == "cilantro" || toppings5 == "fried onions" || toppings6 == "bean sprouts" || toppings7 == "hot chili oil" || toppings8 == "siracha" || toppings8 == "hoison sauce") {
+			 score++;
+		 }
+	 }
+public static void chickenPho(String broth1, String broth2, String broth3, String broth4, String noodle, String beef1, String beef2, String chicken1, String chicken2, String toppings1, String toppings2, String toppings3, String toppings4, String toppings5, String toppings6, String toppings7, String toppings8, String toppings9) {
+	 if (broth1 == "chicken stock" && broth2 == "aromatics" && broth3 == "fish sauce" && broth4 == "grilled onions") {
+		 score=score+2;
+	 }
+	 if (noodle == "glass noodles") {
+		 score++;
+	 }
+	 if (beef1 == "none" && beef2 == "none" && chicken1 == "chicken breast" && chicken2 == "chicken skin") {
+		 score++;
+	 }
+	 if (beef1 == "none" && beef2 == "none" && chicken1 == "chicken skin" && chicken2 == "chicken breast") {
+		 score++;
+	 }
+	 if (toppings1 == "green onions" || toppings2 == "basil" || toppings3 == "scallions" || toppings4 == "cilantro" || toppings5 == "fried onions" || toppings6 == "bean sprouts" || toppings7 == "hot chili oil" || toppings8 == "siracha" || toppings8 == "hoison sauce") {
+		 score++;
+	 }
+}
+public static void veggiePho(String broth1, String broth2, String broth3, String broth4, String noodle, String beef1, String beef2, String chicken1, String chicken2, String toppings1, String toppings2, String toppings3, String toppings4, String toppings5, String toppings6, String toppings7, String toppings8, String toppings9) {
+	 if (broth1 == "veggie stock" && broth2 == "aromatics" && broth3 == "fish sauce" && broth4 == "grilled onions") {
+		 score=score+2;
+	 }
+	 if (noodle == "vermicelli") {
+		 score++;
+	 }
+	 if (beef1 == "none" && beef2 == "none" && chicken1 == "none" && chicken2 == "none") {
+		 score++;
+	 }
+	 if (beef1 == "none" && beef2 == "none" && chicken1 == "none" && chicken2 == "none") {
+		 score++;
+	 }
+	 if (toppings1 == "green onions" || toppings2 == "basil" || toppings3 == "scallions" || toppings4 == "cilantro" || toppings5 == "fried onions" || toppings6 == "bean sprouts" || toppings7 == "hot chili oil" || toppings8 == "siracha" || toppings8 == "hoison sauce") {
+		 score=score+2;
+	 }
+}
 	public static int getScore() {
 		int answer = score;
 		return answer;
