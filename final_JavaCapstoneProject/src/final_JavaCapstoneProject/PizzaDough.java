@@ -22,7 +22,7 @@ public class PizzaDough extends JFrame implements ActionListener {
 	private static String dough;
 	private static String sauce;
 	private static String cheese;
-	
+
 	private JButton back;
 	private JButton next;
 	private JButton doughImage;
@@ -32,24 +32,24 @@ public class PizzaDough extends JFrame implements ActionListener {
 	private JComboBox<String> doughOptions;
 	private JComboBox<String> sauceOptions;
 	private JComboBox<String> cheeseOptions;
-	
+
 	private String select = "";
 	private String thinCrust = "Thin Crust";
 	private String thickCrust = "Thick Crust";
 	private String deepDish = "Deep Dish";
-	
+
 	private String tomatoSauce = "Marinara";
 	private String pestoSauce = "Pesto Sauce";
-	
+
 	private String mozzarella = "Mozzarella";
 	private String cheddar = "Cheddar";
 	private String provolone = "Provolone";
-	
-	private JPanel main;
-	
+
+	private static JPanel main;
+
 	public PizzaDough() {
 		super("Bob's Kitchen");
-		
+
 		main = new JPanel();
 		GridLayout mainLayout = new GridLayout(1, 3);
 		main.setBorder(BorderFactory.createEmptyBorder(10,10,10,10));
@@ -57,32 +57,32 @@ public class PizzaDough extends JFrame implements ActionListener {
 		mainLayout.setHgap(5);
 		main.setLayout(mainLayout);
 		main.setBackground(new Color(200,200,200));
-		
+
 		//The title header with colors
 		JPanel header = new JPanel();
-	    header.setBackground(new Color(79, 93, 117));
-	    JTextPane title = new JTextPane();
-	    title.setText("Select What Veggies You Want");
-	    title.setEditable(false);
-	    title.setAlignmentX(CENTER_ALIGNMENT);
-	    title.setFont(new Font("Montserrat", Font.PLAIN, 40));
-	    title.setForeground(new Color(255, 255, 255));
-	    title.setBackground(new Color(79, 93, 117));
-	    header.add(title);
-	    
+		header.setBackground(new Color(79, 93, 117));
+		JTextPane title = new JTextPane();
+		title.setText("Select What Veggies You Want");
+		title.setEditable(false);
+		title.setAlignmentX(CENTER_ALIGNMENT);
+		title.setFont(new Font("Montserrat", Font.PLAIN, 40));
+		title.setForeground(new Color(255, 255, 255));
+		title.setBackground(new Color(79, 93, 117));
+		header.add(title);
+
 		JPanel left = new JPanel();
 		JTextPane doughLabel = new JTextPane();
 		doughLabel.setText("Dough");
 		doughLabel.setFont(new Font("Montserrat", Font.PLAIN, 30));
 		doughLabel.setEditable(false);
 		left.add(doughLabel, BorderLayout.BEFORE_FIRST_LINE);
-		 
+
 		doughImage = new JButton();
 		ImageIcon doughIcon = new ImageIcon("Resources/noimage.png");
 		doughImage.setIcon(doughIcon);
 		doughImage.setBackground(Color.WHITE);
 		left.add(doughImage, BorderLayout.CENTER);
-		 
+
 		doughOptions = new JComboBox<String>();
 		doughOptions.addItem(select);
 		doughOptions.addItem(thinCrust);
@@ -91,7 +91,7 @@ public class PizzaDough extends JFrame implements ActionListener {
 		doughOptions.addActionListener(this);
 		left.add(doughOptions, BorderLayout.AFTER_LAST_LINE);
 		main.add(left);
-		
+
 		//*****************************************************
 		JPanel center = new JPanel();
 		JTextPane sauceLabel = new JTextPane();
@@ -99,20 +99,20 @@ public class PizzaDough extends JFrame implements ActionListener {
 		sauceLabel.setFont(new Font("Montserrat", Font.PLAIN, 30));
 		sauceLabel.setEditable(false);
 		center.add(sauceLabel, BorderLayout.NORTH);
-		 
+
 		sauceImage = new JButton();
 		ImageIcon sauceIcon = new ImageIcon("Resources/noimage.png");
 		sauceImage.setIcon(sauceIcon);
 		sauceImage.setBackground(Color.WHITE);
 		center.add(sauceImage, BorderLayout.CENTER);
-		 
+
 		sauceOptions = new JComboBox<String>();
 		sauceOptions.addItem(select);
 		sauceOptions.addItem(tomatoSauce);
 		sauceOptions.addItem(pestoSauce);
 		sauceOptions.addActionListener(this);
 		center.add(sauceOptions, BorderLayout.SOUTH);
-		
+
 		main.add(center);
 		//***********************************************************
 		JPanel right = new JPanel();
@@ -121,13 +121,13 @@ public class PizzaDough extends JFrame implements ActionListener {
 		cheeseLabel.setFont(new Font("Montserrat", Font.PLAIN, 30));
 		cheeseLabel.setEditable(false);
 		right.add(cheeseLabel, BorderLayout.NORTH);
-		 
+
 		cheeseImage = new JButton();
 		ImageIcon cheeseIcon = new ImageIcon("Resources/noimage.png");
 		cheeseImage.setIcon(cheeseIcon);
 		cheeseImage.setBackground(Color.WHITE);
 		right.add(cheeseImage, BorderLayout.CENTER);
-		 
+
 		cheeseOptions = new JComboBox<String>();
 		cheeseOptions.addItem(select);
 		cheeseOptions.addItem(mozzarella);
@@ -135,30 +135,35 @@ public class PizzaDough extends JFrame implements ActionListener {
 		cheeseOptions.addItem(provolone);
 		cheeseOptions.addActionListener(this);
 		right.add(cheeseOptions, BorderLayout.SOUTH);
-		
+
 		main.add(right);
-	    
-	    JPanel footer = new JPanel();
-	    back = new JButton();
-	    back.setText("Back");
-	    back.setFont(new Font("Montserrat", Font.PLAIN, 20));
-	    back.setBackground(new Color(191, 192, 192));
-	    back.addActionListener(this);;
-	    this.add(back);
-	    next = new JButton();
-	    next.setText("Next");
-	    next.setFont(new Font("Montserrat", Font.PLAIN, 20));
-	    next.setBackground(new Color(191, 192, 192));
-	    next.addActionListener(this);;
-	    this.add(next);
-	    footer.add(back, BorderLayout.EAST);
-	    footer.add(next, BorderLayout.WEST);
+
+		JPanel footer = new JPanel();
+		back = new JButton();
+		back.setText("Back");
+		back.setFont(new Font("Montserrat", Font.PLAIN, 20));
+		back.setBackground(new Color(191, 192, 192));
+		back.addActionListener(this);;
+		this.add(back);
+		next = new JButton();
+		next.setText("Next");
+		next.setFont(new Font("Montserrat", Font.PLAIN, 20));
+		next.setBackground(new Color(191, 192, 192));
+		next.addActionListener(this);;
+		this.add(next);
+		footer.add(back, BorderLayout.EAST);
+		footer.add(next, BorderLayout.WEST);
 
 		Container base = getContentPane();
 		base.add(header, BorderLayout.BEFORE_FIRST_LINE);
 		base.add(main, BorderLayout.CENTER);
 		base.add(footer, BorderLayout.AFTER_LAST_LINE);
 	}
+	
+	public static Container getBody() {
+		return main;
+	}
+
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
@@ -169,7 +174,7 @@ public class PizzaDough extends JFrame implements ActionListener {
 			back.setBackground(new Color(211,211,211));;
 			back.setVisible(true);
 			back.setIconImage(Main.getIcon());
-			
+
 			setVisible(false);
 			dispose();
 		}
@@ -180,11 +185,11 @@ public class PizzaDough extends JFrame implements ActionListener {
 			next.setBackground(new Color(211,211,211));;
 			next.setVisible(true);
 			next.setIconImage(Main.getIcon());
-			
+
 			setVisible(false);
 			dispose();
 		}
-		
+
 		if(doughOptions.getSelectedItem() == thinCrust) {
 			System.out.println("Thin Crust Dough Selected");
 			dough = "thincrust";
@@ -233,13 +238,13 @@ public class PizzaDough extends JFrame implements ActionListener {
 			ImageIcon cheeseIcon = new ImageIcon("Resources/provolone.png");
 			cheeseImage.setIcon(cheeseIcon);
 		}
-		
+
 	}
-	
+
 	public static String getDough() {
 		return dough;
 	}
-	
+
 	public static String getSauce() {
 		return sauce;
 	}

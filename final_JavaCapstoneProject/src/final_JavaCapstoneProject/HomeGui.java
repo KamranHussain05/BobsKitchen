@@ -108,6 +108,7 @@ public class HomeGui extends JFrame {
 		return main;
 	}
 	
+	
 	public static Component getSecondCard() {
 		JPanel main = new JPanel();
 		GridLayout mainLayout = new GridLayout(1, 2);

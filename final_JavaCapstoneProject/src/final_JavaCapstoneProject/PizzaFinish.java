@@ -20,7 +20,7 @@ public class PizzaFinish extends JFrame implements ActionListener {
 
 	private JButton submit;
 	private JButton back;
-	private JPanel main;
+	private static JPanel main;
 
 	public PizzaFinish() {
 		super("Bob's Kitchen");
@@ -113,6 +113,10 @@ public class PizzaFinish extends JFrame implements ActionListener {
 		base.add(main, BorderLayout.CENTER);
 		base.add(footer, BorderLayout.AFTER_LAST_LINE);
 	}
+	public static Container getBody() {
+		return main;
+	}
+
 
 	@Override
 	public void actionPerformed(ActionEvent e) {

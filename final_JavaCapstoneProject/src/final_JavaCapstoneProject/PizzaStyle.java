@@ -91,6 +91,10 @@ public class PizzaStyle extends JFrame implements ActionListener {
 		base.add(main, BorderLayout.CENTER);
 		base.add(footer, BorderLayout.AFTER_LAST_LINE);
 	}
+	public static Container getBody() {
+		return main;
+	}
+
 
 	public static Component getContent() {
 		return main;

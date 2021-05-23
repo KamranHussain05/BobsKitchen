@@ -43,7 +43,7 @@ public class PizzaToppings extends JFrame implements ActionListener {
 	private String peperoni = "Peperoni";
 	private String none = "None";
 	
-	private JPanel main;
+	private static JPanel main;
 	
 	public PizzaToppings() {
 		main = new JPanel();
@@ -160,6 +160,10 @@ public class PizzaToppings extends JFrame implements ActionListener {
 		base.add(main, BorderLayout.CENTER);
 		base.add(footer, BorderLayout.AFTER_LAST_LINE);
 	}
+	public static Container getBody() {
+		return main;
+	}
+
 
 	@Override
 	public void actionPerformed(ActionEvent e) {

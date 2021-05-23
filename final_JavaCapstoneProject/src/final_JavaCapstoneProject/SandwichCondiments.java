@@ -139,6 +139,10 @@ import javax.swing.JTextPane;
 		base.add(footer, BorderLayout.AFTER_LAST_LINE);
 	    
 	}
+	public static Container getBody() {
+		return main;
+	}
+
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
