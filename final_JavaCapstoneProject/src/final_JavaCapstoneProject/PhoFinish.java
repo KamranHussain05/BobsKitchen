@@ -2,12 +2,12 @@ package final_JavaCapstoneProject;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
-import java.awt.Component;
 import java.awt.Container;
 import java.awt.Font;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -16,14 +16,14 @@ import javax.swing.JPanel;
 import javax.swing.JTextPane;
 
 @SuppressWarnings("serial")
-public class SandwichFinish extends JFrame implements ActionListener {
-//Fields	
+public class PhoFinish extends JFrame implements ActionListener {
+
 	private JButton submit;
 	private JButton back;
 	private static JPanel main;
-//Constructors
-	public SandwichFinish() {
-		super("Level 1: Sandwich");
+	
+	public PhoFinish() {
+super("Level 1: Sandwich");
 		
 		main = new JPanel();
 		GridLayout layout = new GridLayout(1,2);
@@ -45,24 +45,24 @@ public class SandwichFinish extends JFrame implements ActionListener {
 	    JPanel left = new JPanel();
 	    left.setBackground(Color.WHITE);
 	    JLabel imgLabel = new JLabel();
-	    if(SandwichType.getSandwichStyle() == "grilled cheese") {
-	    	ImageIcon gcIcon = new ImageIcon("Resources/grilledcheese.png");
-	    	imgLabel.setIcon(gcIcon);
+	    if(PhoStyle.getPhoType() == "veggie pho") {
+	    	ImageIcon vegIcon = new ImageIcon("Resources/veggiepho.png");
+	    	imgLabel.setIcon(vegIcon);
 	    }
-	    if(SandwichType.getSandwichStyle() == "blt") {
-	    	ImageIcon bltIcon = new ImageIcon("Resources/blt.png");
-	    	imgLabel.setIcon(bltIcon);
+	    if(PhoStyle.getPhoType() == "beef pho") {
+	    	ImageIcon beefIcon = new ImageIcon("Resources/beefpho.png");
+	    	imgLabel.setIcon(beefIcon);
 	    }
-	    if(SandwichType.getSandwichStyle() == "banhmi") {
-	    	ImageIcon banhmiIcon = new ImageIcon("Resources/banhmi.png");
-	    	imgLabel.setIcon(banhmiIcon);
+	    if(PhoStyle.getPhoType() == "chicken pho") {
+	    	ImageIcon chickenIcon = new ImageIcon("Resources/chickenpho.png");
+	    	imgLabel.setIcon(chickenIcon);
 	    }
 	    left.add(imgLabel);
 	    main.add(left);
 	    
 	    //******************************************************
 	    JPanel right = new JPanel();
-	    GridLayout rightLayout = new GridLayout(8,1);
+	    GridLayout rightLayout = new GridLayout(7,1);
 	    right.setLayout(rightLayout);
 	    right.setBackground(Color.WHITE);
 	    
@@ -74,37 +74,43 @@ public class SandwichFinish extends JFrame implements ActionListener {
 	    ingredients.setAlignmentX(CENTER_ALIGNMENT);
 	    right.add(ingredients, BorderLayout.CENTER);
 	    
-	    JLabel sandwichType = new JLabel();
-	    sandwichType.setText("<html><b>Sandwich Style:</b> " + SandwichType.getSandwichStyle());
-	    sandwichType.setFont(new Font("Montserrat", Font.PLAIN, 16));
-	    right.add(sandwichType, BorderLayout.CENTER);
+	    JLabel phoType = new JLabel();
+	    phoType.setText("<html><b>Pho Style:</b> " + PhoStyle.getPhoType());
+	    phoType.setFont(new Font("Montserrat", Font.PLAIN, 16));
+	    right.add(phoType, BorderLayout.CENTER);
 	    
-	    JLabel bread = new JLabel();
-	    bread.setText("<html><b>Bread Type:</b> " + SandwichBread.getBread());
-	    bread.setFont(new Font("Montserrat", Font.PLAIN, 16));
-	    right.add(bread, BorderLayout.WEST);
-	    
-	    JLabel veggies = new JLabel();
-	    veggies.setText("<html><b>Veggies:</b> " + "<br>" + SandwichVeggies.getVeg1()+ 
-	    		"<br>"+"        "+ SandwichVeggies.getVeg2() + "<br>"+
-	    		"        " + SandwichVeggies.getVeg3());
-	    veggies.setFont(new Font("Montserrat", Font.PLAIN, 16));
-	    right.add(veggies);
+	    JLabel broth = new JLabel();
+	    broth.setText("<html><b>Broth Stock:</b> " + PhoStock.getStock());
+	    broth.setFont(new Font("Montserrat", Font.PLAIN, 16));
+	    right.add(broth, BorderLayout.WEST);
 	    
 	    JLabel meat = new JLabel();
-	    meat.setText("<html><b>Meat:</b>        " + SandwichMeat.getMeat());
+	    meat.setText("<html><b>Meat:</b><br>" + 
+	    		PhoMeat.getBeef1() + 
+	    		"<br>        "+ PhoMeat.getBeef2() +
+	    		"<br>        " + PhoMeat.getChick1() +
+	    		"<br>        " + PhoMeat.getChick2());
 	    meat.setFont(new Font("Montserrat", Font.PLAIN, 16));
 	    right.add(meat);
 	    
-	    JLabel sauce = new JLabel();
-	    sauce.setText("<html><b>Sauce:</b>        "+ SandwichCondiments.getSauce());
-	    sauce.setFont(new Font("Montserrat", Font.PLAIN, 16));
-	    right.add(sauce);
+	    JLabel noodle = new JLabel();
+	    noodle.setText("<html><b>Noodles:</b>        " + PhoNoodles.getNoodles());
+	    noodle.setFont(new Font("Montserrat", Font.PLAIN, 16));
+	    right.add(noodle);
 	    
-	    JLabel cheese = new JLabel();
-	    cheese.setText("<html><b>Cheese:</b>        " + SandwichCondiments.getCheese());
-	    cheese.setFont(new Font("Montserrat", Font.PLAIN, 16));
-	    right.add(cheese);
+	    JLabel condiments = new JLabel();
+	    condiments.setText("<html><b>Toppings:</b>        "+ PhoToppings.getTop1() 
+	    					+"<br>" + PhoToppings.getTop2()
+	    					+"<br>" + PhoToppings.getTop3()
+	    					+"<br>" + PhoToppings.getTop4()
+	    					+"<br>" + PhoToppings.getTop5()
+	    					+"<br>" + PhoToppings.getTop6()
+	    					+"<br>" + PhoToppings.getTop7()
+	    					+"<br>" + PhoToppings.getTop8()
+	    					+"<br>" + PhoToppings.getTop9());
+	    condiments.setFont(new Font("Montserrat", Font.PLAIN, 16));
+	    right.add(condiments);
+	    
 	    main.add(right);
 
 	    JPanel footer = new JPanel();
@@ -128,13 +134,8 @@ public class SandwichFinish extends JFrame implements ActionListener {
 		base.add(main, BorderLayout.CENTER);
 		base.add(footer, BorderLayout.AFTER_LAST_LINE);
 	}
-	
-	public static Component getBody() {
-		return main;
-	}
 
 	@Override
-	//Methods
 	public void actionPerformed(ActionEvent e) {
 		if(e.getSource() == back) {
 			System.out.println("back selected");
@@ -150,27 +151,33 @@ public class SandwichFinish extends JFrame implements ActionListener {
 		if(e.getSource() == submit) {
 			System.out.println("submit dish selected");
 			
-			if(SandwichType.getSandwichStyle() == "grilled cheese") {
-				Scorer.grilledCheeseScore(SandwichBread.getBread(), 
-						SandwichCondiments.getCheese(), SandwichCondiments.getSauce(),
-						SandwichVeggies.getVeg1(), SandwichVeggies.getVeg2(), 
-						SandwichVeggies.getVeg3(), SandwichMeat.getMeat());
+			if(PhoStyle.getPhoType() == "veggie pho") {
+				Scorer.veggiePho(PhoStock.getStock(), 
+						PhoNoodles.getNoodles(), PhoMeat.getBeef1(), 
+						PhoMeat.getBeef2(), PhoMeat.getChick1(), PhoMeat.getChick2(),
+						PhoToppings.getTop1(), PhoToppings.getTop2(), PhoToppings.getTop3(),
+						PhoToppings.getTop4(), PhoToppings.getTop5(), PhoToppings.getTop6(),
+						PhoToppings.getTop7(), PhoToppings.getTop8(), PhoToppings.getTop9());
 				submit.setEnabled(false);	
 			}
 			
-			if(SandwichType.getSandwichStyle() == "banhmi") {
-				Scorer.banhMiScore(SandwichBread.getBread(), 
-						SandwichCondiments.getCheese(), SandwichCondiments.getSauce(),
-						SandwichVeggies.getVeg1(), SandwichVeggies.getVeg2(), 
-						SandwichVeggies.getVeg3(), SandwichMeat.getMeat());
+			if(PhoStyle.getPhoType() == "beef pho") {
+				Scorer.beefPho(PhoStock.getStock(), 
+						PhoNoodles.getNoodles(), PhoMeat.getBeef1(), 
+						PhoMeat.getBeef2(), PhoMeat.getChick1(), PhoMeat.getChick2(),
+						PhoToppings.getTop1(), PhoToppings.getTop2(), PhoToppings.getTop3(),
+						PhoToppings.getTop4(), PhoToppings.getTop5(), PhoToppings.getTop6(),
+						PhoToppings.getTop7(), PhoToppings.getTop8(), PhoToppings.getTop9());
 				submit.setEnabled(false);
 			}
 			
-			if(SandwichType.getSandwichStyle() == "blt") {
-				Scorer.bltScore(SandwichBread.getBread(), 
-						SandwichCondiments.getCheese(), SandwichCondiments.getSauce(),
-						SandwichVeggies.getVeg1(), SandwichVeggies.getVeg2(), 
-						SandwichVeggies.getVeg3(), SandwichMeat.getMeat());
+			if(PhoStyle.getPhoType() == "chicken pho") {
+				Scorer.chickenPho(PhoStock.getStock(), 
+						PhoNoodles.getNoodles(), PhoMeat.getBeef1(), 
+						PhoMeat.getBeef2(), PhoMeat.getChick1(), PhoMeat.getChick2(),
+						PhoToppings.getTop1(), PhoToppings.getTop2(), PhoToppings.getTop3(),
+						PhoToppings.getTop4(), PhoToppings.getTop5(), PhoToppings.getTop6(),
+						PhoToppings.getTop7(), PhoToppings.getTop8(), PhoToppings.getTop9());
 				submit.setEnabled(false);
 			}
 			
@@ -183,5 +190,6 @@ public class SandwichFinish extends JFrame implements ActionListener {
 			dispose();
 			setVisible(false);
 		}
+		
 	}
 }

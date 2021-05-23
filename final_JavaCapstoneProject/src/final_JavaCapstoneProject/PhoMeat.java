@@ -118,11 +118,11 @@ public class PhoMeat extends JFrame implements ActionListener {
 		chicken1.setEditable(false);
 		centerRight.add(chicken1, BorderLayout.NORTH);
 		 
-		chickenImage2 = new JButton();
+		chickenImage1 = new JButton();
 		ImageIcon image3 = new ImageIcon("Resources/noimage.png");
-		chickenImage2.setIcon(image3);
-		chickenImage2.setBackground(Color.WHITE);
-		centerRight.add(chickenImage2, BorderLayout.CENTER);
+		chickenImage1.setIcon(image3);
+		chickenImage1.setBackground(Color.WHITE);
+		centerRight.add(chickenImage1, BorderLayout.CENTER);
 		 
 		chickenOptions1 = new JComboBox<String>();
 		chickenOptions1.addItem("");
@@ -192,7 +192,7 @@ public class PhoMeat extends JFrame implements ActionListener {
 		}
 		if(e.getSource() == next) {
 			System.out.println("next selected");
-			PhoToppings next = new PhoToppings();
+			PhoNoodles next = new PhoNoodles();
 			next.setBounds(50,50,1440,900);
 			next.setBackground(new Color(211,211,211));;
 			next.setVisible(true);
@@ -202,6 +202,67 @@ public class PhoMeat extends JFrame implements ActionListener {
 			dispose();
 		}
 		
+		
+		if(beefOptions1.getSelectedItem() == fattyBrisket) {
+			beef1 = "fattybrisket";
+			ImageIcon fattyBrisketImage = new ImageIcon("Resources/fattybrisket.png");
+			beefImage1.setIcon(fattyBrisketImage);
+		}
+		if(beefOptions1.getSelectedItem() == beefTendon) {
+			beef1 = "tendon";
+			ImageIcon tendonImage = new ImageIcon("Resources/beeftendon.png");
+			beefImage1.setIcon(tendonImage);
+		}
+		if(beefOptions1.getSelectedItem() == none) {
+			beef1 = "none";
+			ImageIcon noneImage = new ImageIcon("Resources/none.png");
+			beefImage1.setIcon(noneImage);
+		}
+		if(beefOptions2.getSelectedItem() == fattyBrisket) {
+			beef2 = "fattybrisket";
+			ImageIcon fattyBrisketImage = new ImageIcon("Resources/fattybrisket.png");
+			beefImage2.setIcon(fattyBrisketImage);
+		}
+		if(beefOptions2.getSelectedItem() == beefTendon) {
+			beef2 = "tendon";
+			ImageIcon beefTendonImage = new ImageIcon("Resources/beeftendon.png");
+			beefImage2.setIcon(beefTendonImage);
+		}
+		if(beefOptions2.getSelectedItem() == none) {
+			beef2 = "none";
+			ImageIcon noneImage = new ImageIcon("Resources/none.png");
+			beefImage2.setIcon(noneImage);
+		}
+		if(chickenOptions1.getSelectedItem() == chickenSkin) {
+			chick1 = "chickenskin";
+			ImageIcon chickenskin = new ImageIcon("Resources/chickenskin.png");
+			chickenImage1.setIcon(chickenskin);
+		}
+		if(chickenOptions1.getSelectedItem() == chickenBreast) {
+			chick1 = "chickenbreast";
+			ImageIcon chickenbreast = new ImageIcon("Resources/chickenbreast.png");
+			chickenImage1.setIcon(chickenbreast);
+		}
+		if(chickenOptions1.getSelectedItem() == none) {
+			chick1 = "none";
+			ImageIcon noneImage = new ImageIcon("Resources/none.png");
+			chickenImage1.setIcon(noneImage);
+		}
+		if(chickenOptions2.getSelectedItem() == chickenSkin) {
+			chick2 = "chickenskin";
+			ImageIcon chickenskin = new ImageIcon("Resources/chickenskin.png");
+			chickenImage2.setIcon(chickenskin);
+		}
+		if(chickenOptions2.getSelectedItem() == chickenBreast) {
+			chick2 = "chickenbreast";
+			ImageIcon fattyBrisket = new ImageIcon("Resources/chickenbreast.png");
+			chickenImage2.setIcon(fattyBrisket);
+		}
+		if(chickenOptions2.getSelectedItem() == none) {
+			chick2 = "none";
+			ImageIcon noneImage = new ImageIcon("Resources/none.png");
+			chickenImage2.setIcon(noneImage);
+		}
 	}
 	
 	public static String getBeef1() {

@@ -43,9 +43,19 @@ public class PizzaFinish extends JFrame implements ActionListener {
 		
 	    JPanel left = new JPanel();
 	    left.setBackground(Color.WHITE);
-	    JLabel imgLabel = new JLabel(new ImageIcon("Resources/none.png"));
+	    JLabel imgLabel = new JLabel();
+	    if(PizzaStyle.getPizzaType() == "new york") {
+	    	ImageIcon newIcon = new ImageIcon("Resources/newYork.png");
+	    	imgLabel.setIcon(newIcon);
+	    }
+	    if(PizzaStyle.getPizzaType() == "neopolitan") {
+	    	ImageIcon neoIcon = new ImageIcon("Resources/neopolitan.png");
+	    	imgLabel.setIcon(neoIcon);
+	    }
 	    left.add(imgLabel);
 	    main.add(left);
+	    
+	    //*****************************************************************************
 	    
 	    JPanel right = new JPanel();
 	    GridLayout rightLayout = new GridLayout(8,1);

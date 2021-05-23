@@ -14,6 +14,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JTextPane;
 
+@SuppressWarnings("serial")
 public class ScoreWindow extends JFrame implements ActionListener{
 	
 	private JButton home;
@@ -80,15 +81,5 @@ public class ScoreWindow extends JFrame implements ActionListener{
 	    	dispose();
 	    	setVisible(false);
 		}
-		if(e.getSource() == star1) {
-			ImageIcon surprise = new ImageIcon("Resources/prize.gif");
-			star1.setIcon(surprise);
-			
-			refresh();
-		}
-	}
-
-	private void refresh() {
-		main.add(star1);
 	}
 }

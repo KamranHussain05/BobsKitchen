@@ -22,6 +22,12 @@ public class PhoToppings extends JFrame implements ActionListener {
 	private static String top1;
 	private static String top2;
 	private static String top3;
+	private static String top4;
+	private static String top5;
+	private static String top6;
+	private static String top7;
+	private static String top8;
+	private static String top9;
 	
 	private JButton next;
 	private JButton back;
@@ -88,7 +94,7 @@ public class PhoToppings extends JFrame implements ActionListener {
 	    cilantro = new JButton();
 	    cilantro.setBackground(Color.WHITE);
 	    cilantro.setEnabled(true);
-	    cilantro.setIcon(scallionsImage);
+	    cilantro.setIcon(cilantroImage);
 	    cilantro.addActionListener(this);
 	    this.add(cilantro);
 	    main.add(cilantro);
@@ -160,12 +166,16 @@ public class PhoToppings extends JFrame implements ActionListener {
 		base.add(main, BorderLayout.CENTER);
 		base.add(footer, BorderLayout.AFTER_LAST_LINE);
 	}
+	
+	public static Container getBody() {
+		return main;
+	}
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		if(e.getSource() == back) {
 			System.out.println("back selected");
-			PhoMeat back = new PhoMeat();
+			PhoNoodles back = new PhoNoodles();
 			back.setBounds(50,50,1440,900);
 			back.setBackground(new Color(211,211,211));;
 			back.setVisible(true);
@@ -176,7 +186,7 @@ public class PhoToppings extends JFrame implements ActionListener {
 		}
 		if(e.getSource() == next) {
 			System.out.println("next selected");
-			Home next = new Home();
+			PhoFinish next = new PhoFinish();
 			next.setBounds(50,50,1440,900);
 			next.setBackground(new Color(211,211,211));;
 			next.setVisible(true);
@@ -186,5 +196,78 @@ public class PhoToppings extends JFrame implements ActionListener {
 			dispose();
 		}
 		
+		if(e.getSource() == greenOnion) {
+			System.out.println("Green Onions Selected");
+			top1= "green onion";
+			greenOnion.setEnabled(false);
+		}
+		if(e.getSource() == basil) {
+			System.out.println("Basil Selected");
+			top2= "basil";
+			basil.setEnabled(false);
+		}
+		if(e.getSource() == scallions) {
+			System.out.println("Scallions Selected");
+			top3= "scallions";
+			scallions.setEnabled(false);
+		}
+		if(e.getSource() == cilantro) {
+			System.out.println("Cilantro Selected");
+			top4= "cilantro";
+			cilantro.setEnabled(false);
+		}
+		if(e.getSource() == friedOnions) {
+			System.out.println("Fried Onions Selected");
+			top5= "fried onions";
+			friedOnions.setEnabled(false);
+		}
+		if(e.getSource() == beanSprouts) {
+			System.out.println("Bean Sprouts Selected");
+			top6= "bean sprouts";
+			beanSprouts.setEnabled(false);
+		}
+		if(e.getSource() == chiliOil) {
+			System.out.println("Chili Oil Selected");
+			top7= "chili oil";
+			chiliOil.setEnabled(false);
+		}
+		if(e.getSource() == sriracha) {
+			System.out.println("Sriracha Sauce Selected");
+			top8= "sriracha";
+			sriracha.setEnabled(false);
+		}
+		if(e.getSource() == hoison) {
+			System.out.println("Hoison Sauce Selected");
+			top9= "hoison";
+			hoison.setEnabled(false);
+		}
+	}
+	
+	public static String getTop1() {
+		return top1;
+	}
+	public static String getTop2() {
+		return top2;
+	}
+	public static String getTop3() {
+		return top3;
+	}
+	public static String getTop4() {
+		return top4;
+	}
+	public static String getTop5() {
+		return top5;
+	}
+	public static String getTop6() {
+		return top6;
+	}
+	public static String getTop7() {
+		return top7;
+	}
+	public static String getTop8() {
+		return top8;
+	}
+	public static String getTop9() {
+		return top9;
 	}
 }

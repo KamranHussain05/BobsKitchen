@@ -11,11 +11,10 @@ import java.awt.event.ActionListener;
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
 import javax.swing.JFrame;
-import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.JTextField;
 import javax.swing.JTextPane;
 
+@SuppressWarnings("serial")
 public class CakeStyle extends JFrame implements ActionListener{
 	
 	private JButton button;
@@ -23,7 +22,7 @@ public class CakeStyle extends JFrame implements ActionListener{
 	private int value;
 	private String password;
 	private String typed = "";
-	private JTextField update;
+	private JTextPane title;
 	private static JPanel main;
 	private boolean accepted;
 
@@ -37,25 +36,14 @@ public class CakeStyle extends JFrame implements ActionListener{
 		//The title header with colors
 		JPanel header = new JPanel();
 	    header.setBackground(new Color(79, 93, 117));
-	    JTextPane title = new JTextPane();
-	    title.setText("Enter the 9 Digit Passcode");
+	    title = new JTextPane();
+	    title.setText("Enter the 9 Digit Passcode: " + typed);
 	    title.setEditable(false);
 	    title.setAlignmentX(CENTER_ALIGNMENT);
 	    title.setFont(new Font("Montserrat", Font.PLAIN, 40));
 	    title.setForeground(new Color(255, 255, 255));
 	    title.setBackground(new Color(79, 93, 117));
 	    header.add(title);
-	    
-	    JPanel pressed = new JPanel();
-	    header.setBackground(new Color(79, 93, 117));
-	    update = new JTextField();
-	    update.setText(typed);
-	    update.setEditable(false);
-	    update.setAlignmentX(CENTER_ALIGNMENT);
-	    update.setFont(new Font("Montserrat", Font.PLAIN, 40));
-	    update.setForeground(new Color(255, 255, 255));
-	    update.setBackground(new Color(79, 93, 117));
-	    header.add(update);
 	    
 	    JPanel numButtons = new JPanel();
 	    numButtons.setBackground(new Color(200,200,200));
@@ -68,7 +56,7 @@ public class CakeStyle extends JFrame implements ActionListener{
 			button.addActionListener(this);
 			this.add(button);
 			value++;
-			numButtons.add(button);
+			main.add(button);
 		}
 		
 		JPanel footer = new JPanel();
@@ -78,13 +66,10 @@ public class CakeStyle extends JFrame implements ActionListener{
 	    enter.setBackground(new Color(191, 192, 192));
 	    enter.addActionListener(this);;
 	    this.add(enter);
-	    footer.add(enter, BorderLayout.EAST);
-	    
-	    main.add(numButtons);	
+	    footer.add(enter, BorderLayout.EAST);	
 		
 		Container base = getContentPane();
 		base.add(header, BorderLayout.BEFORE_FIRST_LINE);
-		base.add(pressed, BorderLayout.NORTH);
 		base.add(main, BorderLayout.CENTER);
 		base.add(footer, BorderLayout.AFTER_LAST_LINE);
 	}
@@ -119,6 +104,7 @@ public class CakeStyle extends JFrame implements ActionListener{
 		if(e.getActionCommand().equals("4")) {
 			System.out.println("Number 4 Button Selected");
 			typed = typed + "4";
+			refresh();
 		}
 		if(e.getActionCommand().equals("5")) {
 			System.out.println("Number 5 Button Selected");
@@ -148,7 +134,7 @@ public class CakeStyle extends JFrame implements ActionListener{
 		
 		if(typed.equals(password)) {
 			accepted = true;
-		}
+		} 
 		if(e.getSource() == enter && accepted == true) {
 			System.out.println("Password Entered and Accepted");
 			
@@ -162,13 +148,13 @@ public class CakeStyle extends JFrame implements ActionListener{
 			setVisible(false);
 			
 		} else if(e.getSource() == enter && accepted == false){
+			enter.setBackground(Color.RED);
 			System.out.println("Incorrect Password");
-			typed = "";
+			typed = "";			
 		}
 	}
 	
 	public void refresh() {
-		update.setText(typed);
+		title.setText("Enter Passcode: " + typed);
 	}
-
 }
