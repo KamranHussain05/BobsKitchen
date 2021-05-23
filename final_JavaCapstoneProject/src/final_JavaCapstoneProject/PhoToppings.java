@@ -9,6 +9,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.BorderFactory;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -21,8 +22,10 @@ public class PhoToppings extends JFrame implements ActionListener {
 	private static String top1;
 	private static String top2;
 	private static String top3;
+	
 	private JButton next;
 	private JButton back;
+	
 	private JButton greenOnion;
 	private JButton basil;
 	private JButton scallions;
@@ -54,7 +57,86 @@ public class PhoToppings extends JFrame implements ActionListener {
 	    title.setBackground(new Color(79, 93, 117));
 	    header.add(title);
 	    
+	    ImageIcon greenOnionImage = new ImageIcon("Resources/greenonion.png");
+	    greenOnion = new JButton();
+	    greenOnion.setBackground(Color.WHITE);
+	    greenOnion.setEnabled(true);
+	    greenOnion.setIcon(greenOnionImage);
+	    greenOnion.addActionListener(this);
+	    this.add(greenOnion);
+	    main.add(greenOnion);
 	    
+	    ImageIcon basilImage = new ImageIcon("Resources/basil.png");
+	    basil = new JButton();
+	    basil.setBackground(Color.WHITE);
+	    basil.setEnabled(true);
+	    basil.setIcon(basilImage);
+	    basil.addActionListener(this);
+	    this.add(basil);
+	    main.add(basil);
+	    
+	    ImageIcon scallionsImage = new ImageIcon("Resources/scallions.png");
+	    scallions = new JButton();
+	    scallions.setBackground(Color.WHITE);
+	    scallions.setEnabled(true);
+	    scallions.setIcon(scallionsImage);
+	    scallions.addActionListener(this);
+	    this.add(scallions);
+	    main.add(scallions);
+	    
+	    ImageIcon cilantroImage = new ImageIcon("Resources/cilantro.png");
+	    cilantro = new JButton();
+	    cilantro.setBackground(Color.WHITE);
+	    cilantro.setEnabled(true);
+	    cilantro.setIcon(scallionsImage);
+	    cilantro.addActionListener(this);
+	    this.add(cilantro);
+	    main.add(cilantro);
+	    
+	    ImageIcon friedOnionsImage = new ImageIcon("Resources/friedonions.png");
+	    friedOnions = new JButton();
+	    friedOnions.setBackground(Color.WHITE);
+	    friedOnions.setEnabled(true);
+	    friedOnions.setIcon(friedOnionsImage);
+	    friedOnions.addActionListener(this);
+	    this.add(friedOnions);
+	    main.add(friedOnions);
+	    
+	    ImageIcon beanSproutsImage = new ImageIcon("Resources/beansprouts.png");
+	    beanSprouts = new JButton();
+	    beanSprouts.setBackground(Color.WHITE);
+	    beanSprouts.setEnabled(true);
+	    beanSprouts.setIcon(beanSproutsImage);
+	    beanSprouts.addActionListener(this);
+	    this.add(beanSprouts);
+	    main.add(beanSprouts);
+	    
+	    ImageIcon chiliOilImage = new ImageIcon("Resources/chilioil.png");
+	    chiliOil = new JButton();
+	    chiliOil.setBackground(Color.WHITE);
+	    chiliOil.setEnabled(true);
+	    chiliOil.setIcon(chiliOilImage);
+	    chiliOil.addActionListener(this);
+	    this.add(chiliOil);
+	    main.add(chiliOil);
+	    
+	    ImageIcon srirachaImage = new ImageIcon("Resources/sriracha.png");
+	    sriracha = new JButton();
+	    sriracha.setBackground(Color.WHITE);
+	    sriracha.setEnabled(true);
+	    sriracha.setIcon(srirachaImage);
+	    sriracha.addActionListener(this);
+	    this.add(sriracha);
+	    main.add(sriracha);
+	    
+	    ImageIcon hoisonImage = new ImageIcon("Resources/hoisonsauce.png");
+	    hoison = new JButton();
+	    hoison.setBackground(Color.WHITE);
+	    hoison.setEnabled(true);
+	    hoison.setIcon(hoisonImage);
+	    hoison.addActionListener(this);
+	    this.add(hoison);
+	    main.add(hoison);
 	    
 	    JPanel footer = new JPanel();
 	    back = new JButton();
@@ -81,8 +163,28 @@ public class PhoToppings extends JFrame implements ActionListener {
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		// TODO Auto-generated method stub
+		if(e.getSource() == back) {
+			System.out.println("back selected");
+			PhoMeat back = new PhoMeat();
+			back.setBounds(50,50,1440,900);
+			back.setBackground(new Color(211,211,211));;
+			back.setVisible(true);
+			back.setIconImage(Main.getIcon());
+			
+			setVisible(false);
+			dispose();
+		}
+		if(e.getSource() == next) {
+			System.out.println("next selected");
+			Home next = new Home();
+			next.setBounds(50,50,1440,900);
+			next.setBackground(new Color(211,211,211));;
+			next.setVisible(true);
+			next.setIconImage(Main.getIcon());
+			
+			setVisible(false);
+			dispose();
+		}
 		
 	}
-
 }

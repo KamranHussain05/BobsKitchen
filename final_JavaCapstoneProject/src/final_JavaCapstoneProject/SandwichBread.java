@@ -139,7 +139,7 @@ public class SandwichBread extends CardLayoutDemo {
 		}
 		if(e.getSource() == baguette) {
 			System.out.println("Sweet Bread Selected");
-			breadType = "Sweet Bread";
+			breadType = "Baguette";
 			baguette.setBackground(new Color(211,211,211));
 			whiteBread.setEnabled(false);
 			garlicBread.setEnabled(false);

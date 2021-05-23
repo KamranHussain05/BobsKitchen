@@ -105,7 +105,7 @@ public class PhoStock extends JFrame implements ActionListener{
 			System.out.println("Back button pressed");
 			
 			PhoStyle window = new PhoStyle();
-			window.setBounds(500, 500, 300,200);
+			window.setBounds(50, 50, 1440,900);
 			window.setBackground(new Color(211,211,211));
 	    	window.setVisible(true);
 	    	window.setIconImage(Main.getIcon());

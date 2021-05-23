@@ -181,7 +181,7 @@ public class PhoMeat extends JFrame implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		if(e.getSource() == back) {
 			System.out.println("back selected");
-			PhoBroth back = new PhoBroth();
+			PhoStock back = new PhoStock();
 			back.setBounds(50,50,1440,900);
 			back.setBackground(new Color(211,211,211));;
 			back.setVisible(true);
@@ -192,7 +192,7 @@ public class PhoMeat extends JFrame implements ActionListener {
 		}
 		if(e.getSource() == next) {
 			System.out.println("next selected");
-			SandwichMeat next = new SandwichMeat();
+			PhoToppings next = new PhoToppings();
 			next.setBounds(50,50,1440,900);
 			next.setBackground(new Color(211,211,211));;
 			next.setVisible(true);
