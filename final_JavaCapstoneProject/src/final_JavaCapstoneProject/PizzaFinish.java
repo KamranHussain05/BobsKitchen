@@ -48,7 +48,7 @@ public class PizzaFinish extends JFrame implements ActionListener {
 	    	ImageIcon newIcon = new ImageIcon("Resources/newYork.png");
 	    	imgLabel.setIcon(newIcon);
 	    }
-	    if(PizzaStyle.getPizzaType() == "neopolitan") {
+	    if(PizzaStyle.getPizzaType() == "Neapolitan") {
 	    	ImageIcon neoIcon = new ImageIcon("Resources/neopolitan.png");
 	    	imgLabel.setIcon(neoIcon);
 	    }
@@ -123,10 +123,10 @@ public class PizzaFinish extends JFrame implements ActionListener {
 		base.add(main, BorderLayout.CENTER);
 		base.add(footer, BorderLayout.AFTER_LAST_LINE);
 	}
+	
 	public static Container getBody() {
 		return main;
 	}
-
 
 	@Override
 	public void actionPerformed(ActionEvent e) {

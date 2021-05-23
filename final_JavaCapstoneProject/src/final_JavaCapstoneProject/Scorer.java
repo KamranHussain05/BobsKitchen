@@ -100,7 +100,7 @@ public class Scorer {
 		methodCalled = "sandwich";
 	}
 	//
-	//Neopolitan Score is composed of tomatosauce, thickcurst, no meats, and basil
+	//Neapolitan Score is composed of tomato sauce, thick crust, no meats, and basil
 	public static void neopolitanScore (String crust, String sauce, String cheese, String veg1, String veg2, String meat) { 
 		score=0;
 		if (sauce == "tomatosauce" ) {

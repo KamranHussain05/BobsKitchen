@@ -72,7 +72,7 @@ import javax.swing.JTextPane;
 		saucePanel.add(sauce, BorderLayout.BEFORE_LINE_BEGINS);
 		 
 		sauceButton = new JButton();
-		ImageIcon sauceImage = new ImageIcon("Resources/none.png");
+		ImageIcon sauceImage = new ImageIcon("Resources/noimage.png");
 		sauceButton.setBackground(Color.WHITE);
 		sauceButton.setIcon(sauceImage);
 		saucePanel.add(sauceButton, BorderLayout.CENTER);
@@ -97,7 +97,7 @@ import javax.swing.JTextPane;
 		cheesePanel.add(cheese, BorderLayout.NORTH);
 		 
 		cheeseButton = new JButton();
-		ImageIcon cheeseImage = new ImageIcon("Resources/none.png");
+		ImageIcon cheeseImage = new ImageIcon("Resources/noimage.png");
 		cheeseButton.setIcon(cheeseImage);
 		cheeseButton.setBackground(Color.WHITE);
 		cheesePanel.add(cheeseButton, BorderLayout.CENTER);
