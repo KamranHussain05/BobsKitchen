@@ -49,7 +49,7 @@ public class PhoToppings extends JFrame implements ActionListener {
 		JPanel header = new JPanel();
 	    header.setBackground(new Color(79, 93, 117));
 	    JTextPane title = new JTextPane();
-	    title.setText("Select Type of Bread");
+	    title.setText("Pho Condiments");
 	    title.setEditable(false);
 	    title.setAlignmentX(CENTER_ALIGNMENT);
 	    title.setFont(new Font("Montserrat", Font.PLAIN, 40));
@@ -129,7 +129,7 @@ public class PhoToppings extends JFrame implements ActionListener {
 	    this.add(sriracha);
 	    main.add(sriracha);
 	    
-	    ImageIcon hoisonImage = new ImageIcon("Resources/hoisonsauce.png");
+	    ImageIcon hoisonImage = new ImageIcon("Resources/hoisinsauce.png");
 	    hoison = new JButton();
 	    hoison.setBackground(Color.WHITE);
 	    hoison.setEnabled(true);
