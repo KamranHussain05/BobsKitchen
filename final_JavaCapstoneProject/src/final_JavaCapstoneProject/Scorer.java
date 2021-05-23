@@ -1,3 +1,6 @@
+//Name: William Le
+//Date:5/22/2021
+//Revision:08
 package final_JavaCapstoneProject;
 
 public class Scorer {
@@ -143,6 +146,8 @@ public class Scorer {
 		System.out.println(score);
 		methodCalled = "pizza";
 	  }
+	//Pho is made of broth noodle usually a meat but not required and toppings
+	//
 	 public static void beefPho(String broth1, String noodle, String beef1, String beef2, String chicken1, String chicken2, String toppings1, String toppings2, String toppings3, String toppings4, String toppings5, String toppings6, String toppings7, String toppings8, String toppings9) {
 		 score = 0;
 		 if (broth1 == "beef bones") {
@@ -157,7 +162,7 @@ public class Scorer {
 		 if (beef1 == "tendon" && beef2 == "fatty brisket" && chicken1 == "none" && chicken2 == "none") {
 			 score++;
 		 }
-		 if (toppings1 == "green onions" || toppings2 == "basil" || toppings3 == "scallions" || toppings4 == "cilantro" || toppings5 == "fried onions" || toppings6 == "bean sprouts" || toppings7 == "hot chili oil" || toppings8 == "siracha" || toppings8 == "hoison sauce") {
+		 if (toppings1 == "green onions" || toppings2 == "basil" || toppings3 == "scallions" || toppings4 == "cilantro" || toppings5 == "fried onions" || toppings6 == "bean sprouts" || toppings7 == "hot chili oil" || toppings8 == "siracha" || toppings9 == "hoison sauce") {
 			 score++;
 		 }
 		 System.out.println(score);
