@@ -162,9 +162,12 @@ public class Scorer {
 		 if (beef1 == "tendon" && beef2 == "fatty brisket" && chicken1 == "none" && chicken2 == "none") {
 			 score++;
 		 }
-		 if (toppings1 == "green onions" || toppings2 == "basil" || toppings3 == "scallions" || toppings4 == "cilantro" || toppings5 == "fried onions" || toppings6 == "bean sprouts" || toppings7 == "hot chili oil" || toppings8 == "siracha" || toppings9 == "hoison sauce") {
+		 if (toppings1.isEmpty() || toppings2.isEmpty() || toppings3.isEmpty() || toppings4.isEmpty() || toppings5.isEmpty() || toppings6.isEmpty() || toppings7.isEmpty() || toppings8.isEmpty() || toppings9.isEmpty()) {
+			
+		 } else {
 			 score++;
 		 }
+		 
 		 System.out.println(score);
 		 methodCalled = "pho";
 	 }
@@ -182,7 +185,9 @@ public class Scorer {
 		 if (beef1 == "none" && beef2 == "none" && chicken1 == "chicken skin" && chicken2 == "chicken breast") {
 			 score++;
 		 }
-		 if (toppings1 == "green onions" || toppings2 == "basil" || toppings3 == "scallions" || toppings4 == "cilantro" || toppings5 == "fried onions" || toppings6 == "bean sprouts" || toppings7 == "hot chili oil" || toppings8 == "siracha" || toppings8 == "hoison sauce") {
+		 if (toppings1.isEmpty() || toppings2.isEmpty() || toppings3.isEmpty() || toppings4.isEmpty() || toppings5.isEmpty() || toppings6.isEmpty() || toppings7.isEmpty() || toppings8.isEmpty() || toppings9.isEmpty()) {
+				
+		 } else {
 			 score++;
 		 }
 		 System.out.println(score);
@@ -202,8 +207,10 @@ public class Scorer {
 		 if (beef1 == "none" && beef2 == "none" && chicken1 == "none" && chicken2 == "none") {
 			 score++;
 		 }
-		 if (toppings1 == "green onions" || toppings2 == "basil" || toppings3 == "scallions" || toppings4 == "cilantro" || toppings5 == "fried onions" || toppings6 == "bean sprouts" || toppings7 == "hot chili oil" || toppings8 == "siracha" || toppings8 == "hoison sauce") {
-			 score=score+2;
+		 if (toppings1.isEmpty() || toppings2.isEmpty() || toppings3.isEmpty() || toppings4.isEmpty() || toppings5.isEmpty() || toppings6.isEmpty() || toppings7.isEmpty() || toppings8.isEmpty() || toppings9.isEmpty()) {
+				
+		 } else {
+			 score++;
 		 }
 		 System.out.println(score);
 		 methodCalled = "pho";

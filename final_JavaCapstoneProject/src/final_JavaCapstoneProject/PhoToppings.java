@@ -21,15 +21,15 @@ import javax.swing.JTextPane;
 public class PhoToppings extends JFrame implements ActionListener {
 
 	private static JPanel main;
-	private static String top1;
-	private static String top2;
-	private static String top3;
-	private static String top4;
-	private static String top5;
-	private static String top6;
-	private static String top7;
-	private static String top8;
-	private static String top9;
+	private static String top1 = "none";
+	private static String top2 = "none";
+	private static String top3 = "none";
+	private static String top4 = "none";
+	private static String top5 = "none";
+	private static String top6 = "none";
+	private static String top7 = "none";
+	private static String top8 = "none";
+	private static String top9 = "none";
 	
 	private JButton next;
 	private JButton back;
