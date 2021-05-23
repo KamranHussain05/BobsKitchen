@@ -2,7 +2,8 @@ package final_JavaCapstoneProject;
 
 public class Scorer {
 	
-	private static int score = 0; 
+	private static int score = 0;
+	private static String methodCalled;
 	//calculates score for Grilled Cheese out of 5 points, for white bread and cheese
 	public static void grilledCheeseScore (String bread, String cheese, String sauce, String veg1,String veg2, String veg3, String meat) {
 		score=0;
@@ -32,7 +33,7 @@ public class Scorer {
 			System.out.println("1 point for no meat");
 		}
 		System.out.println(score + "/5");
-		
+		methodCalled = "sandwich";
 	}
 	//Banh Mi is a vietnamese style of sandwich consisting of pickled vegetables bread some sort of meat, and sauce
 	// This is a beef style of banh mi
@@ -59,6 +60,7 @@ public class Scorer {
 			//System.out.println("pork selected plus two point");
 		}
 		System.out.println(score);
+		methodCalled = "sandwich";
 	}
 	//        
 	// blt stands for Bacon Lettuce Tomato and these are the main components of the sandwich with some slight variants
@@ -95,6 +97,7 @@ public class Scorer {
 			score++;
 		}
 		System.out.println(score);
+		methodCalled = "sandwich";
 	}
 	//
 	//Neopolitan Score is composed of tomatosauce, thickcurst, no meats, and basil
@@ -118,8 +121,8 @@ public class Scorer {
 		else if (veg2 == "basil" && veg1 == "none" ) {
 			score++;
 		}
-		
-		
+		System.out.println(score);
+		methodCalled = "pizza";
 	}
 	//
 	// New York style pizza composing of cheddar, tomatosauce, thincrust
@@ -137,8 +140,11 @@ public class Scorer {
 			score=score+3; 
 			System.out.println("thin crust selected plus 3 points");
 		} 
+		System.out.println(score);
+		methodCalled = "pizza";
 	  }
 	 public static void beefPho(String broth1, String noodle, String beef1, String beef2, String chicken1, String chicken2, String toppings1, String toppings2, String toppings3, String toppings4, String toppings5, String toppings6, String toppings7, String toppings8, String toppings9) {
+		 score = 0;
 		 if (broth1 == "beef bones") {
 			 score=score+2;
 		 }
@@ -154,45 +160,56 @@ public class Scorer {
 		 if (toppings1 == "green onions" || toppings2 == "basil" || toppings3 == "scallions" || toppings4 == "cilantro" || toppings5 == "fried onions" || toppings6 == "bean sprouts" || toppings7 == "hot chili oil" || toppings8 == "siracha" || toppings8 == "hoison sauce") {
 			 score++;
 		 }
+		 System.out.println(score);
+		 methodCalled = "pho";
 	 }
-public static void chickenPho(String broth1, String noodle, String beef1, String beef2, String chicken1, String chicken2, String toppings1, String toppings2, String toppings3, String toppings4, String toppings5, String toppings6, String toppings7, String toppings8, String toppings9) {
-	 if (broth1 == "chicken stock") {
-		 score=score+2;
-	 }
-	 if (noodle == "glass noodles") {
-		 score++;
-	 }
-	 if (beef1 == "none" && beef2 == "none" && chicken1 == "chicken breast" && chicken2 == "chicken skin") {
-		 score++;
-	 }
-	 if (beef1 == "none" && beef2 == "none" && chicken1 == "chicken skin" && chicken2 == "chicken breast") {
-		 score++;
-	 }
-	 if (toppings1 == "green onions" || toppings2 == "basil" || toppings3 == "scallions" || toppings4 == "cilantro" || toppings5 == "fried onions" || toppings6 == "bean sprouts" || toppings7 == "hot chili oil" || toppings8 == "siracha" || toppings8 == "hoison sauce") {
-		 score++;
-	 }
-}
-public static void veggiePho(String broth1, String noodle, String beef1, String beef2, String chicken1, String chicken2, String toppings1, String toppings2, String toppings3, String toppings4, String toppings5, String toppings6, String toppings7, String toppings8, String toppings9) {
-	 if (broth1 == "veggie stock") {
-		 score=score+2;
-	 }
-	 if (noodle == "vermicelli") {
-		 score++;
-	 }
-	 if (beef1 == "none" && beef2 == "none" && chicken1 == "none" && chicken2 == "none") {
-		 score++;
-	 }
-	 if (beef1 == "none" && beef2 == "none" && chicken1 == "none" && chicken2 == "none") {
-		 score++;
-	 }
-	 if (toppings1 == "green onions" || toppings2 == "basil" || toppings3 == "scallions" || toppings4 == "cilantro" || toppings5 == "fried onions" || toppings6 == "bean sprouts" || toppings7 == "hot chili oil" || toppings8 == "siracha" || toppings8 == "hoison sauce") {
-		 score=score+2;
-	 }
-}
+	public static void chickenPho(String broth1, String noodle, String beef1, String beef2, String chicken1, String chicken2, String toppings1, String toppings2, String toppings3, String toppings4, String toppings5, String toppings6, String toppings7, String toppings8, String toppings9) {
+		score = 0; 
+		if (broth1 == "chicken stock") {
+			 score=score+2;
+		 }
+		 if (noodle == "glass noodles") {
+			 score++;
+		 }
+		 if (beef1 == "none" && beef2 == "none" && chicken1 == "chicken breast" && chicken2 == "chicken skin") {
+			 score++;
+		 }
+		 if (beef1 == "none" && beef2 == "none" && chicken1 == "chicken skin" && chicken2 == "chicken breast") {
+			 score++;
+		 }
+		 if (toppings1 == "green onions" || toppings2 == "basil" || toppings3 == "scallions" || toppings4 == "cilantro" || toppings5 == "fried onions" || toppings6 == "bean sprouts" || toppings7 == "hot chili oil" || toppings8 == "siracha" || toppings8 == "hoison sauce") {
+			 score++;
+		 }
+		 System.out.println(score);
+		 methodCalled = "pho";
+	}
+	public static void veggiePho(String broth1, String noodle, String beef1, String beef2, String chicken1, String chicken2, String toppings1, String toppings2, String toppings3, String toppings4, String toppings5, String toppings6, String toppings7, String toppings8, String toppings9) {
+		score = 0; 
+		if (broth1 == "veggie stock") {
+			 score=score+2;
+		 }
+		 if (noodle == "vermicelli") {
+			 score++;
+		 }
+		 if (beef1 == "none" && beef2 == "none" && chicken1 == "none" && chicken2 == "none") {
+			 score++;
+		 }
+		 if (beef1 == "none" && beef2 == "none" && chicken1 == "none" && chicken2 == "none") {
+			 score++;
+		 }
+		 if (toppings1 == "green onions" || toppings2 == "basil" || toppings3 == "scallions" || toppings4 == "cilantro" || toppings5 == "fried onions" || toppings6 == "bean sprouts" || toppings7 == "hot chili oil" || toppings8 == "siracha" || toppings8 == "hoison sauce") {
+			 score=score+2;
+		 }
+		 System.out.println(score);
+		 methodCalled = "pho";
+	}
+	
 	public static int getScore() {
 		int answer = score;
 		return answer;
 	}
 	
-	
+	public static String getLevel() {
+		return methodCalled;
+	}
 }

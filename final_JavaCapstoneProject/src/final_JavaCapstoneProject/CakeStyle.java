@@ -148,7 +148,9 @@ public class CakeStyle extends JFrame implements ActionListener{
 			setVisible(false);
 			
 		} else if(e.getSource() == enter && accepted == false){
-			enter.setBackground(Color.RED);
+			while(accepted == false) {
+				enter.setBackground(Color.RED);
+			}
 			System.out.println("Incorrect Password");
 			typed = "";			
 		}

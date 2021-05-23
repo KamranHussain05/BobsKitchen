@@ -11,6 +11,7 @@ import java.awt.event.ActionListener;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextPane;
 
@@ -53,6 +54,18 @@ public class ScoreWindow extends JFrame implements ActionListener{
 	    }
 	    
 	    JPanel footer = new JPanel();
+	    JLabel passcode = new JLabel();
+	    if(Scorer.getLevel() == "sandwich"); {
+	    	passcode.setText("Part of Vault Code: 213");
+	    }
+	    if(Scorer.getLevel() == "pizza") {
+	    	passcode.setText("Part of Vault Code: 426");
+	    }
+	    if(Scorer.getLevel() == "pho") {
+	    	passcode.setText("part of Vault Code: 960");
+	    }
+	    footer.add(passcode);
+	    
 	    home = new JButton();
 	    home.setText("Home");
 	    home.setEnabled(true);
