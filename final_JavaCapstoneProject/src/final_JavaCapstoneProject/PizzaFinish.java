@@ -142,7 +142,7 @@ public class PizzaFinish extends JFrame implements ActionListener {
 				submit.setEnabled(false);	
 			}
 			
-			if(PizzaStyle.getPizzaType() == "New York") {
+			if(PizzaStyle.getPizzaType() == "new york") {
 				Scorer.newYorkScore(PizzaDough.getDough(), 
 						PizzaDough.getSauce(), PizzaDough.getCheese(),
 						PizzaToppings.getVeg1(), PizzaToppings.getVeg2(), 

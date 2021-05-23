@@ -21,7 +21,7 @@ public class ScoreWindow extends JFrame implements ActionListener{
 	private JPanel main;
 	
 	public ScoreWindow() {
-		super("How Good is Your Sandwich?");
+		super("How Good is Your Dish?");
 		
 		main = new JPanel();
 		GridLayout layout = new GridLayout(1,5);
@@ -32,7 +32,7 @@ public class ScoreWindow extends JFrame implements ActionListener{
 		JPanel header = new JPanel();
 	    header.setBackground(new Color(79, 93, 117));
 	    JTextPane title = new JTextPane();
-	    title.setText("Your Sandwich Gets: " + Scorer.getScore() + "/5");
+	    title.setText("Your Dish Gets: " + Scorer.getScore() + "/5");
 	    title.setEditable(false);
 	    title.setAlignmentX(CENTER_ALIGNMENT);
 	    title.setFont(new Font("Montserrat", Font.PLAIN, 40));

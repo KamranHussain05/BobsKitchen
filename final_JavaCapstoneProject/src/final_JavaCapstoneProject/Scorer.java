@@ -16,6 +16,7 @@ public class Scorer {
 			score++;
 			System.out.println("1 point for cheese");
 		}
+		//if no sauce is selected they get a point
 		if (sauce == "none") {
 			score++;
 			System.out.println("1 point for no cheese");
@@ -39,35 +40,35 @@ public class Scorer {
 		score=0;
 		if (bread == "Baguette") {
 			score=score+2;
+			//System.out.println("baguette selected plus two points");
 		}
-		if (sauce == "Mayonaise") {
+		if (veg1 == "cucumber") {
 			score++;
+			//System.out.println("cucumber selected plus one point");
 		}
-		if (veg1 == "Cucumber" && veg2 == "none" && veg3 == "none") {
+		else if (veg2 == "cucumber") {
 			score++;
+			//System.out.println("cucumber selected plus one point");
 		}
-		else if (veg2 == "Cucumber" && veg1 == "none" && veg3 == "none") {
+		else if (veg3 == "cucumber") {
 			score++;
+			//System.out.println("cucumber selected plus one point");
 		}
-		else if (veg3 == "Cucumber" && veg2 == "none" && veg1 == "none") {
-			score++;
-		
-		}
-		
-		if (meat == "pork" && veg2 == "none" && veg3 == "none") {
-			score++;
+		if (meat == "pork") {
+			score=score+2;
+			//System.out.println("pork selected plus two point");
 		}
 		System.out.println(score);
 	}
 	//        
-	// 
+	// blt stands for Bacon Lettuce Tomato and these are the main components of the sandwich with some slight variants
 	public static void bltScore (String bread, String cheese, String sauce, String veg1, String veg2, String veg3, String meat) {
 		score=0;
-		if (bread == "Garlic Bread") {
+		if (bread == "white Bread") {
 			score=score+2;
 		}
-		if (sauce == "Honey Mustard") {
-			score=score+2;
+		if (sauce == "none") {
+			score=score++;
 		}
 		if (veg1 == "Lettuce" && veg2 == "tomato" && veg3 == "none") {
 			score=score+2;
@@ -90,16 +91,19 @@ public class Scorer {
 		if (meat == "bacon") {
 			score=score+2;
 		}
+		if (cheese == "american") {
+			score++;
+		}
 		System.out.println(score);
 	}
 	//
-	//
+	//Neopolitan Score is composed of tomatosauce, thickcurst, no meats, and basil
 	public static void neopolitanScore (String crust, String sauce, String cheese, String veg1, String veg2, String meat) { 
 		score=0;
 		if (sauce == "tomatosauce" ) {
 			score++; 
 		} 
-		if (crust == "thickcrust") { 
+		if (crust == "thincrust") { 
 			score++; 
 		} 
 		if (meat == "none") { 
@@ -108,31 +112,34 @@ public class Scorer {
 		if (cheese == "mozzarella") {
 			score++;
 		}
-		if (veg1 == "basil" && veg2 == "None") {
+		if (veg1 == "basil" && veg2 == "none") {
 			score++;
 		}
-		else if (veg2 == "basil" && veg1 == "None" ) {
+		else if (veg2 == "basil" && veg1 == "none" ) {
 			score++;
 		}
 		
 		
 	}
 	//
-	//
+	// New York style pizza composing of cheddar, tomatosauce, thincrust
 	public static void newYorkScore (String crust, String sauce, String cheese, String veg1, String veg2, String meat) {
 		score=0;
 		if (cheese == "cheddar") { 
 			score++; 
+			System.out.println("cheddar selected plus one point");
 		} 
 		if (sauce == "tomatosauce") { 
 			score++; 
+			System.out.println("tomato sauce selected plus one point");
 		}
 		if (crust == "thincrust") {
-			score+=3; 
+			score=score+3; 
+			System.out.println("thin crust selected plus 3 points");
 		} 
 	  }
-	 public static void beefPho(String broth1, String broth2, String broth3, String broth4, String noodle, String beef1, String beef2, String chicken1, String chicken2, String toppings1, String toppings2, String toppings3, String toppings4, String toppings5, String toppings6, String toppings7, String toppings8, String toppings9) {
-		 if (broth1 == "beef bones" && broth2 == "aromatics" && broth3 == "fish sauce" && broth4 == "grilled onions") {
+	 public static void beefPho(String broth1, String noodle, String beef1, String beef2, String chicken1, String chicken2, String toppings1, String toppings2, String toppings3, String toppings4, String toppings5, String toppings6, String toppings7, String toppings8, String toppings9) {
+		 if (broth1 == "beef bones") {
 			 score=score+2;
 		 }
 		 if (noodle == "vermicelli") {
@@ -148,8 +155,8 @@ public class Scorer {
 			 score++;
 		 }
 	 }
-public static void chickenPho(String broth1, String broth2, String broth3, String broth4, String noodle, String beef1, String beef2, String chicken1, String chicken2, String toppings1, String toppings2, String toppings3, String toppings4, String toppings5, String toppings6, String toppings7, String toppings8, String toppings9) {
-	 if (broth1 == "chicken stock" && broth2 == "aromatics" && broth3 == "fish sauce" && broth4 == "grilled onions") {
+public static void chickenPho(String broth1, String noodle, String beef1, String beef2, String chicken1, String chicken2, String toppings1, String toppings2, String toppings3, String toppings4, String toppings5, String toppings6, String toppings7, String toppings8, String toppings9) {
+	 if (broth1 == "chicken stock") {
 		 score=score+2;
 	 }
 	 if (noodle == "glass noodles") {
@@ -165,8 +172,8 @@ public static void chickenPho(String broth1, String broth2, String broth3, Strin
 		 score++;
 	 }
 }
-public static void veggiePho(String broth1, String broth2, String broth3, String broth4, String noodle, String beef1, String beef2, String chicken1, String chicken2, String toppings1, String toppings2, String toppings3, String toppings4, String toppings5, String toppings6, String toppings7, String toppings8, String toppings9) {
-	 if (broth1 == "veggie stock" && broth2 == "aromatics" && broth3 == "fish sauce" && broth4 == "grilled onions") {
+public static void veggiePho(String broth1, String noodle, String beef1, String beef2, String chicken1, String chicken2, String toppings1, String toppings2, String toppings3, String toppings4, String toppings5, String toppings6, String toppings7, String toppings8, String toppings9) {
+	 if (broth1 == "veggie stock") {
 		 score=score+2;
 	 }
 	 if (noodle == "vermicelli") {

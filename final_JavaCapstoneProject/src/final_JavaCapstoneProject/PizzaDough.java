@@ -228,7 +228,7 @@ public class PizzaDough extends JFrame implements ActionListener {
 		}
 		if(cheeseOptions.getSelectedItem() == cheddar) {
 			System.out.println("Cheddar Cheese Selected");
-			cheddar = "cheddar";
+			cheese = "cheddar";
 			ImageIcon cheeseIcon = new ImageIcon("Resources/chedder.png");
 			cheeseImage.setIcon(cheeseIcon);
 		}
