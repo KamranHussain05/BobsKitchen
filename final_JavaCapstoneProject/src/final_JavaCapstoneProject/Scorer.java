@@ -69,35 +69,41 @@ public class Scorer {
 	// blt stands for Bacon Lettuce Tomato and these are the main components of the sandwich with some slight variants
 	public static void bltScore (String bread, String cheese, String sauce, String veg1, String veg2, String veg3, String meat) {
 		score=0;
-		if (bread == "white Bread") {
-			score=score+2;
+		if (bread == "White Bread") {
+			score++;
+			System.out.println("white bread selected plus two point");
 		}
-		if (sauce == "none") {
-			score=score++;
-		}
-		if (veg1 == "Lettuce" && veg2 == "tomato" && veg3 == "none") {
+		if (veg1 == "lettuce" && veg2 == "tomato" && veg3 == "none") {
 			score=score+2;
+			System.out.println("veggies selected plus two point");
 		}
 		else if (veg1 == "lettuce" && veg2 == "none" && veg3 == "tomato") {
 			score=score+2;
+			System.out.println("veggies selected plus two point");
 		}
 		else if (veg1 == "none" && veg2 == "tomato" && veg3 == "lettuce") {
 			score=score+2;
+			System.out.println("veggies selected plus two point");
 		}
 		else if (veg1 == "tomato" && veg2 == "lettuce" && veg3 == "none") {
 			score=score+2;
+			System.out.println("veggies selected plus two point");
 		}
 		else if (veg1 == "none" && veg2 == "lettuce" && veg3 == "tomato") {
 			score=score+2;
+			System.out.println("veggies selected plus two point");
 		}
 		else if (veg1 == "tomato" && veg2 == "none" && veg3 == "lettuce") {
 			score=score+2;
+			System.out.println("veggies selected plus two point");
 		}
 		if (meat == "bacon") {
-			score=score+2;
+			score++;
+			System.out.println("meat selected plus two point");
 		}
 		if (cheese == "american") {
 			score++;
+			System.out.println("american cheese selected plus two point");
 		}
 		System.out.println(score);
 		methodCalled = "sandwich";
