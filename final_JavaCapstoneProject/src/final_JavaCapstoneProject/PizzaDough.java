@@ -1,3 +1,8 @@
+//Author: Kamran Hussain
+//Date: 5/23/21
+//rev01
+//Notes: adapted from sandwich veggies
+
 package final_JavaCapstoneProject;
 
 import java.awt.BorderLayout;
@@ -18,21 +23,21 @@ import javax.swing.JTextPane;
 
 @SuppressWarnings("serial")
 public class PizzaDough extends JFrame implements ActionListener {
-
+//return the chosen options in strings
 	private static String dough;
 	private static String sauce;
 	private static String cheese;
-
+//fields include naviation and the displayed images using buttons
 	private JButton back;
 	private JButton next;
 	private JButton doughImage;
 	private JButton sauceImage;
 	private JButton cheeseImage;
-
+//the drop down menu for the options
 	private JComboBox<String> doughOptions;
 	private JComboBox<String> sauceOptions;
 	private JComboBox<String> cheeseOptions;
-
+//the strings to populate the drop down menu options
 	private String select = "";
 	private String thinCrust = "Thin Crust";
 	private String thickCrust = "Thick Crust";
@@ -44,7 +49,7 @@ public class PizzaDough extends JFrame implements ActionListener {
 	private String mozzarella = "Mozzarella";
 	private String cheddar = "Cheddar";
 	private String provolone = "Provolone";
-
+//the static main panel that holds all the content
 	private static JPanel main;
 
 	public PizzaDough() {
@@ -62,7 +67,7 @@ public class PizzaDough extends JFrame implements ActionListener {
 		JPanel header = new JPanel();
 		header.setBackground(new Color(79, 93, 117));
 		JTextPane title = new JTextPane();
-		title.setText("Select What Veggies You Want");
+		title.setText("Select What Base You Want");
 		title.setEditable(false);
 		title.setAlignmentX(CENTER_ALIGNMENT);
 		title.setFont(new Font("Montserrat", Font.PLAIN, 40));
@@ -72,7 +77,7 @@ public class PizzaDough extends JFrame implements ActionListener {
 
 		JPanel left = new JPanel();
 		JTextPane doughLabel = new JTextPane();
-		doughLabel.setText("Dough");
+		doughLabel.setText("Crust");
 		doughLabel.setFont(new Font("Montserrat", Font.PLAIN, 30));
 		doughLabel.setEditable(false);
 		left.add(doughLabel, BorderLayout.BEFORE_FIRST_LINE);
@@ -159,15 +164,15 @@ public class PizzaDough extends JFrame implements ActionListener {
 		base.add(main, BorderLayout.CENTER);
 		base.add(footer, BorderLayout.AFTER_LAST_LINE);
 	}
-	
+	//returns the main panel and all of its content
 	public static Container getBody() {
 		return main;
 	}
 
-
 	@Override
+	//determines what to do when a button or menu option is selected
 	public void actionPerformed(ActionEvent e) {
-		if(e.getSource() == back) {
+		if(e.getSource() == back) { //goes to the previous page
 			System.out.println("back selected");
 			PizzaStyle back = new PizzaStyle();
 			back.setBounds(50,50,1000,900);
@@ -178,7 +183,7 @@ public class PizzaDough extends JFrame implements ActionListener {
 			setVisible(false);
 			dispose();
 		}
-		if(e.getSource() == next) {
+		if(e.getSource() == next) { //goes to the next page
 			System.out.println("next selected");
 			PizzaToppings next = new PizzaToppings();
 			next.setBounds(50,50,1000,900);
@@ -189,8 +194,8 @@ public class PizzaDough extends JFrame implements ActionListener {
 			setVisible(false);
 			dispose();
 		}
-
-		if(doughOptions.getSelectedItem() == thinCrust) {
+//determine what option is selected then stores it in the string for its corresponding ingredient class.
+		if(doughOptions.getSelectedItem() == thinCrust) { 
 			System.out.println("Thin Crust Dough Selected");
 			dough = "thincrust";
 			ImageIcon doughIcon = new ImageIcon("Resources/thincrust.png");
@@ -240,7 +245,7 @@ public class PizzaDough extends JFrame implements ActionListener {
 		}
 
 	}
-
+//return the stored user choice to the class that needs to call them.
 	public static String getDough() {
 		return dough;
 	}

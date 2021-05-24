@@ -19,7 +19,7 @@ import javax.swing.JTextPane;
 
 @SuppressWarnings("serial")
 public class PhoToppings extends JFrame implements ActionListener {
-
+//strings are needed for storing every topping selection. They default to none. Fields
 	private static JPanel main;
 	private static String top1 = "none";
 	private static String top2 = "none";
@@ -30,10 +30,10 @@ public class PhoToppings extends JFrame implements ActionListener {
 	private static String top7 = "none";
 	private static String top8 = "none";
 	private static String top9 = "none";
-	
+	//navigation fields
 	private JButton next;
 	private JButton back;
-	
+	//Buttons for the user choice/input fields
 	private JButton greenOnion;
 	private JButton basil;
 	private JButton scallions;
@@ -43,7 +43,7 @@ public class PhoToppings extends JFrame implements ActionListener {
 	private JButton chiliOil;
 	private JButton sriracha;
 	private JButton hoison;
-	
+	//constructor constructs and adds content to the gui.
 	public PhoToppings() {
 		main = new JPanel();
 		GridLayout mainLayout = new GridLayout(3, 3);
@@ -64,7 +64,7 @@ public class PhoToppings extends JFrame implements ActionListener {
 	    title.setForeground(new Color(255, 255, 255));
 	    title.setBackground(new Color(79, 93, 117));
 	    header.add(title);
-	    
+	    //instantiates the user choice button and actives it with the image corresponding to the button name
 	    ImageIcon greenOnionImage = new ImageIcon("Resources/greenonion.png");
 	    greenOnion = new JButton();
 	    greenOnion.setBackground(Color.WHITE);
@@ -73,7 +73,7 @@ public class PhoToppings extends JFrame implements ActionListener {
 	    greenOnion.addActionListener(this);
 	    this.add(greenOnion);
 	    main.add(greenOnion);
-	    
+	  //instantiates the user choice button and actives it with the image corresponding to the button name
 	    ImageIcon basilImage = new ImageIcon("Resources/basil.png");
 	    basil = new JButton();
 	    basil.setBackground(Color.WHITE);
@@ -82,7 +82,7 @@ public class PhoToppings extends JFrame implements ActionListener {
 	    basil.addActionListener(this);
 	    this.add(basil);
 	    main.add(basil);
-	    
+	  //instantiates the user choice button and actives it with the image corresponding to the button name
 	    ImageIcon scallionsImage = new ImageIcon("Resources/scallions.png");
 	    scallions = new JButton();
 	    scallions.setBackground(Color.WHITE);
@@ -91,7 +91,7 @@ public class PhoToppings extends JFrame implements ActionListener {
 	    scallions.addActionListener(this);
 	    this.add(scallions);
 	    main.add(scallions);
-	    
+	  //instantiates the user choice button and actives it with the image corresponding to the button name
 	    ImageIcon cilantroImage = new ImageIcon("Resources/cilantro.png");
 	    cilantro = new JButton();
 	    cilantro.setBackground(Color.WHITE);
@@ -100,7 +100,7 @@ public class PhoToppings extends JFrame implements ActionListener {
 	    cilantro.addActionListener(this);
 	    this.add(cilantro);
 	    main.add(cilantro);
-	    
+	  //instantiates the user choice button and actives it with the image corresponding to the button name
 	    ImageIcon friedOnionsImage = new ImageIcon("Resources/friedonions.png");
 	    friedOnions = new JButton();
 	    friedOnions.setBackground(Color.WHITE);
@@ -109,7 +109,7 @@ public class PhoToppings extends JFrame implements ActionListener {
 	    friedOnions.addActionListener(this);
 	    this.add(friedOnions);
 	    main.add(friedOnions);
-	    
+	  //instantiates the user choice button and actives it with the image corresponding to the button name
 	    ImageIcon beanSproutsImage = new ImageIcon("Resources/beansprouts.png");
 	    beanSprouts = new JButton();
 	    beanSprouts.setBackground(Color.WHITE);
@@ -118,7 +118,7 @@ public class PhoToppings extends JFrame implements ActionListener {
 	    beanSprouts.addActionListener(this);
 	    this.add(beanSprouts);
 	    main.add(beanSprouts);
-	    
+	  //instantiates the user choice button and actives it with the image corresponding to the button name
 	    ImageIcon chiliOilImage = new ImageIcon("Resources/chilioil.png");
 	    chiliOil = new JButton();
 	    chiliOil.setBackground(Color.WHITE);
@@ -127,7 +127,7 @@ public class PhoToppings extends JFrame implements ActionListener {
 	    chiliOil.addActionListener(this);
 	    this.add(chiliOil);
 	    main.add(chiliOil);
-	    
+	  //instantiates the user choice button and actives it with the image corresponding to the button name
 	    ImageIcon srirachaImage = new ImageIcon("Resources/sriracha.png");
 	    sriracha = new JButton();
 	    sriracha.setBackground(Color.WHITE);
@@ -136,7 +136,7 @@ public class PhoToppings extends JFrame implements ActionListener {
 	    sriracha.addActionListener(this);
 	    this.add(sriracha);
 	    main.add(sriracha);
-	    
+	  //instantiates the user choice button and actives it with the image corresponding to the button name
 	    ImageIcon hoisonImage = new ImageIcon("Resources/hoisinsauce.png");
 	    hoison = new JButton();
 	    hoison.setBackground(Color.WHITE);
@@ -145,7 +145,7 @@ public class PhoToppings extends JFrame implements ActionListener {
 	    hoison.addActionListener(this);
 	    this.add(hoison);
 	    main.add(hoison);
-	    
+	    //footer includes navigation
 	    JPanel footer = new JPanel();
 	    back = new JButton();
 	    back.setText("Back");
@@ -162,20 +162,21 @@ public class PhoToppings extends JFrame implements ActionListener {
 	    this.add(next);
 	    footer.add(back, BorderLayout.EAST);
 	    footer.add(next, BorderLayout.WEST);
-
+//container adds content to the content pane 
 		Container base = getContentPane();
 		base.add(header, BorderLayout.BEFORE_FIRST_LINE);
 		base.add(main, BorderLayout.CENTER);
 		base.add(footer, BorderLayout.AFTER_LAST_LINE);
 	}
-	
+	//returns the main panel with its content for page switching.
 	public static Container getBody() {
 		return main;
 	}
 
 	@Override
+	//identifies what to do when a button is pressed.
 	public void actionPerformed(ActionEvent e) {
-		if(e.getSource() == back) {
+		if(e.getSource() == back) { //goes to the previous page
 			System.out.println("back selected");
 			PhoNoodles back = new PhoNoodles();
 			back.setBounds(50,50,1000,900);
@@ -186,7 +187,7 @@ public class PhoToppings extends JFrame implements ActionListener {
 			setVisible(false);
 			dispose();
 		}
-		if(e.getSource() == next) {
+		if(e.getSource() == next) { //goes to the next page
 			System.out.println("next selected");
 			PhoFinish next = new PhoFinish();
 			next.setBounds(50,50,1000,900);
@@ -197,8 +198,8 @@ public class PhoToppings extends JFrame implements ActionListener {
 			setVisible(false);
 			dispose();
 		}
-		
-		if(e.getSource() == greenOnion) {
+		//identify what button was selected and stores the user selection in a string corresponding to the topping order
+		if(e.getSource() == greenOnion) { 
 			System.out.println("Green Onions Selected");
 			top1= "green onion";
 			greenOnion.setEnabled(false);
@@ -244,7 +245,7 @@ public class PhoToppings extends JFrame implements ActionListener {
 			hoison.setEnabled(false);
 		}
 	}
-	
+	//these methods return the string that stores the user selection to the finish class or the scorer for this level.
 	public static String getTop1() {
 		return top1;
 	}

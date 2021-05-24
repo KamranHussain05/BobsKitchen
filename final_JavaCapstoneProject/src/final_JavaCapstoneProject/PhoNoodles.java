@@ -1,3 +1,8 @@
+//Author: Kamran Hussain
+//Date: 5/23/21
+//Rev01
+//Notes: adapted from Pizza Type
+
 package final_JavaCapstoneProject;
 
 import java.awt.BorderLayout;
@@ -17,14 +22,14 @@ import javax.swing.JTextPane;
 
 @SuppressWarnings("serial")
 public class PhoNoodles extends JFrame implements ActionListener {
-
+//fields include the navigation and images
 	private JButton back;
 	private JButton next;
 	private JButton glassNoodles;
 	private JButton vermicelli;
-	private static JPanel main;
+	private static JPanel main; //static variables are returned to other classes
 	private static String noodles;
-	
+//the constructor constructs the gui and adds all its elements
 	public PhoNoodles() {
 		main = new JPanel();
 		GridLayout mainLayout = new GridLayout(1, 3);
@@ -45,7 +50,7 @@ public class PhoNoodles extends JFrame implements ActionListener {
 	    title.setForeground(new Color(255, 255, 255));
 	    title.setBackground(new Color(79, 93, 117));
 	    header.add(title);
-	    
+	    //the glass noodle button with its overlayed image
 	    ImageIcon glassNoodleImage = new ImageIcon("Resources/glassnoodle.png");
 		glassNoodles = new JButton();
 		glassNoodles.setIcon(glassNoodleImage);
@@ -54,7 +59,7 @@ public class PhoNoodles extends JFrame implements ActionListener {
 		glassNoodles.addActionListener(this);
 		this.add(glassNoodles);
 		main.add(glassNoodles);
-		
+		//the vermicelli noodle button with its overlayed image
 		ImageIcon vermicelliImage = new ImageIcon("Resources/vermicelli.png");
 		vermicelli = new JButton();
 		vermicelli.setIcon(vermicelliImage);
@@ -63,7 +68,7 @@ public class PhoNoodles extends JFrame implements ActionListener {
 		vermicelli.addActionListener(this);;
 		this.add(vermicelli);
 		main.add(vermicelli);
-	    
+	    //the footer panel with navigation
 	    JPanel footer = new JPanel();
 	    back = new JButton();
 	    back.setText("Back");
@@ -80,17 +85,22 @@ public class PhoNoodles extends JFrame implements ActionListener {
 	    this.add(next);
 	    footer.add(back, BorderLayout.EAST);
 	    footer.add(next, BorderLayout.WEST);
-
+//the content is added to the content pane of the window
 		Container base = getContentPane();
 		base.add(header, BorderLayout.BEFORE_FIRST_LINE);
 		base.add(main, BorderLayout.CENTER);
 		base.add(footer, BorderLayout.AFTER_LAST_LINE);
 	}
+	//returns the main panel and its content
+	public static Container getBody() {
+		return main;
+	}
 
 	@Override
+	//tests where the button is pressed and stores data in the export string
 	public void actionPerformed(ActionEvent e) {
 		if(e.getSource() == back) {
-			System.out.println("Back button pressed");
+			System.out.println("Back button pressed"); //opens the previous page
 			
 			PhoMeat window = new PhoMeat();
 			window.setBounds(50, 50, 1000,900);
@@ -102,7 +112,7 @@ public class PhoNoodles extends JFrame implements ActionListener {
 	    	dispose();
 		}
 		if(e.getSource() == next) {
-			System.out.println("Next button pressed");
+			System.out.println("Next button pressed"); //opens the next page
 			PhoToppings nextWindow = new PhoToppings();
 			nextWindow.setBounds(50,50, 1000,900);
 			nextWindow.setBackground(new Color(211,211,211));
@@ -113,19 +123,19 @@ public class PhoNoodles extends JFrame implements ActionListener {
 			dispose();
 		}
 		
-		if(e.getSource() == glassNoodles) {
+		if(e.getSource() == glassNoodles) { //identifies the glass noodle is pressed and stores it in the noodles string to be export to the scorer
 			System.out.println("Glass Noodles Selected");
 			noodles = "glass noodles";
 			vermicelli.setEnabled(false);
 		}
-		if(e.getSource() == vermicelli) {
+		if(e.getSource() == vermicelli) { //identifies the vermicelli noodle is pressed and stores it in the noodles string to be export to the scorer
 			System.out.println("Vermicelli Noodles Selected");
 			noodles = "vermicelli";
 			vermicelli.setEnabled(false);
 		}
 	}
 
-	public static String getNoodles() {
+	public static String getNoodles() { //the static method that sends the noodle type to the scorer at the submit page.
 		return noodles;
 	}
 }
