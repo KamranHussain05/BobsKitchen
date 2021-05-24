@@ -1,3 +1,8 @@
+//Author: Kamran Hussain
+//Date: 5/23/21
+//Rev 01
+//Notes: Adapted from Sandwich Type
+
 package final_JavaCapstoneProject;
 
 import java.awt.BorderLayout;
@@ -18,17 +23,17 @@ import javax.swing.JTextPane;
 
 @SuppressWarnings("serial")
 public class PizzaStyle extends JFrame implements ActionListener { 
-	
+	//fields include string storage, navigation, main panel, and gui buttons
 	private JButton newYork;
 	private JButton neopolitan;
 	private JButton back;
 	private JButton next;
 	private static String pizzaStyle;
 	private static JPanel main;
-
+//Constructor constructs and adds the gui 
 	public PizzaStyle() {
 		super("Bob's Kitchen");
-		
+		//instantiates the main panel
 		main = new JPanel();
 		GridLayout mainLayout = new GridLayout(1, 2);
 		main.setBorder(BorderFactory.createEmptyBorder(10,10,10,10));
@@ -50,6 +55,7 @@ public class PizzaStyle extends JFrame implements ActionListener {
 	    header.add(title);
 	    
 	    //*********************************************************************************
+	    //instantiates, activates, and enables the button with the corresponding image
 	    ImageIcon newYorkImage = new ImageIcon("Resources/newYork.png");
 		newYork = new JButton();
 		newYork.setIcon(newYorkImage);
@@ -59,7 +65,7 @@ public class PizzaStyle extends JFrame implements ActionListener {
 		this.add(newYork);
 		main.add(newYork);
 		
-		//Level 2, make a burger
+		//instantiates, activates, and enables the button with the corresponding image
 		ImageIcon neopolitanImage = new ImageIcon("Resources/neopolitan.png");
 		neopolitan = new JButton();
 		neopolitan.setIcon(neopolitanImage);
@@ -68,7 +74,7 @@ public class PizzaStyle extends JFrame implements ActionListener {
 		neopolitan.addActionListener(this);;
 		this.add(neopolitan);
 		main.add(neopolitan);
-	    
+	    //the footer contains the navigation
 	    JPanel footer = new JPanel();
 	    back = new JButton();
 	    back.setText("Back");
@@ -85,23 +91,21 @@ public class PizzaStyle extends JFrame implements ActionListener {
 	    this.add(next);
 	    footer.add(back, BorderLayout.EAST);
 	    footer.add(next, BorderLayout.WEST);
-
+//adds the content to the content pane 
 		Container base = getContentPane();
 		base.add(header, BorderLayout.BEFORE_FIRST_LINE);
 		base.add(main, BorderLayout.CENTER);
 		base.add(footer, BorderLayout.AFTER_LAST_LINE);
 	}
+	//returns the main panel with its elements
 	public static Container getBody() {
 		return main;
 	}
 
-
-	public static Component getContent() {
-		return main;
-	}
-
 	@Override
+	//determines what to do when a button is pressed
 	public void actionPerformed(ActionEvent e) {
+		//these methods determine what button was pressed then store the user selected choice in a string
 		if(e.getSource()==newYork) {
 			System.out.println("New York Style Selected");
 			neopolitan.setEnabled(false);
@@ -112,7 +116,7 @@ public class PizzaStyle extends JFrame implements ActionListener {
 			newYork.setEnabled(false);
 			pizzaStyle = "Neapolitan";
 		}
-		if(e.getSource() == back) {
+		if(e.getSource() == back) { //goes to the previous page.
 			System.out.println("Back button selected");
 			
 			Home window = new Home();
@@ -124,7 +128,7 @@ public class PizzaStyle extends JFrame implements ActionListener {
 			setVisible(false);
 			dispose();
 		}
-		if(e.getSource() == next) {
+		if(e.getSource() == next) { //goes to the next page.
 			System.out.println("Next button selected");
 			
 			PizzaDough window = new PizzaDough();
@@ -137,7 +141,7 @@ public class PizzaStyle extends JFrame implements ActionListener {
 			dispose();
 		}
 	}
-	
+	//returns the stored user choice in a string.
 	public static String getPizzaType() {
 		return pizzaStyle;
 	}

@@ -1,12 +1,6 @@
-<<<<<<< Updated upstream
 //Author: Kevin Choi
 //Date: 5/22/2021 
 //Revision 08
-=======
-//Author: Kamran Hussain
-//Date: 05/23/21
-//Rev 01
->>>>>>> Stashed changes
 
 package final_JavaCapstoneProject;
 
@@ -27,16 +21,6 @@ import javax.swing.JTextPane;
 
 @SuppressWarnings("serial")
 public class ScoreWindow extends JFrame implements ActionListener{
-<<<<<<< Updated upstream
-	//fields
-	private JButton home;
-	private JButton star1;
-	private JPanel main;
-	//constructor 
-	public ScoreWindow() {
-		super("How Good is Your Dish?");//title text
-		
-=======
 	//Buttons needed for the page.
 	private JButton home;
 	private JButton star1;
@@ -45,19 +29,14 @@ public class ScoreWindow extends JFrame implements ActionListener{
 	public ScoreWindow() {
 		super("How Good is Your Dish?");
 		//The main panel is instantiated. It contains the layout needed for the page
->>>>>>> Stashed changes
 		main = new JPanel();
 		GridLayout layout = new GridLayout(1,5);
 		layout.setHgap(5);
 		main.setLayout(layout);
 		main.setBackground(new Color(211,211,211));
-<<<<<<< Updated upstream
 		
-		JPanel header = new JPanel();//"How Good is Your Dish?" is the header
-=======
+		JPanel header = new JPanel(); //"How Good is Your Dish?" is the header
 		//The header with the score from the Scorer class
-		JPanel header = new JPanel();
->>>>>>> Stashed changes
 	    header.setBackground(new Color(79, 93, 117));
 	    JTextPane title = new JTextPane();
 	    title.setText("Your Dish Gets: " + Scorer.getScore() + "/5");
@@ -69,11 +48,8 @@ public class ScoreWindow extends JFrame implements ActionListener{
 	    header.add(title);
 	    //The Icon for the star buttons
 	    ImageIcon star = new ImageIcon("Resources/star1.png");
-<<<<<<< Updated upstream
 	   //for loop that adds the stars on the screen representing the score.
-=======
 	    //The loop automatically creates the number of stars needed based on the score provided by the Scorer
->>>>>>> Stashed changes
 	    for (int i = 0; i<Scorer.getScore(); i++) {
 	    	star1 = new JButton();
 		    star1.setBackground(Color.WHITE);
@@ -82,11 +58,8 @@ public class ScoreWindow extends JFrame implements ActionListener{
 		    this.add(star1);
 		    main.add(star1);
 	    }
-<<<<<<< Updated upstream
-	    //if loops unlocks the vault code after the game finishes scoring 
-=======
-	    //The footer for the class that includes the passcode enter button
->>>>>>> Stashed changes
+	    
+	    
 	    JPanel footer = new JPanel();
 	    JLabel passcode = new JLabel();
 	    if(Scorer.getLevel() == "sandwich"); {

@@ -1,3 +1,8 @@
+//Author: Kamran Hussain
+//Date: 5/23/21
+//Rev 05
+//
+
 package final_JavaCapstoneProject;
 
 import java.awt.BorderLayout;
