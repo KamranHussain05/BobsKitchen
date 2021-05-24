@@ -1,3 +1,6 @@
+//Author: Kamran Hussain
+//NOTES: CLASS IS RESEARCH, EXCLUDED FROM HIERARCHY
+
 package final_JavaCapstoneProject;
 
 import java.awt.BorderLayout;
