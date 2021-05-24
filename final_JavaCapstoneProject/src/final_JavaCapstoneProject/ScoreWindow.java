@@ -1,3 +1,7 @@
+//Author: Kevin Choi
+//Date: 5/22/2021 
+//Revision 08
+
 package final_JavaCapstoneProject;
 
 import java.awt.BorderLayout;
@@ -17,13 +21,13 @@ import javax.swing.JTextPane;
 
 @SuppressWarnings("serial")
 public class ScoreWindow extends JFrame implements ActionListener{
-	
+	//fields
 	private JButton home;
 	private JButton star1;
 	private JPanel main;
-	
+	//constructor 
 	public ScoreWindow() {
-		super("How Good is Your Dish?");
+		super("How Good is Your Dish?");//title text
 		
 		main = new JPanel();
 		GridLayout layout = new GridLayout(1,5);
@@ -31,7 +35,7 @@ public class ScoreWindow extends JFrame implements ActionListener{
 		main.setLayout(layout);
 		main.setBackground(new Color(211,211,211));
 		
-		JPanel header = new JPanel();
+		JPanel header = new JPanel();//"How Good is Your Dish?" is the header
 	    header.setBackground(new Color(79, 93, 117));
 	    JTextPane title = new JTextPane();
 	    title.setText("Your Dish Gets: " + Scorer.getScore() + "/5");
@@ -43,7 +47,7 @@ public class ScoreWindow extends JFrame implements ActionListener{
 	    header.add(title);
 	    
 	    ImageIcon star = new ImageIcon("Resources/star1.png");
-	   
+	   //for loop that adds the stars on the screen representing the score.
 	    for (int i = 0; i<Scorer.getScore(); i++) {
 	    	star1 = new JButton();
 		    star1.setBackground(Color.WHITE);
@@ -52,7 +56,7 @@ public class ScoreWindow extends JFrame implements ActionListener{
 		    this.add(star1);
 		    main.add(star1);
 	    }
-	    
+	    //if loops unlocks the vault code after the game finishes scoring 
 	    JPanel footer = new JPanel();
 	    JLabel passcode = new JLabel();
 	    if(Scorer.getLevel() == "sandwich"); {
@@ -79,7 +83,7 @@ public class ScoreWindow extends JFrame implements ActionListener{
 		base.add(footer, BorderLayout.AFTER_LAST_LINE);
 		
 	}
-
+	//Method
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		if(e.getSource() == home) {
