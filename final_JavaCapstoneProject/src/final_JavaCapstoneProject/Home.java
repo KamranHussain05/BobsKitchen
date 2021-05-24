@@ -163,7 +163,7 @@ public class Home extends JFrame implements ActionListener {
 		}
 		if(e.getSource() == pho) { //switches to the pho page when the pho button is pressed
 			System.out.println("Level 4, Waygu Ramen, was selected");
-			BobsVault next = new BobsVault();
+			PhoStyle next = new PhoStyle();
 			next.setBounds(50,50, 1000,900);
 			next.setBackground(new Color(211,211,211));
 			next.setVisible(true);
