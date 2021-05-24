@@ -1,3 +1,7 @@
+//Author: Kevin Choi
+//Date: 5/23/21
+//Rev01
+
 package final_JavaCapstoneProject;
 
 import java.awt.BorderLayout;
@@ -22,10 +26,10 @@ public class GameOver extends JFrame implements ActionListener {
 	private JButton endGame;
 	private JButton prize;
 
+	//creates the GUI and adds bobs message and the rickroll to the window.
 	public GameOver() {
 		super("Bob's Kitchen");
 		
-
 		main = new JPanel();
 		GridLayout layout = new GridLayout(1,2);
 		layout.setHgap(5);
@@ -71,6 +75,7 @@ public class GameOver extends JFrame implements ActionListener {
 	}
 
 	@Override
+	//Ends the program when the user clicks the end game button
 	public void actionPerformed(ActionEvent e) {
 		if(e.getSource() == endGame) {
 			System.exit(0);

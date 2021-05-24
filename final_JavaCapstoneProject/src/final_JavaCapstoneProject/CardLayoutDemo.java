@@ -1,3 +1,9 @@
+//Author: Kamran Hussain
+//Date: 5/23/21
+//Rev: 01 - CardLayout is used with the HomeGUI class to call cards(panels)
+//Rev 02 - CardLayout is expanded to multiple classes.
+//NOTE: CARDLAYOUT IS NOT INCLUDED IN HEIRARHCY -- CLASS IS RESEARCH
+
 package final_JavaCapstoneProject;
 
 import java.awt.*;
@@ -7,6 +13,7 @@ import javax.swing.*;
 @SuppressWarnings("serial")
 public class CardLayoutDemo extends JFrame implements ActionListener {
 	
+	//Creates the cards that are switched to refresh the main window
     static JPanel cards; 
     static JPanel card1;
     private JPanel card2;
@@ -20,10 +27,12 @@ public class CardLayoutDemo extends JFrame implements ActionListener {
     static String sandwichBread = "sb";
     JTextPane title;
     
+    //Sets the window title.
     public CardLayoutDemo() {
     	super("Bob's Kitchen");
     }
     
+    //Adds content to the content pane of the window
     public void addComponentToPane(Container pane) {
     	
         //Create the "cards".
@@ -87,6 +96,7 @@ public class CardLayoutDemo extends JFrame implements ActionListener {
         pane.add(footer, BorderLayout.AFTER_LAST_LINE);
     }
     
+    //switches the cards when the proper button is clicked.
     public void actionPerformed(ActionEvent e) {
     	c1 = (CardLayout)(cards.getLayout());
     	String button = e.getActionCommand();
@@ -103,7 +113,7 @@ public class CardLayoutDemo extends JFrame implements ActionListener {
     		System.out.println("Sandwich listener is working");
     	}
     }
-    
+    //the main method for this research to create the window
     public static void main(String[] args) {
     	
     	CardLayoutDemo window = new CardLayoutDemo();
