@@ -19,7 +19,7 @@ import javax.swing.JPanel;
 import javax.swing.JTextPane;
 
 @SuppressWarnings("serial") class SandwichCondiments extends JFrame implements ActionListener {
-	
+//fields are used in navigation and displaying content.
 	private JButton back;
 	private JButton next;
 	private JButton cheeseButton;
@@ -29,7 +29,7 @@ import javax.swing.JTextPane;
 	private JComboBox<String> sauceOptions;
 	private JComboBox<String> cheeseOptions;
 	private static JPanel main;
-	
+	//various options for menus
 	private String empty = "";
 	private String mustard = "Honey Mustard";
 	private String mayo = "Mayonnaise";
@@ -45,7 +45,7 @@ import javax.swing.JTextPane;
 	
 	public SandwichCondiments() {
 		super("Level 1: Sandwich");
-		
+		//main panel is instantiated.
 		main = new JPanel();
 		GridLayout mainLayout = new GridLayout(1, 2);
 		main.setBorder(BorderFactory.createEmptyBorder(10,10,10,10));
@@ -65,20 +65,20 @@ import javax.swing.JTextPane;
 	    title.setForeground(new Color(255, 255, 255));
 	    title.setBackground(new Color(79, 93, 117));
 	    header.add(title);
-	    
+	    //panel that displays the sauce options
 	    JPanel saucePanel = new JPanel();
 		JTextPane sauce = new JTextPane();
 		sauce.setText("Sauce");
 		sauce.setFont(new Font("Montserrat", Font.PLAIN, 30));
 		sauce.setEditable(false);
 		saucePanel.add(sauce, BorderLayout.BEFORE_LINE_BEGINS);
-		 
+		//button is used to display the image of the user chosen option
 		sauceButton = new JButton();
 		ImageIcon sauceImage = new ImageIcon("Resources/noimage.png");
 		sauceButton.setBackground(Color.WHITE);
 		sauceButton.setIcon(sauceImage);
 		saucePanel.add(sauceButton, BorderLayout.CENTER);
-		 
+		//the menu is instantiated and the options are added
 		sauceOptions = new JComboBox<String>();
 		sauceOptions.setEnabled(true);
 		sauceOptions.addItem(empty);
@@ -90,20 +90,20 @@ import javax.swing.JTextPane;
 		sauceOptions.addActionListener(this);
 		saucePanel.add(sauceOptions, BorderLayout.AFTER_LAST_LINE);
 		main.add(saucePanel);
-		
+		//the cheese panel hosts the cheese label, image, and menu
 		JPanel cheesePanel = new JPanel();
 		JTextPane cheese = new JTextPane();
 		cheese.setText("Cheese");
 		cheese.setFont(new Font("Montserrat", Font.PLAIN, 30));
 		cheese.setEditable(false);
 		cheesePanel.add(cheese, BorderLayout.NORTH);
-		 
+		///the button is used to display the user selected choice image
 		cheeseButton = new JButton();
 		ImageIcon cheeseImage = new ImageIcon("Resources/noimage.png");
 		cheeseButton.setIcon(cheeseImage);
 		cheeseButton.setBackground(Color.WHITE);
 		cheesePanel.add(cheeseButton, BorderLayout.CENTER);
-		 
+		//the menu is instantiated and the options are added.
 		cheeseOptions = new JComboBox<String>();
 		cheeseOptions.setEnabled(true);
 		cheeseOptions.addItem(empty);
@@ -116,7 +116,7 @@ import javax.swing.JTextPane;
 		cheeseOptions.addActionListener(this);
 		cheesePanel.add(cheeseOptions, BorderLayout.AFTER_LAST_LINE);
 		main.add(cheesePanel);
-	    
+	    //the footer contains navigation
 	    JPanel footer = new JPanel();
 	    back = new JButton();
 	    back.setText("Back");
@@ -132,21 +132,23 @@ import javax.swing.JTextPane;
 	    this.add(next);
 	    footer.add(back, BorderLayout.EAST);
 	    footer.add(next, BorderLayout.WEST);
-
+//adds the panel contents to the frame content pane
 		Container base = getContentPane();
 		base.add(header, BorderLayout.BEFORE_FIRST_LINE);
 		base.add(main, BorderLayout.CENTER);
 		base.add(footer, BorderLayout.AFTER_LAST_LINE);
 	    
 	}
+	//returns the main panel and all of its elements when called.
 	public static Container getBody() {
 		return main;
 	}
 
 
 	@Override
+	//determines what to do when a button is pressed.
 	public void actionPerformed(ActionEvent e) {
-		if(e.getSource() == back) {
+		if(e.getSource() == back) { // goes to the previous page.
 			System.out.println("back selected");
 			SandwichMeat next = new SandwichMeat();
 			next.setBounds(50,50,1000,900);
@@ -157,7 +159,7 @@ import javax.swing.JTextPane;
 			setVisible(false);
 			dispose();
 		}
-		if(e.getSource() == next) {
+		if(e.getSource() == next) { //goes to the next page
 			System.out.println("next selected");
 			SandwichFinish next = new SandwichFinish();
 			next.setBounds(50,50,1000,900);
@@ -168,6 +170,8 @@ import javax.swing.JTextPane;
 			setVisible(false);
 			dispose();
 		} 
+		
+		//determines what the user selected and stores their choice in a string.
 		if(sauceOptions.getSelectedItem() == empty) {
 			System.out.println("Sauce item is unselected");
 			ImageIcon emptyImage = new ImageIcon("Resources/none.png");
@@ -248,7 +252,7 @@ import javax.swing.JTextPane;
 		}
 	}
 
-	
+	//returns the user chosen option when called.
 	public static String getCheese() {
 		return cheese;
 	}

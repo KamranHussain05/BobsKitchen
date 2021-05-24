@@ -19,7 +19,7 @@ import javax.swing.JTextPane;
 
 @SuppressWarnings("serial")
 public class SandwichMeat extends JFrame implements ActionListener{
-	
+	//fields contain the images and navigation
 	private JButton turkey;
 	private JButton pork;
 	private JButton beef; 
@@ -28,11 +28,12 @@ public class SandwichMeat extends JFrame implements ActionListener{
 	private JButton back;
 	private JButton next;
 	private static String meat;
+	private static JPanel main;
 
 	public SandwichMeat() {
 		super("Level 1: Sandwich");
-		
-		JPanel main = new JPanel();
+		//main panel is instantiated and layout is set.
+		main = new JPanel();
 		GridLayout mainLayout = new GridLayout(2, 1);
 		main.setBorder(BorderFactory.createEmptyBorder(10,10,10,10));
 		mainLayout.setVgap(5);
@@ -53,6 +54,7 @@ public class SandwichMeat extends JFrame implements ActionListener{
 	    header.add(title);
 	    
 	    //*********************************************************************************
+	    //this panel contains the top turkey and pork panels for formatting
 	    JPanel topButtons = new JPanel();
 	    GridLayout topLayout = new GridLayout(1,2);
 	    topButtons.setBorder(BorderFactory.createEmptyBorder(0,15,0,15));
@@ -60,7 +62,7 @@ public class SandwichMeat extends JFrame implements ActionListener{
 		topLayout.setHgap(5);
 		topButtons.setLayout(topLayout);
 		topButtons.setBackground(new Color(200,200,200));
-	    
+	    //button is instantiated, enabled, and activated with the corresponding image.
 	    ImageIcon turkeyImage = new ImageIcon("Resources/turkey.png");
 		turkey = new JButton();
 		turkey.setIcon(turkeyImage);
@@ -70,7 +72,7 @@ public class SandwichMeat extends JFrame implements ActionListener{
 		this.add(turkey);
 		topButtons.add(turkey);
 		
-		//Level 2, make a burger
+		//button is instantiated, enabled, and activated with the corresponding image.r
 		ImageIcon porkImage = new ImageIcon("Resources/pork.png");
 		pork = new JButton();
 		pork.setIcon(porkImage);
@@ -79,7 +81,7 @@ public class SandwichMeat extends JFrame implements ActionListener{
 		pork.addActionListener(this);;
 		this.add(pork);
 		topButtons.add(pork);
-		
+		//lower three buttons are added here to keep a consistent layout.
 		JPanel lowButtons = new JPanel();
 	    GridLayout lowLayout = new GridLayout(1,3);
 	    lowButtons.setBorder(BorderFactory.createEmptyBorder(0,15,0,15));
@@ -88,7 +90,7 @@ public class SandwichMeat extends JFrame implements ActionListener{
 		lowButtons.setLayout(lowLayout);
 		lowButtons.setBackground(new Color(200,200,200));
 		
-		//Level 3, make a souffle pancake
+		//button is instantiated, enabled, and activated with the corresponding image.
 		ImageIcon steakImage = new ImageIcon("Resources/steak.png");
 		beef = new JButton();
 		beef.setIcon(steakImage);
@@ -97,7 +99,7 @@ public class SandwichMeat extends JFrame implements ActionListener{
 		beef.addActionListener(this);;
 		this.add(beef);
 		lowButtons.add(beef);
-
+		//button is instantiated, enabled, and activated with the corresponding image.
 		ImageIcon baconImage = new ImageIcon("Resources/bacon.png");
 		bacon = new JButton();
 		bacon.setIcon(baconImage);
@@ -106,7 +108,7 @@ public class SandwichMeat extends JFrame implements ActionListener{
 		bacon.addActionListener(this);
 		this.add(bacon);
 		lowButtons.add(bacon);
-		
+		//button is instantiated, enabled, and activated with the corresponding image.
 		ImageIcon noneImage = new ImageIcon("Resources/none.png");
 		none = new JButton();
 		none.setIcon(noneImage);
@@ -115,10 +117,10 @@ public class SandwichMeat extends JFrame implements ActionListener{
 		none.addActionListener(this);
 		this.add(none);
 		lowButtons.add(none);
-		
+		//panels and their content are added to the main panel.
 		main.add(topButtons);
 		main.add(lowButtons);
-	    
+	    //footer contains the navigation for pages
 	    JPanel footer = new JPanel();
 	    back = new JButton();
 	    back.setText("Back");
@@ -134,16 +136,22 @@ public class SandwichMeat extends JFrame implements ActionListener{
 	    this.add(next);
 	    footer.add(back, BorderLayout.EAST);
 	    footer.add(next, BorderLayout.WEST);
-
+//content is added to the frames content pane.
 		Container base = getContentPane();
 		base.add(header, BorderLayout.BEFORE_FIRST_LINE);
 		base.add(main, BorderLayout.CENTER);
 		base.add(footer, BorderLayout.AFTER_LAST_LINE);
 	}
+	//returns the main panel and all of the content when called.
+	public static Container getBody() {
+		return main;
+	}
 
 	@Override
+	//determines what to do when a button is pressed
 	public void actionPerformed(ActionEvent e) {
-		if(e.getSource() == turkey) {
+		//these statements store the user selected option in a string.
+		if(e.getSource() == turkey) { 
 			System.out.println("Turkey Meat selected");
 			meat = "turkey";
 			pork.setEnabled(false);
@@ -183,7 +191,7 @@ public class SandwichMeat extends JFrame implements ActionListener{
 			beef.setEnabled(false);
 			bacon.setEnabled(false);
 		}
-		if(e.getSource() == back) {
+		if(e.getSource() == back) { //goes to the previous page.
 			System.out.println("back selected");
 			SandwichVeggies back = new SandwichVeggies();
 			back.setBounds(50,50,1000,900);
@@ -194,7 +202,7 @@ public class SandwichMeat extends JFrame implements ActionListener{
 			setVisible(false);
 			dispose();
 		}
-		if(e.getSource() == next) {
+		if(e.getSource() == next) { //goes to the next page.
 			System.out.println("next selected");
 			SandwichCondiments next = new SandwichCondiments();
 			next.setBounds(50,50,1000,900);
@@ -206,7 +214,7 @@ public class SandwichMeat extends JFrame implements ActionListener{
 			dispose();
 		}
 	}
-	
+	//returns the user selected choice.
 	public static String getMeat() {
 		return meat;
 	}

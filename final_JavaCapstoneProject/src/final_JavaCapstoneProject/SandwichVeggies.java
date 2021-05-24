@@ -20,23 +20,23 @@ import javax.swing.JTextPane;
 
 @SuppressWarnings("serial")
 public class SandwichVeggies extends JFrame implements ActionListener {
-	
+//strings return user selected options
 	private static String veg1;
 	private static String veg2;
 	private static String veg3;
-	
+	//buttons for navigation 
 	private JButton back;
 	private JButton next;
 	private JButton veg1Image;
 	private JButton veg2Image;
 	private JButton veg3Image;
-
+//drop down menus 
 	private JComboBox<String> veg1Options;
 	private JComboBox<String> veg2Options;
 	private JComboBox<String> veg3Options;
 	
-	private static Container base;
-	
+	private static JPanel main;
+	//options for the drop down menus
 	private String select = "Select One";
 	private String tomato = "Tomato";
 	private String lettuce = "Lettuce";
@@ -46,8 +46,8 @@ public class SandwichVeggies extends JFrame implements ActionListener {
 //Constructors
 	public SandwichVeggies() {
 		super("Level 1: Sandwich");
-		
-		JPanel main = new JPanel();
+		//main panel is instantiated.
+		main = new JPanel();
 		GridLayout mainLayout = new GridLayout(1, 3);
 		main.setBorder(BorderFactory.createEmptyBorder(10,10,10,10));
 		mainLayout.setVgap(5);
@@ -66,20 +66,20 @@ public class SandwichVeggies extends JFrame implements ActionListener {
 	    title.setForeground(new Color(255, 255, 255));
 	    title.setBackground(new Color(79, 93, 117));
 	    header.add(title);
-	    
+	    //left panel includes the label, image, and menu for the first veggie
 		JPanel left = new JPanel();
 		JTextPane veg1 = new JTextPane();
 		veg1.setText("Veggie 1");
 		veg1.setFont(new Font("Montserrat", Font.PLAIN, 30));
 		veg1.setEditable(false);
 		left.add(veg1, BorderLayout.BEFORE_FIRST_LINE);
-		 
+		//image is used to show the user selected image
 		veg1Image = new JButton();
 		ImageIcon image = new ImageIcon("Resources/noimage.png");
 		veg1Image.setIcon(image);
 		veg1Image.setBackground(Color.WHITE);
 		left.add(veg1Image, BorderLayout.CENTER);
-		 
+		//menu is instantiated and options are added.
 		veg1Options = new JComboBox<String>();
 		veg1Options.addItem(select);
 		veg1Options.addItem(tomato);
@@ -92,19 +92,20 @@ public class SandwichVeggies extends JFrame implements ActionListener {
 		main.add(left);
 		
 		//*****************************************************
+		//center panel is used to display the second veggie and its image, label and menu
 		JPanel center = new JPanel();
 		JTextPane veg2 = new JTextPane();
 		veg2.setText("Veggie 2");
 		veg2.setFont(new Font("Montserrat", Font.PLAIN, 30));
 		veg2.setEditable(false);
 		center.add(veg2, BorderLayout.NORTH);
-		 
+		//button is used to display the image of the user selected option.
 		veg2Image = new JButton();
 		ImageIcon image2 = new ImageIcon("Resources/noimage.png");
 		veg2Image.setIcon(image2);
 		veg2Image.setBackground(Color.WHITE);
 		center.add(veg2Image, BorderLayout.CENTER);
-		 
+		//menu is instantiated and options are added.
 		veg2Options = new JComboBox<String>();
 		veg2Options.addItem(select);
 		veg2Options.addItem(tomato);
@@ -117,19 +118,20 @@ public class SandwichVeggies extends JFrame implements ActionListener {
 		
 		main.add(center);
 		//***********************************************************
+		//right panel is for the third veggie its label, image, and menu
 		JPanel right = new JPanel();
 		JTextPane veg3 = new JTextPane();
 		veg3.setText("Veggie 3");
 		veg3.setFont(new Font("Montserrat", Font.PLAIN, 30));
 		veg3.setEditable(false);
 		right.add(veg3, BorderLayout.NORTH);
-		 
+		//button is used to display user selected option
 		veg3Image = new JButton();
 		ImageIcon image3 = new ImageIcon("Resources/noimage.png");
 		veg3Image.setIcon(image3);
 		veg3Image.setBackground(Color.WHITE);
 		right.add(veg3Image, BorderLayout.CENTER);
-		 
+		//menu is instantiated and options are added
 		veg3Options = new JComboBox<String>();
 		veg3Options.addItem(select);
 		veg3Options.addItem(tomato);
@@ -140,7 +142,7 @@ public class SandwichVeggies extends JFrame implements ActionListener {
 		veg3Options.addActionListener(this);
 		right.add(veg3Options, BorderLayout.SOUTH);
 		main.add(right);
-	    
+	    //footer contains page navigation
 	    JPanel footer = new JPanel();
 	    back = new JButton();
 	    back.setText("Back");
@@ -156,21 +158,21 @@ public class SandwichVeggies extends JFrame implements ActionListener {
 	    this.add(next);
 	    footer.add(back, BorderLayout.EAST);
 	    footer.add(next, BorderLayout.WEST);
-
-		base = getContentPane();
+//content is added to the frames content pane.
+	    Container base = getContentPane();
 		base.add(header, BorderLayout.BEFORE_FIRST_LINE);
 		base.add(main, BorderLayout.CENTER);
 		base.add(footer, BorderLayout.AFTER_LAST_LINE);
 	}
 	
 	public static Container getVeggiePanel() {
-		return base;
+		return main;
 	}
 
 	@Override
-	//Method
+	//determines what to do when an option is selected.
 	public void actionPerformed(ActionEvent e) {
-		if(e.getSource() == back) {
+		if(e.getSource() == back) { //goes to the previous page
 			System.out.println("back selected");
 			SandwichBread back = new SandwichBread();
 			back.setBounds(50,50,1000,900);
@@ -181,7 +183,7 @@ public class SandwichVeggies extends JFrame implements ActionListener {
 			setVisible(false);
 			dispose();
 		}
-		if(e.getSource() == next) {
+		if(e.getSource() == next) { //goes to the next page.
 			System.out.println("next selected");
 			SandwichMeat next = new SandwichMeat();
 			next.setBounds(50,50,1000,900);
@@ -192,7 +194,7 @@ public class SandwichVeggies extends JFrame implements ActionListener {
 			setVisible(false);
 			dispose();
 		}
-		
+		//identifies what item was selected and where, then stores the selected item in the corresponding string.
 		if(veg1Options.getSelectedItem() == tomato) {
 			veg1 = "tomato";
 			ImageIcon tomatoImage = new ImageIcon("Resources/tomato.png");
@@ -269,7 +271,7 @@ public class SandwichVeggies extends JFrame implements ActionListener {
 			veg3Image.setIcon(noneImage);
 		}
 	}
-	
+	//returns the user selected items as strings when called. These are submitted to the scorer on submit in finsih class for this level.
 	public static String getVeg1() {
 		return veg1;
 	}

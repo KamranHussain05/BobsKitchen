@@ -19,17 +19,18 @@ import javax.swing.JTextPane;
 @SuppressWarnings("serial")
 public class SandwichBread extends CardLayoutDemo {
 
-	//Fields
+	//Fields, navigation and buttons for gui
 	private JButton back;
 	private JButton next;
 	private JButton whiteBread;
 	private JButton baguette;
 	private JButton garlicBread;
-	private static String breadType;
+	private static String breadType; //static vars are needed for calling from other classses
 	private static JPanel main;
 
 	//Constructor
 	public SandwichBread() {
+		//instantiates the main panel and sets its layout
 		main = new JPanel();
 		GridLayout mainLayout = new GridLayout(1, 3);
 		main.setBorder(BorderFactory.createEmptyBorder(10,10,10,10));
@@ -51,6 +52,7 @@ public class SandwichBread extends CardLayoutDemo {
 	    header.add(title);
 	    
 	    //*********************************************************************************
+	    //Button is instantiated, activated, and enabled with image
 	    ImageIcon whiteBreadImage = new ImageIcon("Resources/whitebread.png");
 		whiteBread = new JButton();
 		whiteBread.setIcon(whiteBreadImage);
@@ -58,7 +60,7 @@ public class SandwichBread extends CardLayoutDemo {
 		whiteBread.setBackground(Color.WHITE);
 		whiteBread.addActionListener(this);
 		this.add(whiteBread);
-
+//button is instantiated, actived, and enabled with image
 		ImageIcon baguetteImage = new ImageIcon("Resources/baguette.png");
 		baguette = new JButton();
 		baguette.setIcon(baguetteImage);
@@ -66,7 +68,7 @@ public class SandwichBread extends CardLayoutDemo {
 		baguette.setBackground(Color.WHITE);
 		baguette.addActionListener(this);;
 		this.add(baguette);
-
+//button is instantiated, activated, and enabled with image.
 		ImageIcon garlicBreadImage = new ImageIcon("Resources/garlicbread.png");
 		garlicBread = new JButton();
 		garlicBread.setIcon(garlicBreadImage);
@@ -77,7 +79,7 @@ public class SandwichBread extends CardLayoutDemo {
 		main.add(whiteBread);
 		main.add(baguette);
 		main.add(garlicBread);
-	    
+	   //footer contains naviation 
 	    JPanel footer = new JPanel();
 	    back = new JButton();
 	    back.setText("Back");
@@ -94,21 +96,21 @@ public class SandwichBread extends CardLayoutDemo {
 	    this.add(next);
 	    footer.add(back, BorderLayout.EAST);
 	    footer.add(next, BorderLayout.WEST);
-
+//content is added to frame pane
 		Container base = getContentPane();
 		base.add(header, BorderLayout.BEFORE_FIRST_LINE);
 		base.add(main, BorderLayout.CENTER);
 		base.add(footer, BorderLayout.AFTER_LAST_LINE);
 	}
-	
+	//returns the main panel with all of its content.
 	public static Component getBody() {
 		return main;
 	}
 
 	@Override
-	//Method
+	//determines what to do after a button is pressed
 	public void actionPerformed(ActionEvent e) {
-		if(e.getSource() == back) {
+		if(e.getSource() == back) { //goes to the previous page.
 			System.out.println("Back button pressed");
 			
 			SandwichType window = new SandwichType();
@@ -120,7 +122,7 @@ public class SandwichBread extends CardLayoutDemo {
 	    	setVisible(false);
 	    	dispose();
 		}
-		if(e.getSource() == next) {
+		if(e.getSource() == next) { //goes to the next page
 			System.out.println("Next button pressed");
 			SandwichVeggies nextWindow = new SandwichVeggies();
 			nextWindow.setBounds(50,50, 1000,900);
@@ -133,6 +135,7 @@ public class SandwichBread extends CardLayoutDemo {
 		}
 		
 		//Breads *********************************************************************
+		//stores the type of bread selected as a string corresponding to the button selected.
 		if(e.getSource() == whiteBread) {
 			System.out.println("White Bread Selected");
 			breadType = "White Bread";
@@ -156,7 +159,7 @@ public class SandwichBread extends CardLayoutDemo {
 		}
 	}
 	
-	//Method
+	//returns the string for the type of bread
 	public static String getBread() {
 		return breadType;
 	}

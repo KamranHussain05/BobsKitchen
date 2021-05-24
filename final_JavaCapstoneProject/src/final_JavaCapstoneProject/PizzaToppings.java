@@ -1,7 +1,7 @@
 //Author: Kamran Hussain
 //Date: 5/23/21
 //Rev 05
-//
+//Notes: none
 
 package final_JavaCapstoneProject;
 
@@ -23,34 +23,35 @@ import javax.swing.JTextPane;
 
 @SuppressWarnings("serial")
 public class PizzaToppings extends JFrame implements ActionListener {
-
+//static fields are needed to pass user selected items to other classes
 	private static String veggie1;
 	private static String veggie2;
 	private static String meat;
-	
+//buttons are for navigation and displaying selected choices images
 	private JButton back;
 	private JButton next;
 	private JButton veg1Image;
 	private JButton veg2Image;
 	private JButton meatImage;
-
+//the drop down menus
 	private JComboBox<String> veg1Options;
 	private JComboBox<String> veg2Options;
 	private JComboBox<String> meatOptions;
-	
+//Strings are used to add user choices
 	private String select = "";
 	private String onion = "Onion";
 	private String olives = "Olives";
 	private String bellPepper = "Bell Pepper";
 	private String basil = "Basil";
-	
 	private String sausage = "Sausage";
 	private String peperoni = "Peperoni";
 	private String none = "None";
-	
+//panel containing the content
 	private static JPanel main;
-	
+	//constructor constructs the gui and adds stuff to the content pane
 	public PizzaToppings() {
+		super("Pizza Toppings");
+		//main panel is initiated and the layout is set
 		main = new JPanel();
 		GridLayout mainLayout = new GridLayout(1, 3);
 		main.setBorder(BorderFactory.createEmptyBorder(10,10,10,10));
@@ -70,20 +71,20 @@ public class PizzaToppings extends JFrame implements ActionListener {
 	    title.setForeground(new Color(255, 255, 255));
 	    title.setBackground(new Color(79, 93, 117));
 	    header.add(title);
-	    
+	    //left panel is needed to host the label, menu and images
 		JPanel left = new JPanel();
 		JTextPane veg1 = new JTextPane();
 		veg1.setText("Veggie 1");
 		veg1.setFont(new Font("Montserrat", Font.PLAIN, 30));
 		veg1.setEditable(false);
 		left.add(veg1, BorderLayout.BEFORE_FIRST_LINE);
-		 
+		//button is used to display the image of the item selected in the menu
 		veg1Image = new JButton();
 		ImageIcon veg1Icon = new ImageIcon("Resources/noimage.png");
 		veg1Image.setIcon(veg1Icon);
 		veg1Image.setBackground(Color.WHITE);
 		left.add(veg1Image, BorderLayout.CENTER);
-		 
+		//The menu is instantiated and the items are added
 		veg1Options = new JComboBox<String>();
 		veg1Options.addItem(select);
 		veg1Options.addItem(onion);
@@ -96,19 +97,20 @@ public class PizzaToppings extends JFrame implements ActionListener {
 		main.add(left);
 		
 		//*****************************************************
+		//center panel is needed to host the label, image, and menu
 		JPanel center = new JPanel();
 		JTextPane veg2 = new JTextPane();
 		veg2.setText("Veggie 2");
 		veg2.setFont(new Font("Montserrat", Font.PLAIN, 30));
 		veg2.setEditable(false);
 		center.add(veg2, BorderLayout.NORTH);
-		 
+		//button is used to display the image of the item selected in the menu
 		veg2Image = new JButton();
 		ImageIcon veg2Icon = new ImageIcon("Resources/noimage.png");
 		veg2Image.setIcon(veg2Icon);
 		veg2Image.setBackground(Color.WHITE);
 		center.add(veg2Image, BorderLayout.CENTER);
-		 
+		//the menu is instantiated and the items are added
 		veg2Options = new JComboBox<String>();
 		veg2Options.addItem(select);
 		veg2Options.addItem(onion);
@@ -121,19 +123,20 @@ public class PizzaToppings extends JFrame implements ActionListener {
 		
 		main.add(center);
 		//***********************************************************
+		//the right jpanel is needed to display the label, image, and menu
 		JPanel right = new JPanel();
 		JTextPane veg3 = new JTextPane();
 		veg3.setText("Meat");
 		veg3.setFont(new Font("Montserrat", Font.PLAIN, 30));
 		veg3.setEditable(false);
 		right.add(veg3, BorderLayout.NORTH);
-		 
+		//the button is used to display the image of the user selected menu option
 		meatImage = new JButton();
 		ImageIcon meatIcon = new ImageIcon("Resources/noimage.png");
 		meatImage.setIcon(meatIcon);
 		meatImage.setBackground(Color.WHITE);
 		right.add(meatImage, BorderLayout.CENTER);
-		 
+		// the menu is instantiated and the items are added.
 		meatOptions = new JComboBox<String>();
 		meatOptions.addItem(select);
 		meatOptions.addItem(peperoni);
@@ -143,7 +146,7 @@ public class PizzaToppings extends JFrame implements ActionListener {
 		right.add(meatOptions, BorderLayout.SOUTH);
 		
 		main.add(right);
-	    
+	    //the footer contains navigation between pages
 	    JPanel footer = new JPanel();
 	    back = new JButton();
 	    back.setText("Back");
@@ -159,20 +162,21 @@ public class PizzaToppings extends JFrame implements ActionListener {
 	    this.add(next);
 	    footer.add(back, BorderLayout.EAST);
 	    footer.add(next, BorderLayout.WEST);
-
+//content is added to the content pane of the window
 		Container base = getContentPane();
 		base.add(header, BorderLayout.BEFORE_FIRST_LINE);
 		base.add(main, BorderLayout.CENTER);
 		base.add(footer, BorderLayout.AFTER_LAST_LINE);
 	}
+	//the main panel with its elements can be called here for page switching.
 	public static Container getBody() {
 		return main;
 	}
 
-
 	@Override
+	//determines what to do when a menu option is selected
 	public void actionPerformed(ActionEvent e) {
-		if(e.getSource() == back) {
+		if(e.getSource() == back) { //goes to the previous page
 			System.out.println("back selected");
 			PizzaDough back = new PizzaDough();
 			back.setBounds(50,50,1000,900);
@@ -183,7 +187,7 @@ public class PizzaToppings extends JFrame implements ActionListener {
 			setVisible(false);
 			dispose();
 		}
-		if(e.getSource() == next) {
+		if(e.getSource() == next) { //goes to the next page
 			System.out.println("next selected");
 			PizzaFinish next = new PizzaFinish();
 			next.setBounds(50,50,1000,900);
@@ -195,7 +199,7 @@ public class PizzaToppings extends JFrame implements ActionListener {
 			dispose();
 		}
 		
-		//First Drop Down Menu listener
+		//First Drop Down Menu listener, stores the user selected item in a string
 		if(veg1Options.getSelectedItem() == onion) {
 			System.out.println("Onion Veggie Selected");
 			veggie1 = "onion";
@@ -279,7 +283,7 @@ public class PizzaToppings extends JFrame implements ActionListener {
 			meatImage.setIcon(meatIcon);
 		}
 	}
-		
+	//return the user selected item stored as a string to what ever calls these methods.
 	public static String getVeg1() {
 		return veggie1;
 	}

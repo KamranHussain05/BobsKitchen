@@ -1,6 +1,7 @@
 //Author: Kamran Hussain
 //Date: 5/22/2021
 //Revision 08
+///Notes: none
 package final_JavaCapstoneProject;
 import java.awt.BorderLayout;
 import java.awt.Color;
@@ -19,20 +20,20 @@ import javax.swing.JTextPane;
 
 @SuppressWarnings("serial")
 public class SandwichFinish extends JFrame implements ActionListener {
-//Fields	
+//Fields, navigation and return the main panel 	
 	private JButton submit;
 	private JButton back;
 	private static JPanel main;
 //Constructors
 	public SandwichFinish() {
 		super("Level 1: Sandwich");
-		
+		//main panel is instantiated
 		main = new JPanel();
 		GridLayout layout = new GridLayout(1,2);
 		layout.setHgap(5);
 		main.setLayout(layout);
 		main.setBackground(new Color(211,211,211));
-		
+		//header is created and setup
 		JPanel header = new JPanel();
 	    header.setBackground(new Color(79, 93, 117));
 	    JTextPane title = new JTextPane();
@@ -43,7 +44,7 @@ public class SandwichFinish extends JFrame implements ActionListener {
 	    title.setForeground(new Color(255, 255, 255));
 	    title.setBackground(new Color(79, 93, 117));
 	    header.add(title);
-	    
+	    //the left panel displays the image of the dish the user is trying to make
 	    JPanel left = new JPanel();
 	    left.setBackground(Color.WHITE);
 	    JLabel imgLabel = new JLabel();
@@ -63,11 +64,12 @@ public class SandwichFinish extends JFrame implements ActionListener {
 	    main.add(left);
 	    
 	    //******************************************************
+	    //the right panel contains a summary of what the user chose.
 	    JPanel right = new JPanel();
 	    GridLayout rightLayout = new GridLayout(8,1);
 	    right.setLayout(rightLayout);
 	    right.setBackground(Color.WHITE);
-	    
+	    //ingredients header
 	    JTextPane ingredients = new JTextPane();
 	    ingredients.setText("Ingredients");
 	    ingredients.setFont(new Font("Montserrat", Font.PLAIN, 35));
@@ -75,7 +77,7 @@ public class SandwichFinish extends JFrame implements ActionListener {
 	    ingredients.setBackground(new Color(79, 93, 117));
 	    ingredients.setAlignmentX(CENTER_ALIGNMENT);
 	    right.add(ingredients, BorderLayout.CENTER);
-	    
+	    //the jlabels include what part of the dish it is and what the user chose by calling the corresponding getter methods
 	    JLabel sandwichType = new JLabel();
 	    sandwichType.setText("<html><b>Sandwich Style:</b> " + SandwichType.getSandwichStyle());
 	    sandwichType.setFont(new Font("Montserrat", Font.PLAIN, 16));
@@ -108,7 +110,7 @@ public class SandwichFinish extends JFrame implements ActionListener {
 	    cheese.setFont(new Font("Montserrat", Font.PLAIN, 16));
 	    right.add(cheese);
 	    main.add(right);
-
+///footer contains navigation
 	    JPanel footer = new JPanel();
 	    back = new JButton();
 	    back.setText("Back");
@@ -124,21 +126,21 @@ public class SandwichFinish extends JFrame implements ActionListener {
 	    this.add(submit);
 	    footer.add(back, BorderLayout.EAST);
 	    footer.add(submit, BorderLayout.WEST);
-
+///content is added to the frames content pane
 		Container base = getContentPane();
 		base.add(header, BorderLayout.BEFORE_FIRST_LINE);
 		base.add(main, BorderLayout.CENTER);
 		base.add(footer, BorderLayout.AFTER_LAST_LINE);
 	}
-	
+	//the main panel and its elements are returned when this method is called
 	public static Component getBody() {
 		return main;
 	}
 
 	@Override
-	//Methods
+	//Determines what to do when a button is pressed
 	public void actionPerformed(ActionEvent e) {
-		if(e.getSource() == back) {
+		if(e.getSource() == back) { //goes to the previous window
 			System.out.println("back selected");
 			SandwichCondiments back = new SandwichCondiments();
 			back.setBounds(50,50,1000,900);
@@ -149,10 +151,10 @@ public class SandwichFinish extends JFrame implements ActionListener {
 			setVisible(false);
 			dispose();
 		}
-		if(e.getSource() == submit) {
+		if(e.getSource() == submit) { //submits the user selected inputs to the proper scorer method.
 			System.out.println("submit dish selected");
 			
-			if(SandwichType.getSandwichStyle() == "grilled cheese") {
+			if(SandwichType.getSandwichStyle() == "grilled cheese") { //determines the dish and sends the inputs to the proper method in the scorer
 				Scorer.grilledCheeseScore(SandwichBread.getBread(), 
 						SandwichCondiments.getCheese(), SandwichCondiments.getSauce(),
 						SandwichVeggies.getVeg1(), SandwichVeggies.getVeg2(), 
@@ -160,7 +162,7 @@ public class SandwichFinish extends JFrame implements ActionListener {
 				submit.setEnabled(false);	
 			}
 			
-			if(SandwichType.getSandwichStyle() == "banhmi") {
+			if(SandwichType.getSandwichStyle() == "banhmi") { //determines the dish and sends the inputs to the proper method in the scorer
 				Scorer.banhMiScore(SandwichBread.getBread(), 
 						SandwichCondiments.getCheese(), SandwichCondiments.getSauce(),
 						SandwichVeggies.getVeg1(), SandwichVeggies.getVeg2(), 
@@ -168,7 +170,7 @@ public class SandwichFinish extends JFrame implements ActionListener {
 				submit.setEnabled(false);
 			}
 			
-			if(SandwichType.getSandwichStyle() == "blt") {
+			if(SandwichType.getSandwichStyle() == "blt") { //determines the dish and sends the inputs to the proper method in the scorer
 				Scorer.bltScore(SandwichBread.getBread(), 
 						SandwichCondiments.getCheese(), SandwichCondiments.getSauce(),
 						SandwichVeggies.getVeg1(), SandwichVeggies.getVeg2(), 
@@ -176,13 +178,13 @@ public class SandwichFinish extends JFrame implements ActionListener {
 				submit.setEnabled(false);
 			}
 			
-			ScoreWindow window = new ScoreWindow();
+			ScoreWindow window = new ScoreWindow(); //goes to the next page.
 			window.setBounds(50,50,1000,900);
 			window.setVisible(true);
 			window.setIconImage(Main.getIcon());
 			window.setBackground(new Color(211,211,211));
 			
-			dispose();
+			dispose(); //closes this page.
 			setVisible(false);
 		}
 	}
