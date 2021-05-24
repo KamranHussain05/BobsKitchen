@@ -1,5 +1,7 @@
 //Author: Kamran Hussain
-//Date: 
+//Date: 5/23/21
+//Rev 01
+//Notes: Adapted from Sandiwch Finish
 
 package final_JavaCapstoneProject;
 
@@ -20,20 +22,20 @@ import javax.swing.JTextPane;
 
 @SuppressWarnings("serial")
 public class PhoFinish extends JFrame implements ActionListener {
-
+//Fields are the buttons for navigation and the main, bottom panel.
 	private JButton submit;
 	private JButton back;
 	private static JPanel main;
-	
+	//The constructor constructs the GUI on the main panel.
 	public PhoFinish() {
-super("Level 1: Sandwich");
-		
+		super("Level 1: Sandwich");
+		//instantiates the main panel.
 		main = new JPanel();
 		GridLayout layout = new GridLayout(1,2);
 		layout.setHgap(5);
 		main.setLayout(layout);
 		main.setBackground(new Color(211,211,211));
-		
+		//creates the header with the title of the window
 		JPanel header = new JPanel();
 	    header.setBackground(new Color(79, 93, 117));
 	    JTextPane title = new JTextPane();
@@ -44,7 +46,7 @@ super("Level 1: Sandwich");
 	    title.setForeground(new Color(255, 255, 255));
 	    title.setBackground(new Color(79, 93, 117));
 	    header.add(title);
-	    
+	    //the left JPanel that shows the selected dishes image
 	    JPanel left = new JPanel();
 	    left.setBackground(Color.WHITE);
 	    JLabel imgLabel = new JLabel();
@@ -61,14 +63,14 @@ super("Level 1: Sandwich");
 	    	imgLabel.setIcon(chickenIcon);
 	    }
 	    left.add(imgLabel);
-	    main.add(left);
+	    main.add(left); //adds the image panel to the main panel.
 	    
 	    //******************************************************
 	    JPanel right = new JPanel();
 	    GridLayout rightLayout = new GridLayout(7,1);
 	    right.setLayout(rightLayout);
 	    right.setBackground(Color.WHITE);
-	    
+	    //The ingredients header
 	    JTextPane ingredients = new JTextPane();
 	    ingredients.setText("Ingredients");
 	    ingredients.setFont(new Font("Montserrat", Font.PLAIN, 35));
@@ -76,7 +78,7 @@ super("Level 1: Sandwich");
 	    ingredients.setBackground(new Color(79, 93, 117));
 	    ingredients.setAlignmentX(CENTER_ALIGNMENT);
 	    right.add(ingredients, BorderLayout.CENTER);
-	    
+	    //includes all the labels for the chosen ingredients. HTML is used for formatting.
 	    JLabel phoType = new JLabel();
 	    phoType.setText("<html><b>Pho Style:</b> " + PhoStyle.getPhoType());
 	    phoType.setFont(new Font("Montserrat", Font.PLAIN, 16));
@@ -113,9 +115,8 @@ super("Level 1: Sandwich");
 	    					+"<br>" + PhoToppings.getTop9());
 	    condiments.setFont(new Font("Montserrat", Font.PLAIN, 16));
 	    right.add(condiments);
-	    
 	    main.add(right);
-
+//footer panel includes the navigation.
 	    JPanel footer = new JPanel();
 	    back = new JButton();
 	    back.setText("Back");
@@ -131,16 +132,21 @@ super("Level 1: Sandwich");
 	    this.add(submit);
 	    footer.add(back, BorderLayout.EAST);
 	    footer.add(submit, BorderLayout.WEST);
-
+//adds everything to the content pane of the window.
 		Container base = getContentPane();
 		base.add(header, BorderLayout.BEFORE_FIRST_LINE);
 		base.add(main, BorderLayout.CENTER);
 		base.add(footer, BorderLayout.AFTER_LAST_LINE);
 	}
+	//static container to be called for single frame.
+	public static Container getBody() {
+		return main;
+	}
 
 	@Override
+	//checks what button is pressed then directs it to another class.
 	public void actionPerformed(ActionEvent e) {
-		if(e.getSource() == back) {
+		if(e.getSource() == back) { //reopens the condiments page
 			System.out.println("back selected");
 			SandwichCondiments back = new SandwichCondiments();
 			back.setBounds(50,50,1000,900);
@@ -154,7 +160,7 @@ super("Level 1: Sandwich");
 		if(e.getSource() == submit) {
 			System.out.println("submit dish selected");
 			
-			if(PhoStyle.getPhoType() == "veggie pho") {
+			if(PhoStyle.getPhoType() == "veggie pho") { //sends the inputs to the veggie pho method in the Scorer.
 				Scorer.veggiePho(PhoStock.getStock(), 
 						PhoNoodles.getNoodles(), PhoMeat.getBeef1(), 
 						PhoMeat.getBeef2(), PhoMeat.getChick1(), PhoMeat.getChick2(),
@@ -164,7 +170,7 @@ super("Level 1: Sandwich");
 				submit.setEnabled(false);	
 			}
 			
-			if(PhoStyle.getPhoType() == "beef pho") {
+			if(PhoStyle.getPhoType() == "beef pho") { //sends the inputs to the beef pho scorer in the scorer class.
 				Scorer.beefPho(PhoStock.getStock(), 
 						PhoNoodles.getNoodles(), PhoMeat.getBeef1(), 
 						PhoMeat.getBeef2(), PhoMeat.getChick1(), PhoMeat.getChick2(),
@@ -174,7 +180,7 @@ super("Level 1: Sandwich");
 				submit.setEnabled(false);
 			}
 			
-			if(PhoStyle.getPhoType() == "chicken pho") {
+			if(PhoStyle.getPhoType() == "chicken pho") { //sends the inputs to the chicken pho scorer in the scorer class.
 				Scorer.chickenPho(PhoStock.getStock(), 
 						PhoNoodles.getNoodles(), PhoMeat.getBeef1(), 
 						PhoMeat.getBeef2(), PhoMeat.getChick1(), PhoMeat.getChick2(),
@@ -184,7 +190,7 @@ super("Level 1: Sandwich");
 				submit.setEnabled(false);
 			}
 			
-			ScoreWindow window = new ScoreWindow();
+			ScoreWindow window = new ScoreWindow(); //open the score page with stars and closes this page.
 			window.setBounds(50,50,1000,900);
 			window.setVisible(true);
 			window.setIconImage(Main.getIcon());

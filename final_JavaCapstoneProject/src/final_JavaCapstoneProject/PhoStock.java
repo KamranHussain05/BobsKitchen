@@ -1,3 +1,8 @@
+//Author: Kamran Hussain
+//Date: 5/23/21
+//Rev01
+//Notes adapted from bread type sandwich
+
 package final_JavaCapstoneProject;
 
 import java.awt.BorderLayout;
@@ -17,18 +22,18 @@ import javax.swing.JTextPane;
 
 @SuppressWarnings("serial")
 public class PhoStock extends JFrame implements ActionListener{
-	
+	//fields include the navigation and the gui buttons
 	private JButton back;
 	private JButton next;
 	private JButton vegStock;
 	private JButton beefStock;
 	private JButton chickenStock;
-	private static JPanel main;
+	private static JPanel main; //static fields are for accessing from other classes and the scorer
 	private static String stock;
-	
+	//the constructor constructs the gui
 	public PhoStock() {
 		super("Bob's Kitchen");
-		
+		//insantiates the main base panel and sets the layout
 		main = new JPanel();
 		GridLayout mainLayout = new GridLayout(1, 3);
 		main.setBorder(BorderFactory.createEmptyBorder(10,10,10,10));
@@ -48,7 +53,7 @@ public class PhoStock extends JFrame implements ActionListener{
 	    title.setForeground(new Color(255, 255, 255));
 	    title.setBackground(new Color(79, 93, 117));
 	    header.add(title);
-	    
+	    //veggie stock button is instantiated, activated, and the image is set
 	    ImageIcon vegStockImage = new ImageIcon("Resources/veggie stock.png");
 		vegStock = new JButton();
 		vegStock.setIcon(vegStockImage);
@@ -56,7 +61,7 @@ public class PhoStock extends JFrame implements ActionListener{
 		vegStock.setBackground(Color.WHITE);
 		vegStock.addActionListener(this);
 		this.add(vegStock);
-		
+		//beef stock button is instantiated, activated, and the image is set
 		ImageIcon beefStockImage = new ImageIcon("Resources/beefstock.png");
 		beefStock = new JButton();
 		beefStock.setIcon(beefStockImage);
@@ -64,7 +69,7 @@ public class PhoStock extends JFrame implements ActionListener{
 		beefStock.setBackground(Color.WHITE);
 		beefStock.addActionListener(this);;
 		this.add(beefStock);
-		
+		//chicken stock button is instantiated, activated, and the image is set
 		ImageIcon chickenStockImage = new ImageIcon("Resources/chickenstock.png");
 		chickenStock = new JButton();
 		chickenStock.setIcon(chickenStockImage);
@@ -72,10 +77,10 @@ public class PhoStock extends JFrame implements ActionListener{
 		chickenStock.setBackground(Color.WHITE);
 		chickenStock.addActionListener(this);;
 		this.add(chickenStock);
-		main.add(vegStock);
+		main.add(vegStock); //the buttons are added to the main panel and automatically formatted into the grid layout.
 		main.add(beefStock);
 		main.add(chickenStock);
-	    
+	    //footer panel with navigation.
 	    JPanel footer = new JPanel();
 	    back = new JButton();
 	    back.setText("Back");
@@ -92,16 +97,21 @@ public class PhoStock extends JFrame implements ActionListener{
 	    this.add(next);
 	    footer.add(back, BorderLayout.EAST);
 	    footer.add(next, BorderLayout.WEST);
-
+//content is added to the content pane
 		Container base = getContentPane();
 		base.add(header, BorderLayout.BEFORE_FIRST_LINE);
 		base.add(main, BorderLayout.CENTER);
 		base.add(footer, BorderLayout.AFTER_LAST_LINE);
 	}
+	//returns the main panel with all its content
+	public static Container getBody() {
+		return main;
+	}
 
 	@Override
+	//identifies what button was pressed and stores the choice in a string
 	public void actionPerformed(ActionEvent e) {
-		if(e.getSource() == back) {
+		if(e.getSource() == back) { //goes to the previous page
 			System.out.println("Back button pressed");
 			
 			PhoStyle window = new PhoStyle();
@@ -113,7 +123,7 @@ public class PhoStock extends JFrame implements ActionListener{
 	    	setVisible(false);
 	    	dispose();
 		}
-		if(e.getSource() == next) {
+		if(e.getSource() == next) { //goes to the next page
 			System.out.println("Next button pressed");
 			PhoMeat nextWindow = new PhoMeat();
 			nextWindow.setBounds(50,50, 1000,900);
@@ -124,7 +134,7 @@ public class PhoStock extends JFrame implements ActionListener{
 			setVisible(false);
 			dispose();
 		}
-		
+		//when the corresponding button is selected, the user choice is stored in the stock string and sent to the scorer on submit
 		if(e.getSource() == vegStock) {
 			System.out.println("Veg Stock Selected");
 			stock = "veggie stock";
@@ -144,7 +154,7 @@ public class PhoStock extends JFrame implements ActionListener{
 			beefStock.setEnabled(false);
 		}
 	}
-	
+	//string with user stock choice is sent to the scorer on phofinish submit.
 	public static String getStock() {
 		return stock;
 	}

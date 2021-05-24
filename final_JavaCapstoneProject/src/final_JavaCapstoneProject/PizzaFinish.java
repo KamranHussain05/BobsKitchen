@@ -1,3 +1,8 @@
+//Author: Kamran Hussain
+//Date: 5/23/21
+//Rev01
+//Notes: Adapted from sandwich finish
+
 package final_JavaCapstoneProject;
 
 import java.awt.BorderLayout;
@@ -17,19 +22,20 @@ import javax.swing.JTextPane;
 
 @SuppressWarnings("serial")
 public class PizzaFinish extends JFrame implements ActionListener {
-
+//fields include navigation and the main panel
 	private JButton submit;
 	private JButton back;
 	private static JPanel main;
-
+//constructor constructs the main panel and adds the elements to the main panel
 	public PizzaFinish() {
 		super("Bob's Kitchen");
+		//main panel is instantiated and the layout is set
 		main = new JPanel();
 		GridLayout layout = new GridLayout(1,2);
 		layout.setHgap(5);
 		main.setLayout(layout);
 		main.setBackground(new Color(211,211,211));
-		
+		//the header with the page title
 		JPanel header = new JPanel();
 	    header.setBackground(new Color(79, 93, 117));
 	    JTextPane title = new JTextPane();
@@ -40,7 +46,7 @@ public class PizzaFinish extends JFrame implements ActionListener {
 	    title.setForeground(new Color(255, 255, 255));
 	    title.setBackground(new Color(79, 93, 117));
 	    header.add(title);
-		
+		//left panel inlcudes the chosen type of pizza.
 	    JPanel left = new JPanel();
 	    left.setBackground(Color.WHITE);
 	    JLabel imgLabel = new JLabel();
@@ -53,15 +59,15 @@ public class PizzaFinish extends JFrame implements ActionListener {
 	    	imgLabel.setIcon(neoIcon);
 	    }
 	    left.add(imgLabel);
-	    main.add(left);
+	    main.add(left); //left panel is added to main
 	    
 	    //*****************************************************************************
-	    
+	    //right panel includes the labels and summary
 	    JPanel right = new JPanel();
 	    GridLayout rightLayout = new GridLayout(8,1);
 	    right.setLayout(rightLayout);
 	    right.setBackground(Color.WHITE);
-	    
+	    //ingredients title header
 	    JTextPane ingredients = new JTextPane();
 	    ingredients.setText("Ingredients");
 	    ingredients.setFont(new Font("Montserrat", Font.PLAIN, 35));
@@ -69,7 +75,7 @@ public class PizzaFinish extends JFrame implements ActionListener {
 	    ingredients.setBackground(new Color(79, 93, 117));
 	    ingredients.setAlignmentX(CENTER_ALIGNMENT);
 	    right.add(ingredients, BorderLayout.CENTER);
-	    
+	    //the jlabels state the type of ingredient then get the user selected item from the storage string in the ingredients class.
 	    JLabel pizzaType = new JLabel();
 	    pizzaType.setText("<html><b>Pizza Style:</b> " + PizzaStyle.getPizzaType());
 	    pizzaType.setFont(new Font("Montserrat", Font.PLAIN, 16));
@@ -101,7 +107,7 @@ public class PizzaFinish extends JFrame implements ActionListener {
 	    meat.setFont(new Font("Montserrat",Font.PLAIN, 16));
 	    right.add(meat);
 	    
-	    
+	    //the footer contains navigation
 	    JPanel footer = new JPanel();
 	    back = new JButton();
 	    back.setText("Back");
@@ -123,14 +129,15 @@ public class PizzaFinish extends JFrame implements ActionListener {
 		base.add(main, BorderLayout.CENTER);
 		base.add(footer, BorderLayout.AFTER_LAST_LINE);
 	}
-	
+	//returns the main panel and all the content for page navigation.
 	public static Container getBody() {
 		return main;
 	}
 
 	@Override
+	//determines what to do when a button is pressed
 	public void actionPerformed(ActionEvent e) {
-		if(e.getSource() == back) {
+		if(e.getSource() == back) { //goes to the previous page
 			System.out.println("back selected");
 			PizzaToppings back = new PizzaToppings();
 			back.setBounds(50,50,1000,900);
@@ -141,10 +148,10 @@ public class PizzaFinish extends JFrame implements ActionListener {
 			setVisible(false);
 			dispose();
 		}
-		if(e.getSource() == submit) {
+		if(e.getSource() == submit) { //submits the dish to the scorer
 			System.out.println("submit dish selected");
 			
-			if(PizzaStyle.getPizzaType() == "Neapolitan") {
+			if(PizzaStyle.getPizzaType() == "Neapolitan") { //determines if the type matches this then inputs to data to the corresponding method in the scorer
 				Scorer.neopolitanScore(PizzaDough.getDough(), 
 						PizzaDough.getSauce(), PizzaDough.getCheese(),
 						PizzaToppings.getVeg1(), PizzaToppings.getVeg2(), 
@@ -152,7 +159,7 @@ public class PizzaFinish extends JFrame implements ActionListener {
 				submit.setEnabled(false);	
 			}
 			
-			if(PizzaStyle.getPizzaType() == "new york") {
+			if(PizzaStyle.getPizzaType() == "new york") { //determines if the type matches this then inputs to data to the corresponding method in the scorer
 				Scorer.newYorkScore(PizzaDough.getDough(), 
 						PizzaDough.getSauce(), PizzaDough.getCheese(),
 						PizzaToppings.getVeg1(), PizzaToppings.getVeg2(), 
@@ -160,7 +167,7 @@ public class PizzaFinish extends JFrame implements ActionListener {
 				submit.setEnabled(false);	
 			}
 			
-		ScoreWindow window = new ScoreWindow();
+		ScoreWindow window = new ScoreWindow(); //opens the score page and closes this page.
 		window.setBounds(50,50,1000,900);
 		window.setVisible(true);
 		window.setIconImage(Main.getIcon());
