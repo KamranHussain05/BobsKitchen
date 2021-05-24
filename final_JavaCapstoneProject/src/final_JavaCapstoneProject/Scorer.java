@@ -42,25 +42,25 @@ public class Scorer {
 	// This is a beef style of banh mi
 	public static void banhMiScore (String bread, String cheeese, String sauce, String veg1, String veg2, String veg3, String meat) {
 		score=0;
-		if (bread == "Baguette") {
+		if (bread == "Baguette") { 
 			score=score+2;
-			//System.out.println("baguette selected plus two points");
+			System.out.println("baguette selected plus two points");
 		}
 		if (veg1 == "cucumber") {
 			score++;
-			//System.out.println("cucumber selected plus one point");
+			System.out.println("cucumber selected plus one point");
 		}
 		else if (veg2 == "cucumber") {
 			score++;
-			//System.out.println("cucumber selected plus one point");
+			System.out.println("cucumber selected plus one point");
 		}
 		else if (veg3 == "cucumber") {
 			score++;
-			//System.out.println("cucumber selected plus one point");
+			System.out.println("cucumber selected plus one point");
 		}
 		if (meat == "pork") {
 			score=score+2;
-			//System.out.println("pork selected plus two point");
+			System.out.println("pork selected plus two point");
 		}
 		System.out.println(score);
 		methodCalled = "sandwich";
@@ -134,7 +134,6 @@ public class Scorer {
 		System.out.println(score);
 		methodCalled = "pizza";
 	}
-	//
 	// New York style pizza composing of cheddar, tomatosauce, thincrust
 	public static void newYorkScore (String crust, String sauce, String cheese, String veg1, String veg2, String meat) {
 		score=0;
@@ -153,8 +152,8 @@ public class Scorer {
 		System.out.println(score);
 		methodCalled = "pizza";
 	  }
-	//Pho is made of broth noodle usually a meat but not required and toppings
-	//
+	//Pho is made of broth, noodles, usually a meat but not required, and toppings
+	//Beef pho is pho made using beef bones stock, vermiceeli noodles, fattybrisket and tendon as the meat, and various toppings
 	 public static void beefPho(String broth1, String noodle, String beef1, String beef2, String chicken1, String chicken2, String toppings1, String toppings2, String toppings3, String toppings4, String toppings5, String toppings6, String toppings7, String toppings8, String toppings9) {
 		 score = 0;
 		 if (broth1 == "beef stock") {
@@ -173,6 +172,7 @@ public class Scorer {
 			 score++;
 			 System.out.println("beef meat plus one point");
 		 }
+		 // if they have a topping they get a point
 		 if (toppings1.isEmpty() || toppings2.isEmpty() || toppings3.isEmpty() || toppings4.isEmpty() || toppings5.isEmpty() || toppings6.isEmpty() || toppings7.isEmpty() || toppings8.isEmpty() || toppings9.isEmpty()) {
 			
 		 } else {
@@ -183,6 +183,7 @@ public class Scorer {
 		 System.out.println(score);
 		 methodCalled = "pho";
 	 }
+	 // chicken pho is made of chicken stock, glass noodles, chicken breast and skin, and various toppings
 	public static void chickenPho(String broth1, String noodle, String beef1, String beef2, String chicken1, String chicken2, String toppings1, String toppings2, String toppings3, String toppings4, String toppings5, String toppings6, String toppings7, String toppings8, String toppings9) {
 		score = 0; 
 		if (broth1 == "chicken stock") {
@@ -201,6 +202,7 @@ public class Scorer {
 			 score++;
 			 System.out.println("chicken meat plus one point");
 		 }
+		 // if they have a topping they get a point
 		 if (toppings1.isEmpty() || toppings2.isEmpty() || toppings3.isEmpty() || toppings4.isEmpty() || toppings5.isEmpty() || toppings6.isEmpty() || toppings7.isEmpty() || toppings8.isEmpty() || toppings9.isEmpty()) {
 				
 		 } else {
@@ -210,6 +212,7 @@ public class Scorer {
 		 System.out.println(score);
 		 methodCalled = "pho";
 	}
+	//vegetable pho is made of veggie stock using mushrooms as a source of "meatiness", vermicelli noodles, no meat, and plenty of toppings
 	public static void veggiePho(String broth1, String noodle, String beef1, String beef2, String chicken1, String chicken2, String toppings1, String toppings2, String toppings3, String toppings4, String toppings5, String toppings6, String toppings7, String toppings8, String toppings9) {
 		score = 0; 
 		if (broth1 == "veggie stock") {
@@ -228,6 +231,7 @@ public class Scorer {
 			 score++;
 			 System.out.println("no meat plus one point");
 		 }
+		 // if they have a topping they get a point
 		 if (toppings1.isEmpty() || toppings2.isEmpty() || toppings3.isEmpty() || toppings4.isEmpty() || toppings5.isEmpty() || toppings6.isEmpty() || toppings7.isEmpty() || toppings8.isEmpty() || toppings9.isEmpty()) {
 				
 		 } else {
