@@ -1,7 +1,9 @@
 //Author: Kevin Choi
 //Date: 5/22/2021 
 //Revision 08
+
 package final_JavaCapstoneProject;
+
 import java.awt.Color;
 import java.awt.Image;
 import javax.swing.ImageIcon;
@@ -17,7 +19,7 @@ public class Main {
     	Image icon = appIcon.getImage();
     	return icon;
 	}
-	
+	//Closes the home page
 	public static void closeHome() {
 		home.setVisible(false);
 		home.dispose();

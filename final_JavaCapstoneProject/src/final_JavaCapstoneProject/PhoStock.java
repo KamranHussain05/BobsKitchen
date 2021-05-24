@@ -49,7 +49,7 @@ public class PhoStock extends JFrame implements ActionListener{
 	    title.setBackground(new Color(79, 93, 117));
 	    header.add(title);
 	    
-	    ImageIcon vegStockImage = new ImageIcon("Resources/whitebread.png");
+	    ImageIcon vegStockImage = new ImageIcon("Resources/veggie stock.png");
 		vegStock = new JButton();
 		vegStock.setIcon(vegStockImage);
 		vegStock.setHorizontalAlignment(JButton.CENTER);
@@ -57,7 +57,7 @@ public class PhoStock extends JFrame implements ActionListener{
 		vegStock.addActionListener(this);
 		this.add(vegStock);
 		
-		ImageIcon beefStockImage = new ImageIcon("Resources/baguette.png");
+		ImageIcon beefStockImage = new ImageIcon("Resources/beefstock.png");
 		beefStock = new JButton();
 		beefStock.setIcon(beefStockImage);
 		beefStock.setHorizontalAlignment(JButton.CENTER);
@@ -65,7 +65,7 @@ public class PhoStock extends JFrame implements ActionListener{
 		beefStock.addActionListener(this);;
 		this.add(beefStock);
 		
-		ImageIcon chickenStockImage = new ImageIcon("Resources/garlicbread.png");
+		ImageIcon chickenStockImage = new ImageIcon("Resources/chickenstock.png");
 		chickenStock = new JButton();
 		chickenStock.setIcon(chickenStockImage);
 		chickenStock.setHorizontalAlignment(JButton.CENTER);

@@ -108,6 +108,7 @@ public class Scorer {
 		score=0;
 		if (sauce == "tomatosauce" ) {
 			score++; 
+			System.out.println("tomato sauce plus one point");
 		} 
 		if (crust == "thincrust") { 
 			score++; 
@@ -150,22 +151,27 @@ public class Scorer {
 	//
 	 public static void beefPho(String broth1, String noodle, String beef1, String beef2, String chicken1, String chicken2, String toppings1, String toppings2, String toppings3, String toppings4, String toppings5, String toppings6, String toppings7, String toppings8, String toppings9) {
 		 score = 0;
-		 if (broth1 == "beef bones") {
+		 if (broth1 == "beef stock") {
 			 score=score+2;
+			 System.out.println("beef broth plus one point");
 		 }
 		 if (noodle == "vermicelli") {
 			 score++;
+			 System.out.println("vermicelli plus one point");
 		 }
-		 if (beef1 == "fatty brisket" && beef2 == "tendon" && chicken1 == "none" && chicken2 == "none") {
+		 if (beef1 == "fattybrisket" && beef2 == "tendon" && chicken1 == "none" && chicken2 == "none") {
 			 score++;
+			 System.out.println("beef meat plus one point");
 		 }
-		 if (beef1 == "tendon" && beef2 == "fatty brisket" && chicken1 == "none" && chicken2 == "none") {
+		 if (beef1 == "tendon" && beef2 == "fattybrisket" && chicken1 == "none" && chicken2 == "none") {
 			 score++;
+			 System.out.println("beef meat plus one point");
 		 }
 		 if (toppings1.isEmpty() || toppings2.isEmpty() || toppings3.isEmpty() || toppings4.isEmpty() || toppings5.isEmpty() || toppings6.isEmpty() || toppings7.isEmpty() || toppings8.isEmpty() || toppings9.isEmpty()) {
 			
 		 } else {
 			 score++;
+			 System.out.println("Toppings plus one point");
 		 }
 		 
 		 System.out.println(score);
@@ -175,20 +181,25 @@ public class Scorer {
 		score = 0; 
 		if (broth1 == "chicken stock") {
 			 score=score+2;
+			 System.out.println("chicken stock plus one point");
 		 }
 		 if (noodle == "glass noodles") {
 			 score++;
+			 System.out.println("glass noodles plus one point");
 		 }
-		 if (beef1 == "none" && beef2 == "none" && chicken1 == "chicken breast" && chicken2 == "chicken skin") {
+		 if (beef1 == "none" && beef2 == "none" && chicken1 == "chickenbreast" && chicken2 == "chickenskin") {
 			 score++;
+			 System.out.println("chicken meat plus one point");
 		 }
-		 if (beef1 == "none" && beef2 == "none" && chicken1 == "chicken skin" && chicken2 == "chicken breast") {
+		 if (beef1 == "none" && beef2 == "none" && chicken1 == "chickenskin" && chicken2 == "chickenbreast") {
 			 score++;
+			 System.out.println("chicken meat plus one point");
 		 }
 		 if (toppings1.isEmpty() || toppings2.isEmpty() || toppings3.isEmpty() || toppings4.isEmpty() || toppings5.isEmpty() || toppings6.isEmpty() || toppings7.isEmpty() || toppings8.isEmpty() || toppings9.isEmpty()) {
 				
 		 } else {
 			 score++;
+			 System.out.println("chicken stock plus one point");
 		 }
 		 System.out.println(score);
 		 methodCalled = "pho";
@@ -197,20 +208,25 @@ public class Scorer {
 		score = 0; 
 		if (broth1 == "veggie stock") {
 			 score=score+2;
+			 System.out.println("veggie stock plus one point");
 		 }
 		 if (noodle == "vermicelli") {
 			 score++;
+			 System.out.println("vermicelli plus one point");
 		 }
 		 if (beef1 == "none" && beef2 == "none" && chicken1 == "none" && chicken2 == "none") {
 			 score++;
+			 System.out.println("no meat plus one point");
 		 }
 		 if (beef1 == "none" && beef2 == "none" && chicken1 == "none" && chicken2 == "none") {
 			 score++;
+			 System.out.println("no meat plus one point");
 		 }
 		 if (toppings1.isEmpty() || toppings2.isEmpty() || toppings3.isEmpty() || toppings4.isEmpty() || toppings5.isEmpty() || toppings6.isEmpty() || toppings7.isEmpty() || toppings8.isEmpty() || toppings9.isEmpty()) {
 				
 		 } else {
 			 score++;
+			 System.out.println("toppings plus one point");
 		 }
 		 System.out.println(score);
 		 methodCalled = "pho";
