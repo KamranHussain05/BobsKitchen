@@ -71,7 +71,7 @@ public class Scorer {
 		score=0;
 		if (bread == "White Bread") {
 			score++;
-			System.out.println("white bread selected plus two point");
+			System.out.println("white bread selected plus one point");
 		}
 		if (veg1 == "lettuce" && veg2 == "tomato" && veg3 == "none") {
 			score=score+2;
@@ -99,11 +99,11 @@ public class Scorer {
 		}
 		if (meat == "bacon") {
 			score++;
-			System.out.println("meat selected plus two point");
+			System.out.println("meat selected plus one point");
 		}
 		if (cheese == "american") {
 			score++;
-			System.out.println("american cheese selected plus two point");
+			System.out.println("american cheese selected plus one point");
 		}
 		System.out.println(score);
 		methodCalled = "sandwich";
