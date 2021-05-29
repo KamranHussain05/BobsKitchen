@@ -1,13 +1,14 @@
 # Bob's Kitchen
 
 Kamran Hussain, William Le, Kevin Choi
+
 Team Name: 417 Expectation Failed
+
 Last Updated: 5/28/2021
+
 Intro to Programming Java
+
 Ed Taylor
-Production Release, 5/24/21
-Version 1.0.0
-Dependency on the Resources Folder
 
 Program Purpose:
 Bob’s Kitchen is a game where players try to guess what Bob’s secret recipes are
