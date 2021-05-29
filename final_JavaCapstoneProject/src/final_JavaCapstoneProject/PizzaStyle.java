@@ -1,9 +1,10 @@
+package final_JavaCapstoneProject;
+
 //Author: Kamran Hussain
 //Date: 5/23/21
 //Rev 01
 //Notes: Adapted from Sandwich Type
 
-package final_JavaCapstoneProject;
 
 import java.awt.BorderLayout;
 import java.awt.Color;

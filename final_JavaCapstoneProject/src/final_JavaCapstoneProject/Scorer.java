@@ -1,7 +1,8 @@
+package final_JavaCapstoneProject;
+
 //Name: William Le
 //Date:5/22/2021
 //Revision:08
-package final_JavaCapstoneProject;
 
 public class Scorer {
 	

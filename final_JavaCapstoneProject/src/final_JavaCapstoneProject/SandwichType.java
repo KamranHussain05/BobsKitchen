@@ -1,7 +1,9 @@
+package final_JavaCapstoneProject;
+
 //Author: Kamran Hussain
 //Date: 5/22/2021
 //Revision 08
-package final_JavaCapstoneProject;
+
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Container;

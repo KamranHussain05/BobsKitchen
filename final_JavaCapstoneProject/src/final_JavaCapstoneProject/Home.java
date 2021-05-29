@@ -1,3 +1,5 @@
+package final_JavaCapstoneProject;
+
 //Author: Kamran Hussain
 //Date: 5/23/21
 //Rev 01 - Contains 5 dishes and 5 buttons
@@ -5,7 +7,6 @@
 //rev 03 - changed to 4 buttons and 4 levels with one help button on the botton
 //rev 04 - size was changed to be more friendly for screens below 1080x1920 resolution
 
-package final_JavaCapstoneProject;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
