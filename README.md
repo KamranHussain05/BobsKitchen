@@ -1,4 +1,4 @@
-# IntroJavaCapstoneProject
+# Bob's Kitchen
 
 Beta Release, 5/3/21
 Version 0.0.3
