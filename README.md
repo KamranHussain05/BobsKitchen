@@ -1,19 +1,12 @@
 # Bob's Kitchen
 
 Kamran Hussain, William Le, Kevin Choi
-
 Team Name: 417 Expectation Failed
-
 Last Updated: 5/28/2021
-
 Intro to Programming Java
-
 Ed Taylor
-
 Production Release, 5/24/21
-
 Version 1.0.0
-
 Dependency on the Resources Folder
 
 Program Purpose:
