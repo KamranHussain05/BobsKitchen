@@ -72,7 +72,7 @@ Will, scoring system is implemented when the user inputs are sent to the scorer.
 Working on adapting code to one frame with refreshing panels. Helped with the
 Presentation. Edited the video.
 
-William Le: Listed Fields, Methods, and Constructors in each class via comments.
+William Le - Listed Fields, Methods, and Constructors in each class via comments.
 Drew out by hand and made a UML Diagram for the program including arrows
 that show hierarchy and class paths. I came up with the idea of a cooking game
 including the game engine (how the game works), the various dishes that we will
