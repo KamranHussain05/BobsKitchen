@@ -17,8 +17,8 @@ public class CardLayoutDemo extends JFrame implements ActionListener {
     static JPanel cards; 
     static JPanel card1;
     private JPanel card2;
-    private JPanel card3; //a panel that uses CardLayout
-    private JPanel card4;
+//    private JPanel card3; //a panel that uses CardLayout
+//    private JPanel card4;
     static CardLayout c1;
     static String next = "next";
     static String previous = "previous";

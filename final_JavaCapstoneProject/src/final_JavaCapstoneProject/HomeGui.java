@@ -54,7 +54,7 @@ public class HomeGui extends JFrame {
 		topButtons.setBackground(new Color(200,200,200));
 	    
 	    //Level 1, make a sandwich
-		ImageIcon sandwichImage = new ImageIcon("Resources/sandwichthumbnail.png");
+		ImageIcon sandwichImage = new ImageIcon("sandwichthumbnail.png");
 		sandwich = new JButton();
 		sandwich.setIcon(sandwichImage);
 		sandwich.setHorizontalAlignment(JButton.CENTER);
@@ -62,7 +62,7 @@ public class HomeGui extends JFrame {
 		topButtons.add(sandwich);
 		
 		//Level 2, make a burger
-		ImageIcon burgerImage = new ImageIcon("Resources/burgerthumbnail.png");
+		ImageIcon burgerImage = new ImageIcon("/burgerthumbnail.png");
 		burger = new JButton();
 		burger.setIcon(burgerImage);
 		burger.setHorizontalAlignment(JButton.CENTER);
@@ -78,7 +78,7 @@ public class HomeGui extends JFrame {
 		lowerButtons.setBackground(new Color(200,200,200));
 		
 		//Level 3, make a souffle pancake
-		ImageIcon pancakeImage = new ImageIcon("Resources/pancakethumbnail.png");
+		ImageIcon pancakeImage = new ImageIcon("/pancakethumbnail.png");
 		pancake = new JButton();
 		pancake.setIcon(pancakeImage);
 		pancake.setHorizontalAlignment(JButton.CENTER);
@@ -86,14 +86,14 @@ public class HomeGui extends JFrame {
 		lowerButtons.add(pancake);
 		
 		//Level 4, 
-		ImageIcon ramenImage = new ImageIcon("Resources/ramenthumbnail.png");
+		ImageIcon ramenImage = new ImageIcon("/ramenthumbnail.png");
 		ramen = new JButton();
 		ramen.setIcon(ramenImage);
 		ramen.setHorizontalAlignment(JButton.CENTER);
 		ramen.setBackground(Color.WHITE);
 		lowerButtons.add(ramen);
 		
-		ImageIcon wellingtonImage = new ImageIcon("Resources/wellingtonthumbnail.png");
+		ImageIcon wellingtonImage = new ImageIcon("/wellingtonthumbnail.png");
 		beefWellington = new JButton();
 		beefWellington.setIcon(wellingtonImage);
 		beefWellington.setHorizontalAlignment(JButton.CENTER);
@@ -135,7 +135,7 @@ public class HomeGui extends JFrame {
 	    
 	    JPanel left = new JPanel();
 	    left.setBackground(Color.WHITE);
-	    JLabel imgLabel = new JLabel(new ImageIcon("Resources/none.png"));
+	    JLabel imgLabel = new JLabel(new ImageIcon("/none.png"));
 	    left.add(imgLabel);
 	    main.add(left);
 	    
